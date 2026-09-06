@@ -51,7 +51,9 @@ class Record:
             for item in values:
                 if isinstance(item, str):
                     _require(bool(item.strip()), f"{field.name}: blank text")
-            if field.name.endswith("_id") or field.name == "benchmark_revision":
+            if value is not None and (
+                field.name.endswith("_id") or field.name == "benchmark_revision"
+            ):
                 _require(
                     isinstance(value, str) and not any(c.isspace() for c in value),
                     f"{field.name}: identifiers must not contain whitespace",
@@ -128,6 +130,7 @@ class ApplicabilityAssertion(Record):
     content_locator: str
     basis_locator: str
     basis: str
+    basis_source_id: str | None = None
     applies_to: tuple[VersionSelector, ...] = ()
     transition_source: tuple[VersionSelector, ...] = ()
     transition_target: tuple[VersionSelector, ...] = ()
@@ -153,6 +156,31 @@ class DocumentType(StrEnum):
     CONCEPTUAL_GUIDE = "conceptual_guide"
     MIGRATION_GUIDE = "migration_guide"
     RELEASE_NOTE = "release_note"
+    DOCUMENTATION_EXAMPLE = "documentation_example"
+
+
+class ContributionRole(StrEnum):
+    PRIMARY_EXPLANATION = "primary_explanation"
+    SUPPORTING_EXPLANATION = "supporting_explanation"
+    COMPANION_EXAMPLE = "companion_example"
+
+
+@dataclass(frozen=True, kw_only=True)
+class SourceContribution(Record):
+    """Map a frozen source span to a half-open character span in evidence.content."""
+
+    source_id: str
+    source_locator: str
+    role: ContributionRole
+    content_start: int
+    content_end: int
+
+    def __post_init__(self) -> None:
+        super().__post_init__()
+        _require(
+            0 <= self.content_start < self.content_end,
+            "contribution requires a nonempty, nonnegative content span",
+        )
 
 
 @dataclass(frozen=True, kw_only=True)
@@ -200,12 +228,63 @@ class EvidenceUnit(Record):
     applicability: tuple[ApplicabilityAssertion, ...]
     technical_identifiers: tuple[str, ...] = ()
     curator_notes: str | None = None
+    contributions: tuple[SourceContribution, ...] = ()
+    assembly_policy: str | None = None
 
     def __post_init__(self) -> None:
         super().__post_init__()
         _require(bool(self.section_path), "section_path must not be empty")
         _require(bool(self.applicability), "applicability must be explicit")
         _hash(self.content_hash)
+        if self.contributions:
+            _require(
+                self.assembly_policy is not None,
+                "explicit contributions require assembly_policy",
+            )
+            primary = [
+                c
+                for c in self.contributions
+                if c.role is ContributionRole.PRIMARY_EXPLANATION
+            ]
+            _require(len(primary) == 1, "exactly one primary contribution required")
+            _require(
+                primary[0].source_id == self.source_id
+                and primary[0].source_locator == self.source_locator,
+                "primary contribution must match evidence source and locator",
+            )
+            end = 0
+            for contribution in sorted(
+                self.contributions, key=lambda c: c.content_start
+            ):
+                _require(
+                    contribution.content_start == end,
+                    "contribution content spans must partition content "
+                    "without gaps or overlaps",
+                )
+                end = contribution.content_end
+            _require(
+                end == len(self.content),
+                "contribution content spans must cover exactly the evidence content",
+            )
+        else:
+            _require(
+                self.assembly_policy is None,
+                "assembly_policy requires explicit contributions",
+            )
+        contributing_sources = {self.source_id} | {
+            c.source_id for c in self.contributions
+        }
+        for assertion in self.applicability:
+            if self.contributions:
+                _require(
+                    assertion.basis_source_id is not None,
+                    "explicit contributions require a source-qualified "
+                    "applicability basis",
+                )
+            _require(
+                (assertion.basis_source_id or self.source_id) in contributing_sources,
+                "applicability basis must reference a contributing source",
+            )
 
 
 class QueryKind(StrEnum):
@@ -345,6 +424,14 @@ class Benchmark(Record):
                 unit.ecosystem_id == sources[unit.source_id].ecosystem_id,
                 "evidence/source ecosystem mismatch",
             )
+            for contribution in unit.contributions:
+                _require(
+                    contribution.source_id in sources, "unknown contribution source_id"
+                )
+                _require(
+                    unit.ecosystem_id == sources[contribution.source_id].ecosystem_id,
+                    "contribution/source ecosystem mismatch",
+                )
         pairs: set[tuple[str, str]] = set()
         positives: set[str] = set()
         for judgment in self.judgments:

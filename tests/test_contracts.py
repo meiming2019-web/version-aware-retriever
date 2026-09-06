@@ -13,6 +13,7 @@ from version_aware_retriever.contracts import (
     Benchmark,
     BenchmarkQuery,
     ContractError,
+    ContributionRole,
     DocumentType,
     EvidenceRole,
     EvidenceUnit,
@@ -23,6 +24,7 @@ from version_aware_retriever.contracts import (
     RankedRun,
     ReviewStatus,
     SelectorKind,
+    SourceContribution,
     SourceManifestEntry,
     VersionApplicability,
     VersionSelector,
@@ -368,3 +370,166 @@ def test_cross_ecosystem_positive_rejected(benchmark: Benchmark) -> None:
     query = replace(benchmark.queries[0], ecosystem_id="another:project")
     with pytest.raises(ContractError, match="positive judgment ecosystem"):
         replace(benchmark, queries=(query, benchmark.queries[1]))
+
+
+@pytest.fixture
+def compound_benchmark(benchmark: Benchmark) -> Benchmark:
+    """Test-only Markdown plus fictional companion code; no real corpus content."""
+    unit = benchmark.evidence[0]
+    content = unit.content + "\nprint('example')"
+    example = replace(
+        benchmark.sources[0],
+        source_id="test-example",
+        document_type=DocumentType.DOCUMENTATION_EXAMPLE,
+        snapshot_locator="fixture:r2/example.py",
+        content_hash="sha256:" + sha256(b"print('example')").hexdigest(),
+    )
+    compound = replace(
+        unit,
+        content=content,
+        content_hash="sha256:" + sha256(content.encode()).hexdigest(),
+        assembly_policy="test-assembly-v1: append newline and committed code",
+        contributions=(
+            SourceContribution(
+                source_id=unit.source_id,
+                source_locator=unit.source_locator,
+                role=ContributionRole.PRIMARY_EXPLANATION,
+                content_start=0,
+                content_end=len(unit.content),
+            ),
+            SourceContribution(
+                source_id=example.source_id,
+                source_locator="L1",
+                role=ContributionRole.COMPANION_EXAMPLE,
+                content_start=len(unit.content),
+                content_end=len(content),
+            ),
+        ),
+        applicability=(replace(unit.applicability[0], basis_source_id=unit.source_id),),
+    )
+    return replace(
+        benchmark,
+        sources=(*benchmark.sources, example),
+        evidence=(compound, benchmark.evidence[1]),
+    )
+
+
+def test_compound_provenance(compound_benchmark: Benchmark) -> None:
+    unit = compound_benchmark.evidence[0]
+    assert len(compound_benchmark.sources) == 2
+    assert len(unit.contributions) == 2
+    run_for(compound_benchmark).validate_against(compound_benchmark)
+    assert compound_benchmark.judgments[0].is_valid_positive
+
+
+def test_companion_reference_validation(compound_benchmark: Benchmark) -> None:
+    unit = compound_benchmark.evidence[0]
+    unknown = replace(
+        unit,
+        contributions=(
+            unit.contributions[0],
+            replace(unit.contributions[1], source_id="unknown"),
+        ),
+    )
+    with pytest.raises(ContractError, match="unknown contribution"):
+        replace(compound_benchmark, evidence=(unknown, compound_benchmark.evidence[1]))
+    with pytest.raises(ContractError, match="ecosystem mismatch"):
+        replace(
+            compound_benchmark,
+            sources=(
+                compound_benchmark.sources[0],
+                replace(compound_benchmark.sources[1], ecosystem_id="other:project"),
+            ),
+        )
+
+
+def test_primary_designation(compound_benchmark: Benchmark) -> None:
+    unit = compound_benchmark.evidence[0]
+    primary, example = unit.contributions
+    for contributions in (
+        (replace(primary, role=ContributionRole.SUPPORTING_EXPLANATION), example),
+        (primary, replace(example, role=ContributionRole.PRIMARY_EXPLANATION)),
+        (replace(primary, source_id=example.source_id), example),
+        (replace(primary, source_locator="wrong-span"), example),
+    ):
+        with pytest.raises(ContractError, match="primary"):
+            replace(unit, contributions=contributions)
+
+
+def test_contribution_spans(compound_benchmark: Benchmark) -> None:
+    unit = compound_benchmark.evidence[0]
+    primary, example = unit.contributions
+    for contributions in (
+        (primary, example, example),
+        (primary, replace(example, content_start=example.content_start - 1)),
+        (primary, replace(example, content_start=example.content_start + 1)),
+        (primary, replace(example, content_end=len(unit.content) + 1)),
+        (primary, replace(example, content_end=len(unit.content) - 1)),
+    ):
+        with pytest.raises(ContractError, match="content"):
+            replace(unit, contributions=contributions)
+    for start, end in ((-1, 1), (1, 1), (2, 1)):
+        with pytest.raises(ContractError, match="content span"):
+            replace(example, content_start=start, content_end=end)
+    with pytest.raises(ContractError, match="blank"):
+        replace(example, source_locator=" ")
+    with pytest.raises(ContractError, match="invalid type"):
+        replace(example, role="companion_example")  # type: ignore[arg-type]
+
+
+def test_multiple_spans_from_same_source(compound_benchmark: Benchmark) -> None:
+    unit = compound_benchmark.evidence[0]
+    primary, example = unit.contributions
+    split = example.content_start + 2
+    changed = replace(
+        unit,
+        contributions=(
+            primary,
+            replace(example, content_end=split, source_locator="L1:1-2"),
+            replace(example, content_start=split, source_locator="L1:3-end"),
+        ),
+    )
+    replace(compound_benchmark, evidence=(changed, compound_benchmark.evidence[1]))
+
+
+def test_applicability_basis_sources(compound_benchmark: Benchmark) -> None:
+    unit = compound_benchmark.evidence[0]
+    assertion = unit.applicability[0]
+    for source in (None, "unknown"):
+        with pytest.raises(ContractError, match="basis"):
+            replace(unit, applicability=(replace(assertion, basis_source_id=source),))
+    companion_basis = replace(
+        assertion, basis_source_id="test-example", basis_locator="L1"
+    )
+    changed = replace(unit, applicability=(companion_basis,))
+    replace(compound_benchmark, evidence=(changed, compound_benchmark.evidence[1]))
+    registered = replace(compound_benchmark.sources[0], source_id="unrelated")
+    with pytest.raises(ContractError, match="contributing source"):
+        replace(
+            unit,
+            applicability=(replace(assertion, basis_source_id=registered.source_id),),
+        )
+
+
+def test_single_source_basis_compatibility(benchmark: Benchmark) -> None:
+    unit = benchmark.evidence[0]
+    assert unit.contributions == ()
+    assert unit.applicability[0].basis_source_id is None
+    explicit = replace(
+        unit,
+        applicability=(replace(unit.applicability[0], basis_source_id=unit.source_id),),
+    )
+    replace(benchmark, evidence=(explicit, benchmark.evidence[1]))
+    with pytest.raises(ContractError, match="contributing source"):
+        replace(
+            unit,
+            applicability=(replace(unit.applicability[0], basis_source_id="unknown"),),
+        )
+
+
+def test_assembly_policy_required(compound_benchmark: Benchmark) -> None:
+    unit = compound_benchmark.evidence[0]
+    with pytest.raises(ContractError, match="assembly_policy"):
+        replace(unit, assembly_policy=None)
+    with pytest.raises(ContractError, match="assembly_policy"):
+        replace(unit, contributions=())
