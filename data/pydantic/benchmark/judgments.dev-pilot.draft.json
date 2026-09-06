@@ -1,0 +1,2749 @@
+{
+  "draft_format": "m1.3b-development-pilot-v0",
+  "review_status": "draft",
+  "human_review_status": "pending",
+  "artifact_bindings": {
+    "data/pydantic/benchmark/queries.dev.draft.json": "sha256:d9953c2c651314f658aa1e29c6aa7e0fba5215c1bfc9a2cb84316901fe2ac240",
+    "data/pydantic/extraction/derived/evidence.json": "sha256:bce9dfa1709d6114d967fa4042fb2a33fc011bfd1d9573234b6818cd64a1f798"
+  },
+  "query_ids": [
+    "q:a7c2",
+    "q:39fa",
+    "q:7bd4",
+    "q:b503"
+  ],
+  "scope": "136 individual draft GoldJudgment records, not a scored Benchmark. Full contents reviewed; evaluation draft not opened. Existing question and applicability statuses unchanged.",
+  "locator_convention": "supporting_locators are half-open character spans in assembled evidence; contributions map to original frozen files. For relevance 0 the full inspected unit is located for auditability, not as a citation proving absence. background is the required schema role placeholder for unrelated content, not positive relevance.",
+  "proposal_count_rule": "Count topical_relevance=2 and version_applicability=valid explicitly, irrespective of draft status; is_valid_positive remains false for all records.",
+  "judgments": [
+    {
+      "inspection_key": "migration-config",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:883046956d69fc69fa76cd3a28d772a46f067d517f5d679bb3e3a6dfcc7b3383",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Inner Config to model_config placement and deprecation; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:333"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-from-orm",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:da3e85d95eeb3b3bd713254506e0318c573ace5ae089e9651ea775a077f034bc",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Attribute-loading constructor migration and its configuration condition; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:226"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-methods",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:b7182dc833aa33ab0c632c644e5bf752f05782964ec65a2ea7bc36fdd5780d97",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "BaseModel method/attribute renames, including the internal validators name; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:808"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-nullable",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Requiredness, None acceptance and defaults; its ValidationError example concerns null input; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:2183"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-orm-setting",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:60c76235152cb5d1ae54f8cd577c0779be723e81729971c54eae67cddf89c2c1",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "orm_mode configuration rename; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:88"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-subclasses",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:b35a6a3ea3647392d775a0ffcc87965fb59371889f6636cc74403594c32f63e0",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Nested subclass export-field changes; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:644"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-typeerror",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:4bd23223de4ab66136b4944b2145e5c28ddbbc025f58c337cac6bf182c323bc5",
+        "topical_relevance": 2,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "requested_behavior"
+        ],
+        "rationale": "The historical wrapping statement in this v2 document directly answers the v1 lookup; target propagation is not applied to v1.",
+        "supporting_locators": [
+          "chars:76:443"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-validator",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:ea1ecf63c526ef552a3561a457e351903d098554729c0b4c6b3e786eefe66be3",
+        "topical_relevance": 1,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Decorator migration contextualizes the named validator; no rule here establishes the requested v1 TypeError outcome.",
+        "supporting_locators": [
+          "chars:56:960"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-config",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:b6cb2402ea041bab4b014f341d2434c8ed8615cda00a26a1fa398719ffa13c80",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "String-length configuration and error-message templates, not exceptions raised by custom validators; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:440"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-dict",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Recursive dictionary export and omission options; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1394"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-errors",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:d7267def0efc3affe89aebfe80b279bd6910209fc2db679c5c98f16571254127",
+        "topical_relevance": 2,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "requested_behavior"
+        ],
+        "rationale": "Explicitly catches validator TypeError into ValidationError at the requested v1 endpoint under snapshot policy.",
+        "supporting_locators": [
+          "chars:129:367"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-extra",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:b84bfd24fd6881120fb7e04bfe9f7c5dc9b6eb258d64c94e4abc927cb51d4a27",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Treatment of unexpected initialization fields; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:410"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-iteration",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:6a88147979a8479686c02647b54f0d0bdd5bb6b1033480da56d019f52353c7ae",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Raw-value model iteration; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:622"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-nested-filter",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:066375dd8bb4dd93910cb6c4aaa4fba632ca2a055579368f5aae15ac072f27da",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Nested export include/exclude selection; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:945"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-nullable",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:dbe99fbadce62a074aa9f9cfd04fefb4f64e6b3c6ceb094a6dc7a5bb5eb6cced",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Nullable required declarations and missing-field errors; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:966"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-orm",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:812c551c52b07ddf921401d978ad281a6d4604f27ddc2f0215961bed9e107fec",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Synchronous ORM attribute loading with a SQLAlchemy example; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1334"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-orm-option",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:dabe9d5ec1597dbefad71ecda95e40df288cb31a0cca8ccb300ee1f10f245da3",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "ORM-mode enablement; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:104"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-parse-obj",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:80a4ff35755ad525346d42bc58e669c02c3c045fff9b6930b838e42b182895bb",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Dictionary-input parsing and a non-dictionary ValidationError, not a function-call TypeError; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:560"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-pre-item",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:e621fdbd4927656e460324576059d928af9ebbfd21ed0a445ecf0fa47cb5aab3",
+        "topical_relevance": 1,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Old field-check examples raise ValueError/assert and catch ValidationError, but never demonstrate TypeError wrapping.",
+        "supporting_locators": [
+          "chars:653:813"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-required",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:886499a7f09a03b7574da0a604b79dd83457ff6bbd5625d7bb934176175698be",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Required int declarations and a mypy caveat; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:526"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-sequence-filter",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:481e2f537c4f907d0b6d4f5c2c693d96e3d4569ed296d5b84a3067683769be4e",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Sequence export filtering by index or __all__; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1958"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-validators",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:de3bf67621ae0433616b3b88bbad1052768664fea091db62c16a5f92c19fd83b",
+        "topical_relevance": 1,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Recommends raising TypeError in v1 callbacks, useful context but does not explicitly say what exception reaches the caller.",
+        "supporting_locators": [
+          "chars:1794:1941"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-attributes",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:e7d14e6e4abdf8b91c69ecbfe2d73153531359feb2017b8dc967a8fc5f3d01ab",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "ORM attribute loading with model_validate and a SQLAlchemy object; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1855"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-config",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:6602b94e99222b815990638bbc8d9db96a5fc0bea5e270819c6c8b6ae326221b",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Model configuration and string-length errors; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:685"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-dump",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:ff1f3e3ee236ff1387cd370b65854454999d9ee70de571433c98a6e65aed1f1d",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Recursive dictionary export, omission options and JSON round-trip examples; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:2320"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-extra",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:7b7cf7427e97588af230e2fbe78f40e686c952b53e3f2b1b05757058020df09c",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Unexpected-field ignoring/rejection; its assert is a demonstration, not a field validator; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:724"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-field-validators",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:5ed599d618c2a175889d935bc3f49c783f312ea2c927b24eadc9e72166b05bb6",
+        "topical_relevance": 1,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Callback and ValueError/assert examples contextualize validation, but establish neither v1 TypeError behavior nor applicability of these target signatures to v1.",
+        "supporting_locators": [
+          "chars:2423:2737"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-iteration",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:d92505ddf3dab1bc30ce5846bb6ff07b452d74c73a7257de03624d2bddc53e00",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Raw-value iteration and RootModel representation; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:886"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-model-validate",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:7f401a00baab9c24c6506ed641ec655534f5cbec1fe540ba9cfe9de8f66c2301",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Dictionary usage and non-dictionary input errors, not callback TypeError or async execution; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:958"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-nested-filter",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:f6f7fddb0625fd25e1f626799e80adcdaecdce0b25fcb829f01e735375425cae",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Nested dictionary export filtering; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1034"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-nested-subclass",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:f7b5629735f7a4a5e01a76beab4f534816e11a77e6223d001a9f49ceed710c8e",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Annotated-type export and subclass-field omission; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1383"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-required",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Required int fields, mypy caveat and implicit-default history; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:862"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-sequence-filter",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:d72bdda37f9d3c26b38333eb7b8715f7db7ec9e7d80897904b014a3dcc6b61b0",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Sequence export inclusion/exclusion; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:2485"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-validator-errors",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:a7c2",
+        "evidence_id": "evidence:a9c73c27473d19d0472e7ebb2f5a313950f5cc6ce9c5b3100f9aff1a5ece31ff",
+        "topical_relevance": 2,
+        "version_applicability": "invalid",
+        "evidence_roles": [
+          "requested_behavior"
+        ],
+        "rationale": "Directly states unwrapped TypeError, contrary to requested v1 wrapping documented in v1-errors and migration-typeerror. Other shared exception rules do not answer this TypeError fact.",
+        "supporting_locators": [
+          "chars:336:432"
+        ],
+        "hard_negative": true,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-config",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:883046956d69fc69fa76cd3a28d772a46f067d517f5d679bb3e3a6dfcc7b3383",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Inner Config to model_config placement and deprecation; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:333"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-from-orm",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:da3e85d95eeb3b3bd713254506e0318c573ace5ae089e9651ea775a077f034bc",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Attribute-loading constructor migration and its configuration condition; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:226"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-methods",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:b7182dc833aa33ab0c632c644e5bf752f05782964ec65a2ea7bc36fdd5780d97",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "BaseModel method/attribute renames, including the internal validators name; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:808"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-nullable",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Requiredness, None acceptance and defaults; its ValidationError example concerns null input; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:2183"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-orm-setting",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:60c76235152cb5d1ae54f8cd577c0779be723e81729971c54eae67cddf89c2c1",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "orm_mode configuration rename; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:88"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-subclasses",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:b35a6a3ea3647392d775a0ffcc87965fb59371889f6636cc74403594c32f63e0",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Nested subclass export-field changes; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:644"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-typeerror",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:4bd23223de4ab66136b4944b2145e5c28ddbbc025f58c337cac6bf182c323bc5",
+        "topical_relevance": 2,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "transition",
+          "source_behavior",
+          "target_behavior"
+        ],
+        "rationale": "Explicit wrong-signature scenario and old wrapping/new propagation explain the exact migration; family history is bounded by endpoint policy.",
+        "supporting_locators": [
+          "chars:76:443",
+          "chars:445:566"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-validator",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:ea1ecf63c526ef552a3561a457e351903d098554729c0b4c6b3e786eefe66be3",
+        "topical_relevance": 1,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "transition",
+          "background"
+        ],
+        "rationale": "Changes callback APIs and signatures; useful nearby migration context, but its validator-argument changes are not the wrong function call inside the callback.",
+        "supporting_locators": [
+          "chars:56:960"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-config",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:b6cb2402ea041bab4b014f341d2434c8ed8615cda00a26a1fa398719ffa13c80",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "String-length configuration and error-message templates, not exceptions raised by custom validators; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:440"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-dict",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Recursive dictionary export and omission options; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1394"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-errors",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:d7267def0efc3affe89aebfe80b279bd6910209fc2db679c5c98f16571254127",
+        "topical_relevance": 2,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "source_behavior"
+        ],
+        "rationale": "Direct source-side wrapping rule supports one essential half of the migration; it does not by itself establish the new behavior.",
+        "supporting_locators": [
+          "chars:129:367"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-extra",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:b84bfd24fd6881120fb7e04bfe9f7c5dc9b6eb258d64c94e4abc927cb51d4a27",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Treatment of unexpected initialization fields; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:410"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-iteration",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:6a88147979a8479686c02647b54f0d0bdd5bb6b1033480da56d019f52353c7ae",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Raw-value model iteration; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:622"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-nested-filter",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:066375dd8bb4dd93910cb6c4aaa4fba632ca2a055579368f5aae15ac072f27da",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Nested export include/exclude selection; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:945"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-nullable",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:dbe99fbadce62a074aa9f9cfd04fefb4f64e6b3c6ceb094a6dc7a5bb5eb6cced",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Nullable required declarations and missing-field errors; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:966"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-orm",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:812c551c52b07ddf921401d978ad281a6d4604f27ddc2f0215961bed9e107fec",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Synchronous ORM attribute loading with a SQLAlchemy example; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1334"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-orm-option",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:dabe9d5ec1597dbefad71ecda95e40df288cb31a0cca8ccb300ee1f10f245da3",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "ORM-mode enablement; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:104"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-parse-obj",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:80a4ff35755ad525346d42bc58e669c02c3c045fff9b6930b838e42b182895bb",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Dictionary-input parsing and a non-dictionary ValidationError, not a function-call TypeError; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:560"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-pre-item",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:e621fdbd4927656e460324576059d928af9ebbfd21ed0a445ecf0fa47cb5aab3",
+        "topical_relevance": 1,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "source_behavior",
+          "background"
+        ],
+        "rationale": "Source callback examples illustrate validation exceptions, not a wrong-signature TypeError transition.",
+        "supporting_locators": [
+          "chars:653:813"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-required",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:886499a7f09a03b7574da0a604b79dd83457ff6bbd5625d7bb934176175698be",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Required int declarations and a mypy caveat; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:526"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-sequence-filter",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:481e2f537c4f907d0b6d4f5c2c693d96e3d4569ed296d5b84a3067683769be4e",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Sequence export filtering by index or __all__; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1958"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-validators",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:de3bf67621ae0433616b3b88bbad1052768664fea091db62c16a5f92c19fd83b",
+        "topical_relevance": 1,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "source_behavior",
+          "background"
+        ],
+        "rationale": "Old callback guidance permits raising TypeError; context for the source side, without explicit wrapping or the transition.",
+        "supporting_locators": [
+          "chars:1794:1941"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-attributes",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:e7d14e6e4abdf8b91c69ecbfe2d73153531359feb2017b8dc967a8fc5f3d01ab",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "ORM attribute loading with model_validate and a SQLAlchemy object; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1855"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-config",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:6602b94e99222b815990638bbc8d9db96a5fc0bea5e270819c6c8b6ae326221b",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Model configuration and string-length errors; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:685"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-dump",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:ff1f3e3ee236ff1387cd370b65854454999d9ee70de571433c98a6e65aed1f1d",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Recursive dictionary export, omission options and JSON round-trip examples; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:2320"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-extra",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:7b7cf7427e97588af230e2fbe78f40e686c952b53e3f2b1b05757058020df09c",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Unexpected-field ignoring/rejection; its assert is a demonstration, not a field validator; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:724"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-field-validators",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:5ed599d618c2a175889d935bc3f49c783f312ea2c927b24eadc9e72166b05bb6",
+        "topical_relevance": 1,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "target_behavior",
+          "background"
+        ],
+        "rationale": "Target callback examples and allowed validation exceptions explain context, but omission of TypeError is not proof of propagation.",
+        "supporting_locators": [
+          "chars:2423:2737"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-iteration",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:d92505ddf3dab1bc30ce5846bb6ff07b452d74c73a7257de03624d2bddc53e00",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Raw-value iteration and RootModel representation; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:886"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-model-validate",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:7f401a00baab9c24c6506ed641ec655534f5cbec1fe540ba9cfe9de8f66c2301",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Dictionary usage and non-dictionary input errors, not callback TypeError or async execution; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:958"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-nested-filter",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:f6f7fddb0625fd25e1f626799e80adcdaecdce0b25fcb829f01e735375425cae",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Nested dictionary export filtering; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1034"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-nested-subclass",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:f7b5629735f7a4a5e01a76beab4f534816e11a77e6223d001a9f49ceed710c8e",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Annotated-type export and subclass-field omission; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1383"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-required",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Required int fields, mypy caveat and implicit-default history; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:862"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-sequence-filter",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:d72bdda37f9d3c26b38333eb7b8715f7db7ec9e7d80897904b014a3dcc6b61b0",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Sequence export inclusion/exclusion; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:2485"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-validator-errors",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:39fa",
+        "evidence_id": "evidence:a9c73c27473d19d0472e7ebb2f5a313950f5cc6ce9c5b3100f9aff1a5ece31ff",
+        "topical_relevance": 2,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "target_behavior"
+        ],
+        "rationale": "Direct target-side TypeError propagation supports the new outcome, not the historical half alone.",
+        "supporting_locators": [
+          "chars:336:432"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-config",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:883046956d69fc69fa76cd3a28d772a46f067d517f5d679bb3e3a6dfcc7b3383",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Inner Config to model_config placement and deprecation; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:333"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-from-orm",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:da3e85d95eeb3b3bd713254506e0318c573ace5ae089e9651ea775a077f034bc",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Attribute-loading constructor migration and its configuration condition; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:226"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-methods",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:b7182dc833aa33ab0c632c644e5bf752f05782964ec65a2ea7bc36fdd5780d97",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "BaseModel method/attribute renames, including the internal validators name; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:808"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-nullable",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Requiredness, None acceptance and defaults; its ValidationError example concerns null input; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:2183"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-orm-setting",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:60c76235152cb5d1ae54f8cd577c0779be723e81729971c54eae67cddf89c2c1",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "orm_mode configuration rename; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:88"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-subclasses",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:b35a6a3ea3647392d775a0ffcc87965fb59371889f6636cc74403594c32f63e0",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Nested subclass export-field changes; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:644"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-typeerror",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:4bd23223de4ab66136b4944b2145e5c28ddbbc025f58c337cac6bf182c323bc5",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Validator TypeError wrapping transition; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:902"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-validator",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:ea1ecf63c526ef552a3561a457e351903d098554729c0b4c6b3e786eefe66be3",
+        "topical_relevance": 1,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Identifies the target field-validator replacement; background for the named hook, not an optimization rule.",
+        "supporting_locators": [
+          "chars:56:960"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-config",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:b6cb2402ea041bab4b014f341d2434c8ed8615cda00a26a1fa398719ffa13c80",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "String-length configuration and error-message templates, not exceptions raised by custom validators; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:440"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-dict",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Recursive dictionary export and omission options; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1394"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-errors",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:d7267def0efc3affe89aebfe80b279bd6910209fc2db679c5c98f16571254127",
+        "topical_relevance": 1,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Lists AssertionError as a validation failure, but says nothing about optimization disabling assert; v1 TypeError treatment must not be transferred to target.",
+        "supporting_locators": [
+          "chars:129:367"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-extra",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:b84bfd24fd6881120fb7e04bfe9f7c5dc9b6eb258d64c94e4abc927cb51d4a27",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Treatment of unexpected initialization fields; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:410"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-iteration",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:6a88147979a8479686c02647b54f0d0bdd5bb6b1033480da56d019f52353c7ae",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Raw-value model iteration; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:622"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-nested-filter",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:066375dd8bb4dd93910cb6c4aaa4fba632ca2a055579368f5aae15ac072f27da",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Nested export include/exclude selection; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:945"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-nullable",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:dbe99fbadce62a074aa9f9cfd04fefb4f64e6b3c6ceb094a6dc7a5bb5eb6cced",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Nullable required declarations and missing-field errors; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:966"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-orm",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:812c551c52b07ddf921401d978ad281a6d4604f27ddc2f0215961bed9e107fec",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Synchronous ORM attribute loading with a SQLAlchemy example; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1334"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-orm-option",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:dabe9d5ec1597dbefad71ecda95e40df288cb31a0cca8ccb300ee1f10f245da3",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "ORM-mode enablement; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:104"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-parse-obj",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:80a4ff35755ad525346d42bc58e669c02c3c045fff9b6930b838e42b182895bb",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Dictionary-input parsing and a non-dictionary ValidationError, not a function-call TypeError; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:560"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-pre-item",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:e621fdbd4927656e460324576059d928af9ebbfd21ed0a445ecf0fa47cb5aab3",
+        "topical_relevance": 1,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Assert-based old callback examples show the kind of check at issue, but have no -O rule and do not establish target validity of each_item syntax.",
+        "supporting_locators": [
+          "chars:653:813"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-required",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:886499a7f09a03b7574da0a604b79dd83457ff6bbd5625d7bb934176175698be",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Required int declarations and a mypy caveat; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:526"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-sequence-filter",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:481e2f537c4f907d0b6d4f5c2c693d96e3d4569ed296d5b84a3067683769be4e",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Sequence export filtering by index or __all__; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1958"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-validators",
+      "human_review_status": "pending",
+      "unresolved_issues": [
+        "Review scope: propose direct valid support for the shared Python assert rule, unlike the earlier background-only candidate placement. If decorator-specific sufficiency is required, downgrade relevance to 1; do not mark invalid by snapshot age."
+      ],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:de3bf67621ae0433616b3b88bbad1052768664fea091db62c16a5f92c19fd83b",
+        "topical_relevance": 2,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "requested_behavior"
+        ],
+        "rationale": "The same explicit Python -O disables assert rule is corroborated at the target by v2-field-validators. Scoped to assert semantics, not validity of every v1 callback signature.",
+        "supporting_locators": [
+          "chars:1943:2199"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-attributes",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:e7d14e6e4abdf8b91c69ecbfe2d73153531359feb2017b8dc967a8fc5f3d01ab",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "ORM attribute loading with model_validate and a SQLAlchemy object; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1855"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-config",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:6602b94e99222b815990638bbc8d9db96a5fc0bea5e270819c6c8b6ae326221b",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Model configuration and string-length errors; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:685"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-dump",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:ff1f3e3ee236ff1387cd370b65854454999d9ee70de571433c98a6e65aed1f1d",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Recursive dictionary export, omission options and JSON round-trip examples; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:2320"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-extra",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:7b7cf7427e97588af230e2fbe78f40e686c952b53e3f2b1b05757058020df09c",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Unexpected-field ignoring/rejection; its assert is a demonstration, not a field validator; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:724"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-field-validators",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:5ed599d618c2a175889d935bc3f49c783f312ea2c927b24eadc9e72166b05bb6",
+        "topical_relevance": 2,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "requested_behavior"
+        ],
+        "rationale": "Explicit conditional -O warning directly answers target assert-check behavior; not a claim that all validators stop.",
+        "supporting_locators": [
+          "chars:2739:2995"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-iteration",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:d92505ddf3dab1bc30ce5846bb6ff07b452d74c73a7257de03624d2bddc53e00",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Raw-value iteration and RootModel representation; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:886"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-model-validate",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:7f401a00baab9c24c6506ed641ec655534f5cbec1fe540ba9cfe9de8f66c2301",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Dictionary usage and non-dictionary input errors, not callback TypeError or async execution; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:958"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-nested-filter",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:f6f7fddb0625fd25e1f626799e80adcdaecdce0b25fcb829f01e735375425cae",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Nested dictionary export filtering; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1034"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-nested-subclass",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:f7b5629735f7a4a5e01a76beab4f534816e11a77e6223d001a9f49ceed710c8e",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Annotated-type export and subclass-field omission; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1383"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-required",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Required int fields, mypy caveat and implicit-default history; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:862"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-sequence-filter",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:d72bdda37f9d3c26b38333eb7b8715f7db7ec9e7d80897904b014a3dcc6b61b0",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Sequence export inclusion/exclusion; does not address assert checks under Python -O. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:2485"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-validator-errors",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:7bd4",
+        "evidence_id": "evidence:a9c73c27473d19d0472e7ebb2f5a313950f5cc6ce9c5b3100f9aff1a5ece31ff",
+        "topical_relevance": 1,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Target prose allows assert-generated AssertionError for validation failure, but does not describe -O disabling it.",
+        "supporting_locators": [
+          "chars:34:432"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-config",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:883046956d69fc69fa76cd3a28d772a46f067d517f5d679bb3e3a6dfcc7b3383",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Inner Config to model_config placement and deprecation; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:333"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-from-orm",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:da3e85d95eeb3b3bd713254506e0318c573ace5ae089e9651ea775a077f034bc",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Attribute-loading constructor migration and its configuration condition; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:226"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-methods",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:b7182dc833aa33ab0c632c644e5bf752f05782964ec65a2ea7bc36fdd5780d97",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "BaseModel method/attribute renames, including the internal validators name; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:808"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-nullable",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Requiredness, None acceptance and defaults; its ValidationError example concerns null input; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:2183"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-orm-setting",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:60c76235152cb5d1ae54f8cd577c0779be723e81729971c54eae67cddf89c2c1",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "orm_mode configuration rename; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:88"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-subclasses",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:b35a6a3ea3647392d775a0ffcc87965fb59371889f6636cc74403594c32f63e0",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Nested subclass export-field changes; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:644"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-typeerror",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:4bd23223de4ab66136b4944b2145e5c28ddbbc025f58c337cac6bf182c323bc5",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Validator TypeError wrapping transition; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:902"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "migration-validator",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:ea1ecf63c526ef552a3561a457e351903d098554729c0b4c6b3e786eefe66be3",
+        "topical_relevance": 1,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Target replacement decorator and signature changes provide hook context, not evidence for or against awaiting database work.",
+        "supporting_locators": [
+          "chars:56:960"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-config",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:b6cb2402ea041bab4b014f341d2434c8ed8615cda00a26a1fa398719ffa13c80",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "String-length configuration and error-message templates, not exceptions raised by custom validators; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:440"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-dict",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Recursive dictionary export and omission options; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1394"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-errors",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:d7267def0efc3affe89aebfe80b279bd6910209fc2db679c5c98f16571254127",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Exceptions collected into ValidationError; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:367"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-extra",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:b84bfd24fd6881120fb7e04bfe9f7c5dc9b6eb258d64c94e4abc927cb51d4a27",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Treatment of unexpected initialization fields; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:410"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-iteration",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:6a88147979a8479686c02647b54f0d0bdd5bb6b1033480da56d019f52353c7ae",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Raw-value model iteration; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:622"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-nested-filter",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:066375dd8bb4dd93910cb6c4aaa4fba632ca2a055579368f5aae15ac072f27da",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Nested export include/exclude selection; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:945"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-nullable",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:dbe99fbadce62a074aa9f9cfd04fefb4f64e6b3c6ceb094a6dc7a5bb5eb6cced",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Nullable required declarations and missing-field errors; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:966"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-orm",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:812c551c52b07ddf921401d978ad281a6d4604f27ddc2f0215961bed9e107fec",
+        "topical_relevance": 1,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Old SQLAlchemy loading example is related database context, but establishes neither a target async hook nor coroutine execution.",
+        "supporting_locators": [
+          "chars:45:149"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-orm-option",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:dabe9d5ec1597dbefad71ecda95e40df288cb31a0cca8ccb300ee1f10f245da3",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "ORM-mode enablement; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:104"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-parse-obj",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:80a4ff35755ad525346d42bc58e669c02c3c045fff9b6930b838e42b182895bb",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Dictionary-input parsing and a non-dictionary ValidationError, not a function-call TypeError; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:560"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-pre-item",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:e621fdbd4927656e460324576059d928af9ebbfd21ed0a445ecf0fa47cb5aab3",
+        "topical_relevance": 1,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Old per-item synchronous checks illustrate callback use; neither target applicability of those signatures nor coroutine handling is established.",
+        "supporting_locators": [
+          "chars:32:76"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-required",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:886499a7f09a03b7574da0a604b79dd83457ff6bbd5625d7bb934176175698be",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Required int declarations and a mypy caveat; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:526"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-sequence-filter",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:481e2f537c4f907d0b6d4f5c2c693d96e3d4569ed296d5b84a3067683769be4e",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Sequence export filtering by index or __all__; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1958"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v1-validators",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:de3bf67621ae0433616b3b88bbad1052768664fea091db62c16a5f92c19fd83b",
+        "topical_relevance": 1,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Old synchronous callbacks and signatures illustrate hooks, but do not establish target async capability; lack of async code is not invalidity.",
+        "supporting_locators": [
+          "chars:0:108"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-attributes",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:e7d14e6e4abdf8b91c69ecbfe2d73153531359feb2017b8dc967a8fc5f3d01ab",
+        "topical_relevance": 1,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Target SQLAlchemy example reads an existing object's attributes, not an awaited database query in a field validator; only the loading context is supported.",
+        "supporting_locators": [
+          "chars:74:315"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-config",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:6602b94e99222b815990638bbc8d9db96a5fc0bea5e270819c6c8b6ae326221b",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Model configuration and string-length errors; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:685"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-dump",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:ff1f3e3ee236ff1387cd370b65854454999d9ee70de571433c98a6e65aed1f1d",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Recursive dictionary export, omission options and JSON round-trip examples; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:2320"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-extra",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:7b7cf7427e97588af230e2fbe78f40e686c952b53e3f2b1b05757058020df09c",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Unexpected-field ignoring/rejection; its assert is a demonstration, not a field validator; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:724"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-field-validators",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:5ed599d618c2a175889d935bc3f49c783f312ea2c927b24eadc9e72166b05bb6",
+        "topical_relevance": 1,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Target field-hook declaration and synchronous examples help locate the extension point; no coroutine awaiting or async declaration semantics.",
+        "supporting_locators": [
+          "chars:157:267"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-iteration",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:d92505ddf3dab1bc30ce5846bb6ff07b452d74c73a7257de03624d2bddc53e00",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Raw-value iteration and RootModel representation; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:886"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-model-validate",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:7f401a00baab9c24c6506ed641ec655534f5cbec1fe540ba9cfe9de8f66c2301",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Dictionary usage and non-dictionary input errors, not callback TypeError or async execution; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:958"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-nested-filter",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:f6f7fddb0625fd25e1f626799e80adcdaecdce0b25fcb829f01e735375425cae",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Nested dictionary export filtering; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1034"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-nested-subclass",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:f7b5629735f7a4a5e01a76beab4f534816e11a77e6223d001a9f49ceed710c8e",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Annotated-type export and subclass-field omission; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:1383"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-required",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Required int fields, mypy caveat and implicit-default history; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:862"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-sequence-filter",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:d72bdda37f9d3c26b38333eb7b8715f7db7ec9e7d80897904b014a3dcc6b61b0",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Sequence export inclusion/exclusion; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:2485"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    },
+    {
+      "inspection_key": "v2-validator-errors",
+      "human_review_status": "pending",
+      "unresolved_issues": [],
+      "judgment": {
+        "query_id": "q:b503",
+        "evidence_id": "evidence:a9c73c27473d19d0472e7ebb2f5a313950f5cc6ce9c5b3100f9aff1a5ece31ff",
+        "topical_relevance": 0,
+        "version_applicability": "unknown",
+        "evidence_roles": [
+          "background"
+        ],
+        "rationale": "Exceptions raised within validators; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+        "supporting_locators": [
+          "chars:0:432"
+        ],
+        "hard_negative": false,
+        "review_status": "draft"
+      }
+    }
+  ]
+}
