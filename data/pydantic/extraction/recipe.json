@@ -1,0 +1,2062 @@
+{
+  "format_version": 1,
+  "selection_hash": "sha256:57d033da5f5bd98cb0ae33d3135795378067100fc0bab28be1a5dfd60a8de2ea",
+  "policy": {
+    "revision": "explicit-lines-v1",
+    "encoding": "UTF-8 strict; preserve original line endings and characters",
+    "source_coordinates": "1-based inclusive physical lines, split only at LF",
+    "assembled_coordinates": "0-based half-open Python-string character offsets",
+    "formatting": "Only declared newline separators and Python Markdown fences may be inserted. No rewriting or execution.",
+    "snapshot_policy": "Unqualified behavior in pinned release documentation is proposed only for that exact endpoint. Explicit V1/V2 historical or transition claims are bounded to 1.10.13 and 2.5.3. Capture dates do not establish applicability. Annotations are pending human review."
+  },
+  "sources": {
+    "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98": {
+      "allowed_lines": [
+        [
+          122,
+          133
+        ],
+        [
+          172,
+          179
+        ],
+        [
+          227,
+          228
+        ],
+        [
+          231,
+          232
+        ],
+        [
+          238,
+          238
+        ],
+        [
+          431,
+          457
+        ]
+      ]
+    },
+    "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c": {
+      "allowed_lines": [
+        [
+          4,
+          23
+        ],
+        [
+          25,
+          33
+        ],
+        [
+          133,
+          149
+        ]
+      ]
+    },
+    "source:f0bc9c56bef004636f0b9ea6ab1f9ac8d45e25726093f01a3f5f449bd7995aad": {
+      "allowed_lines": [
+        [
+          1,
+          31
+        ],
+        [
+          33,
+          45
+        ]
+      ]
+    },
+    "source:e3ef0609f76c2aa3569eab65f599c520c7ed78b9f373bc3a63e22e0a9916a45e": {
+      "allowed_lines": [
+        [
+          1,
+          3
+        ],
+        [
+          34,
+          38
+        ],
+        [
+          85,
+          86
+        ]
+      ]
+    },
+    "source:42a7f99d419ff673c85f2bd317253ca1fd15ab38066f1bccc537b2b7b8b4bf72": {
+      "allowed_lines": [
+        [
+          1,
+          36
+        ]
+      ]
+    },
+    "source:bface2a509d560bcca49984aa3863bad490c5673ee18dc28532a0b1919d10d34": {
+      "allowed_lines": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          20
+        ]
+      ]
+    },
+    "source:23bb35430dac787c94d4aa8ebc0a1072429d7e4efd4f06b7df0a3cb0e0bbe058": {
+      "allowed_lines": [
+        [
+          1,
+          7
+        ]
+      ]
+    },
+    "source:7cc2e598ca6e3adf75a17e29ad5006c795c9909e1ed7361cae49020446168429": {
+      "allowed_lines": [
+        [
+          1,
+          15
+        ]
+      ]
+    },
+    "source:8b9b8d6e289d40f980a6f71f7e3fbcc39dae3523a2d56701f0eeb946dc89ab95": {
+      "allowed_lines": [
+        [
+          1,
+          19
+        ]
+      ]
+    },
+    "source:b9335424ac067acc0027f439fabc55dea8fe4a07602e9566a961a933b8c491b4": {
+      "allowed_lines": [
+        [
+          1,
+          18
+        ]
+      ]
+    },
+    "source:d4f8355782fb6357698ace44703691836ab577709fe135d58240b7658d0eff5c": {
+      "allowed_lines": [
+        [
+          1,
+          32
+        ]
+      ]
+    },
+    "source:d86c4e4fa1cddbf1b37bc4a16b701e16027257cd2f3fe625a1f0c47c2f6cce0f": {
+      "allowed_lines": [
+        [
+          1,
+          73
+        ]
+      ]
+    },
+    "source:1b5a90b71c4385b0f2245630f20cc2976310d2863abaa08f080472a678514894": {
+      "allowed_lines": [
+        [
+          1,
+          44
+        ]
+      ]
+    },
+    "source:ce5afe23ec92adab45b63afbd17b3db48433e07aa48b00301375b143d8cc66dd": {
+      "allowed_lines": [
+        [
+          1,
+          46
+        ]
+      ]
+    },
+    "source:cdcbaf4b67aef9a7e11e1030e58c4e024c6a0f2dc856df6321932cc29046ed47": {
+      "allowed_lines": [
+        [
+          1,
+          17
+        ]
+      ]
+    },
+    "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d": {
+      "allowed_lines": [
+        [
+          233,
+          290
+        ],
+        [
+          427,
+          428
+        ],
+        [
+          431,
+          433
+        ],
+        [
+          435,
+          460
+        ],
+        [
+          1317,
+          1340
+        ],
+        [
+          1612,
+          1649
+        ]
+      ]
+    },
+    "source:52b13daa1b59dd62db3a77845294d6c52cc2936b983ebf704d9e9a7b82787633": {
+      "allowed_lines": [
+        [
+          298,
+          391
+        ],
+        [
+          468,
+          472
+        ]
+      ]
+    },
+    "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955": {
+      "allowed_lines": [
+        [
+          17,
+          97
+        ],
+        [
+          142,
+          175
+        ],
+        [
+          393,
+          429
+        ],
+        [
+          495,
+          638
+        ]
+      ]
+    },
+    "source:3177ac9c7416d2cb5eff4207e35a6740c9f2feb34908de1e60817435b30bd10a": {
+      "allowed_lines": [
+        [
+          1,
+          26
+        ]
+      ]
+    },
+    "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a": {
+      "allowed_lines": [
+        [
+          78,
+          95
+        ],
+        [
+          99,
+          100
+        ],
+        [
+          124,
+          129
+        ],
+        [
+          202,
+          206
+        ],
+        [
+          222,
+          222
+        ],
+        [
+          230,
+          230
+        ],
+        [
+          238,
+          249
+        ],
+        [
+          315,
+          343
+        ],
+        [
+          526,
+          575
+        ]
+      ]
+    }
+  },
+  "omissions": [
+    "No approved topic omitted. The source allowlist is narrowed where selection notes exclude helper siblings and unrelated configuration entries.",
+    "models_parse.py: omit pickle/Path imports and all parse_raw/parse_file/file-writing code; only lines 2 and 5-20 contribute.",
+    "Metadata headings outside selected body spans are retained only as heading ancestry, never copied into content.",
+    "No standalone common-type subclass passage, generated API pages, or additional documentation included."
+  ],
+  "issues": [
+    "All applicability annotations are proposals pending human review, not gold labels or independent behavioral verification.",
+    "V1 nested-subclass behavior is retrospective evidence in the v2 snapshot; it is not asserted as a v1 source passage.",
+    "Original documentation links and MkDocs admonitions/API references are retained as text; no link resolution or site rendering.",
+    "Some approved examples contain incidental APIs. Their text is preserved without expanding evaluation topics."
+  ],
+  "units": [
+    {
+      "key": "v1-orm",
+      "primary_source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+      "heading_lines": [
+        122
+      ],
+      "parts": [
+        {
+          "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+          "first": 122,
+          "last": 132,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "source_id": "source:42a7f99d419ff673c85f2bd317253ca1fd15ab38066f1bccc537b2b7b8b4bf72",
+          "first": 1,
+          "last": 36,
+          "role": "companion_example",
+          "prefix": "```python\n",
+          "suffix": "```\n"
+        }
+      ],
+      "includes": [
+        {
+          "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+          "first": 133,
+          "last": 133,
+          "companion_source_id": "source:42a7f99d419ff673c85f2bd317253ca1fd15ab38066f1bccc537b2b7b8b4bf72"
+        }
+      ],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+            "first": 124,
+            "last": 131
+          },
+          "basis_location": {
+            "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+            "first": 124,
+            "last": 131
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 1.10.13 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "1.10.13"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v1-errors",
+      "primary_source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+      "heading_lines": [
+        172
+      ],
+      "parts": [
+        {
+          "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+          "first": 172,
+          "last": 179,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+            "first": 174,
+            "last": 179
+          },
+          "basis_location": {
+            "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+            "first": 174,
+            "last": 179
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 1.10.13 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "1.10.13"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v1-parse-obj",
+      "primary_source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+      "heading_lines": [
+        227
+      ],
+      "parts": [
+        {
+          "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+          "first": 227,
+          "last": 228,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+          "first": 231,
+          "last": 232,
+          "role": "supporting_explanation",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "source_id": "source:bface2a509d560bcca49984aa3863bad490c5673ee18dc28532a0b1919d10d34",
+          "first": 2,
+          "last": 2,
+          "role": "companion_example",
+          "prefix": "\n```python\n",
+          "suffix": "\n"
+        },
+        {
+          "source_id": "source:bface2a509d560bcca49984aa3863bad490c5673ee18dc28532a0b1919d10d34",
+          "first": 5,
+          "last": 20,
+          "role": "companion_example",
+          "prefix": "",
+          "suffix": "```\n"
+        }
+      ],
+      "includes": [
+        {
+          "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+          "first": 238,
+          "last": 238,
+          "companion_source_id": "source:bface2a509d560bcca49984aa3863bad490c5673ee18dc28532a0b1919d10d34"
+        }
+      ],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+            "first": 231,
+            "last": 232
+          },
+          "basis_location": {
+            "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+            "first": 231,
+            "last": 232
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 1.10.13 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "1.10.13"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": [
+        "Omitted helper-count introduction and unrelated parse_raw/parse_file text; only relevant imports and parse_obj code retained."
+      ]
+    },
+    {
+      "key": "v1-required",
+      "primary_source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+      "heading_lines": [
+        431
+      ],
+      "parts": [
+        {
+          "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+          "first": 431,
+          "last": 435,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "source_id": "source:23bb35430dac787c94d4aa8ebc0a1072429d7e4efd4f06b7df0a3cb0e0bbe058",
+          "first": 1,
+          "last": 7,
+          "role": "companion_example",
+          "prefix": "```python\n",
+          "suffix": "```\n"
+        },
+        {
+          "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+          "first": 437,
+          "last": 441,
+          "role": "supporting_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [
+        {
+          "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+          "first": 436,
+          "last": 436,
+          "companion_source_id": "source:23bb35430dac787c94d4aa8ebc0a1072429d7e4efd4f06b7df0a3cb0e0bbe058"
+        }
+      ],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+            "first": 433,
+            "last": 434
+          },
+          "basis_location": {
+            "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+            "first": 433,
+            "last": 434
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 1.10.13 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "1.10.13"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v1-nullable",
+      "primary_source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+      "heading_lines": [
+        431,
+        443
+      ],
+      "parts": [
+        {
+          "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+          "first": 443,
+          "last": 453,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "source_id": "source:7cc2e598ca6e3adf75a17e29ad5006c795c9909e1ed7361cae49020446168429",
+          "first": 1,
+          "last": 15,
+          "role": "companion_example",
+          "prefix": "```python\n",
+          "suffix": "```\n"
+        },
+        {
+          "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+          "first": 455,
+          "last": 457,
+          "role": "supporting_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [
+        {
+          "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+          "first": 454,
+          "last": 454,
+          "companion_source_id": "source:7cc2e598ca6e3adf75a17e29ad5006c795c9909e1ed7361cae49020446168429"
+        }
+      ],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+            "first": 451,
+            "last": 452
+          },
+          "basis_location": {
+            "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+            "first": 451,
+            "last": 452
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 1.10.13 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "1.10.13"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v1-dict",
+      "primary_source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+      "heading_lines": [
+        4
+      ],
+      "parts": [
+        {
+          "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+          "first": 4,
+          "last": 22,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "source_id": "source:8b9b8d6e289d40f980a6f71f7e3fbcc39dae3523a2d56701f0eeb946dc89ab95",
+          "first": 1,
+          "last": 19,
+          "role": "companion_example",
+          "prefix": "```python\n",
+          "suffix": "```\n"
+        }
+      ],
+      "includes": [
+        {
+          "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+          "first": 23,
+          "last": 23,
+          "companion_source_id": "source:8b9b8d6e289d40f980a6f71f7e3fbcc39dae3523a2d56701f0eeb946dc89ab95"
+        }
+      ],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+            "first": 6,
+            "last": 19
+          },
+          "basis_location": {
+            "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+            "first": 6,
+            "last": 19
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 1.10.13 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "1.10.13"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v1-iteration",
+      "primary_source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+      "heading_lines": [
+        25
+      ],
+      "parts": [
+        {
+          "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+          "first": 25,
+          "last": 32,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "source_id": "source:b9335424ac067acc0027f439fabc55dea8fe4a07602e9566a961a933b8c491b4",
+          "first": 1,
+          "last": 18,
+          "role": "companion_example",
+          "prefix": "```python\n",
+          "suffix": "```\n"
+        }
+      ],
+      "includes": [
+        {
+          "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+          "first": 33,
+          "last": 33,
+          "companion_source_id": "source:b9335424ac067acc0027f439fabc55dea8fe4a07602e9566a961a933b8c491b4"
+        }
+      ],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+            "first": 27,
+            "last": 29
+          },
+          "basis_location": {
+            "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+            "first": 27,
+            "last": 29
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 1.10.13 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "1.10.13"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v1-nested-filter",
+      "primary_source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+      "heading_lines": [
+        133
+      ],
+      "parts": [
+        {
+          "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+          "first": 133,
+          "last": 137,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "source_id": "source:d4f8355782fb6357698ace44703691836ab577709fe135d58240b7658d0eff5c",
+          "first": 1,
+          "last": 32,
+          "role": "companion_example",
+          "prefix": "```python\n",
+          "suffix": "```\n"
+        },
+        {
+          "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+          "first": 139,
+          "last": 141,
+          "role": "supporting_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [
+        {
+          "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+          "first": 138,
+          "last": 138,
+          "companion_source_id": "source:d4f8355782fb6357698ace44703691836ab577709fe135d58240b7658d0eff5c"
+        }
+      ],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+            "first": 135,
+            "last": 136
+          },
+          "basis_location": {
+            "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+            "first": 135,
+            "last": 136
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 1.10.13 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "1.10.13"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v1-sequence-filter",
+      "primary_source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+      "heading_lines": [
+        133
+      ],
+      "parts": [
+        {
+          "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+          "first": 143,
+          "last": 146,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "source_id": "source:d86c4e4fa1cddbf1b37bc4a16b701e16027257cd2f3fe625a1f0c47c2f6cce0f",
+          "first": 1,
+          "last": 73,
+          "role": "companion_example",
+          "prefix": "```python\n",
+          "suffix": "```\n"
+        },
+        {
+          "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+          "first": 148,
+          "last": 149,
+          "role": "supporting_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [
+        {
+          "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+          "first": 147,
+          "last": 147,
+          "companion_source_id": "source:d86c4e4fa1cddbf1b37bc4a16b701e16027257cd2f3fe625a1f0c47c2f6cce0f"
+        }
+      ],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+            "first": 143,
+            "last": 145
+          },
+          "basis_location": {
+            "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+            "first": 143,
+            "last": 145
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 1.10.13 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "1.10.13"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v1-validators",
+      "primary_source_id": "source:f0bc9c56bef004636f0b9ea6ab1f9ac8d45e25726093f01a3f5f449bd7995aad",
+      "heading_lines": [],
+      "parts": [
+        {
+          "source_id": "source:f0bc9c56bef004636f0b9ea6ab1f9ac8d45e25726093f01a3f5f449bd7995aad",
+          "first": 1,
+          "last": 2,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "source_id": "source:1b5a90b71c4385b0f2245630f20cc2976310d2863abaa08f080472a678514894",
+          "first": 1,
+          "last": 44,
+          "role": "companion_example",
+          "prefix": "```python\n",
+          "suffix": "```\n"
+        },
+        {
+          "source_id": "source:f0bc9c56bef004636f0b9ea6ab1f9ac8d45e25726093f01a3f5f449bd7995aad",
+          "first": 4,
+          "last": 31,
+          "role": "supporting_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [
+        {
+          "source_id": "source:f0bc9c56bef004636f0b9ea6ab1f9ac8d45e25726093f01a3f5f449bd7995aad",
+          "first": 3,
+          "last": 3,
+          "companion_source_id": "source:1b5a90b71c4385b0f2245630f20cc2976310d2863abaa08f080472a678514894"
+        }
+      ],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:f0bc9c56bef004636f0b9ea6ab1f9ac8d45e25726093f01a3f5f449bd7995aad",
+            "first": 1,
+            "last": 1
+          },
+          "basis_location": {
+            "source_id": "source:f0bc9c56bef004636f0b9ea6ab1f9ac8d45e25726093f01a3f5f449bd7995aad",
+            "first": 1,
+            "last": 1
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 1.10.13 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "1.10.13"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v1-pre-item",
+      "primary_source_id": "source:f0bc9c56bef004636f0b9ea6ab1f9ac8d45e25726093f01a3f5f449bd7995aad",
+      "heading_lines": [
+        33
+      ],
+      "parts": [
+        {
+          "source_id": "source:f0bc9c56bef004636f0b9ea6ab1f9ac8d45e25726093f01a3f5f449bd7995aad",
+          "first": 33,
+          "last": 36,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "source_id": "source:ce5afe23ec92adab45b63afbd17b3db48433e07aa48b00301375b143d8cc66dd",
+          "first": 1,
+          "last": 46,
+          "role": "companion_example",
+          "prefix": "```python\n",
+          "suffix": "```\n"
+        },
+        {
+          "source_id": "source:f0bc9c56bef004636f0b9ea6ab1f9ac8d45e25726093f01a3f5f449bd7995aad",
+          "first": 38,
+          "last": 45,
+          "role": "supporting_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [
+        {
+          "source_id": "source:f0bc9c56bef004636f0b9ea6ab1f9ac8d45e25726093f01a3f5f449bd7995aad",
+          "first": 37,
+          "last": 37,
+          "companion_source_id": "source:ce5afe23ec92adab45b63afbd17b3db48433e07aa48b00301375b143d8cc66dd"
+        }
+      ],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:f0bc9c56bef004636f0b9ea6ab1f9ac8d45e25726093f01a3f5f449bd7995aad",
+            "first": 43,
+            "last": 45
+          },
+          "basis_location": {
+            "source_id": "source:f0bc9c56bef004636f0b9ea6ab1f9ac8d45e25726093f01a3f5f449bd7995aad",
+            "first": 43,
+            "last": 45
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 1.10.13 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "1.10.13"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v1-config",
+      "primary_source_id": "source:e3ef0609f76c2aa3569eab65f599c520c7ed78b9f373bc3a63e22e0a9916a45e",
+      "heading_lines": [],
+      "parts": [
+        {
+          "source_id": "source:e3ef0609f76c2aa3569eab65f599c520c7ed78b9f373bc3a63e22e0a9916a45e",
+          "first": 1,
+          "last": 2,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "source_id": "source:cdcbaf4b67aef9a7e11e1030e58c4e024c6a0f2dc856df6321932cc29046ed47",
+          "first": 1,
+          "last": 17,
+          "role": "companion_example",
+          "prefix": "```python\n",
+          "suffix": "```\n"
+        }
+      ],
+      "includes": [
+        {
+          "source_id": "source:e3ef0609f76c2aa3569eab65f599c520c7ed78b9f373bc3a63e22e0a9916a45e",
+          "first": 3,
+          "last": 3,
+          "companion_source_id": "source:cdcbaf4b67aef9a7e11e1030e58c4e024c6a0f2dc856df6321932cc29046ed47"
+        }
+      ],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:e3ef0609f76c2aa3569eab65f599c520c7ed78b9f373bc3a63e22e0a9916a45e",
+            "first": 1,
+            "last": 1
+          },
+          "basis_location": {
+            "source_id": "source:e3ef0609f76c2aa3569eab65f599c520c7ed78b9f373bc3a63e22e0a9916a45e",
+            "first": 1,
+            "last": 1
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 1.10.13 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "1.10.13"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v1-extra",
+      "primary_source_id": "source:e3ef0609f76c2aa3569eab65f599c520c7ed78b9f373bc3a63e22e0a9916a45e",
+      "heading_lines": [
+        11
+      ],
+      "parts": [
+        {
+          "source_id": "source:e3ef0609f76c2aa3569eab65f599c520c7ed78b9f373bc3a63e22e0a9916a45e",
+          "first": 34,
+          "last": 38,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:e3ef0609f76c2aa3569eab65f599c520c7ed78b9f373bc3a63e22e0a9916a45e",
+            "first": 34,
+            "last": 38
+          },
+          "basis_location": {
+            "source_id": "source:e3ef0609f76c2aa3569eab65f599c520c7ed78b9f373bc3a63e22e0a9916a45e",
+            "first": 34,
+            "last": 38
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 1.10.13 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "1.10.13"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v1-orm-option",
+      "primary_source_id": "source:e3ef0609f76c2aa3569eab65f599c520c7ed78b9f373bc3a63e22e0a9916a45e",
+      "heading_lines": [
+        11
+      ],
+      "parts": [
+        {
+          "source_id": "source:e3ef0609f76c2aa3569eab65f599c520c7ed78b9f373bc3a63e22e0a9916a45e",
+          "first": 85,
+          "last": 86,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:e3ef0609f76c2aa3569eab65f599c520c7ed78b9f373bc3a63e22e0a9916a45e",
+            "first": 85,
+            "last": 86
+          },
+          "basis_location": {
+            "source_id": "source:e3ef0609f76c2aa3569eab65f599c520c7ed78b9f373bc3a63e22e0a9916a45e",
+            "first": 85,
+            "last": 86
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 1.10.13 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "1.10.13"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v2-attributes",
+      "primary_source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+      "heading_lines": [
+        233
+      ],
+      "parts": [
+        {
+          "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+          "first": 233,
+          "last": 290,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+            "first": 237,
+            "last": 242
+          },
+          "basis_location": {
+            "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+            "first": 237,
+            "last": 242
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 2.5.3 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "2.5.3"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v2-model-validate",
+      "primary_source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+      "heading_lines": [
+        427
+      ],
+      "parts": [
+        {
+          "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+          "first": 427,
+          "last": 428,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+          "first": 431,
+          "last": 433,
+          "role": "supporting_explanation",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+          "first": 435,
+          "last": 460,
+          "role": "supporting_explanation",
+          "prefix": "",
+          "suffix": "```\n"
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+            "first": 431,
+            "last": 433
+          },
+          "basis_location": {
+            "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+            "first": 431,
+            "last": 433
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 2.5.3 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "2.5.3"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": [
+        "Closing Markdown code fence inserted after the selected example; no model_validate_json content included."
+      ]
+    },
+    {
+      "key": "v2-required",
+      "primary_source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+      "heading_lines": [
+        1317
+      ],
+      "parts": [
+        {
+          "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+          "first": 1317,
+          "last": 1340,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+            "first": 1319,
+            "last": 1335
+          },
+          "basis_location": {
+            "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+            "first": 1319,
+            "last": 1335
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 2.5.3 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "2.5.3"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        },
+        {
+          "kind": "transition",
+          "claim": {
+            "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+            "first": 1337,
+            "last": 1340
+          },
+          "basis_location": {
+            "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+            "first": 1337,
+            "last": 1340
+          },
+          "basis": "The quoted passage explicitly describes a V1/V2 change. Endpoint policy maps those release families only to selected 1.10.13 and 2.5.3; no intervening or future release claim.",
+          "applies_to": [],
+          "transition_source": [
+            "1.10.13"
+          ],
+          "transition_target": [
+            "2.5.3"
+          ]
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v2-extra",
+      "primary_source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+      "heading_lines": [
+        1612
+      ],
+      "parts": [
+        {
+          "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+          "first": 1612,
+          "last": 1649,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+            "first": 1614,
+            "last": 1649
+          },
+          "basis_location": {
+            "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+            "first": 1614,
+            "last": 1649
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 2.5.3 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "2.5.3"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v2-field-validators",
+      "primary_source_id": "source:52b13daa1b59dd62db3a77845294d6c52cc2936b983ebf704d9e9a7b82787633",
+      "heading_lines": [
+        298
+      ],
+      "parts": [
+        {
+          "source_id": "source:52b13daa1b59dd62db3a77845294d6c52cc2936b983ebf704d9e9a7b82787633",
+          "first": 298,
+          "last": 391,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:52b13daa1b59dd62db3a77845294d6c52cc2936b983ebf704d9e9a7b82787633",
+            "first": 303,
+            "last": 303
+          },
+          "basis_location": {
+            "source_id": "source:52b13daa1b59dd62db3a77845294d6c52cc2936b983ebf704d9e9a7b82787633",
+            "first": 303,
+            "last": 303
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 2.5.3 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "2.5.3"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        },
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:52b13daa1b59dd62db3a77845294d6c52cc2936b983ebf704d9e9a7b82787633",
+            "first": 373,
+            "last": 383
+          },
+          "basis_location": {
+            "source_id": "source:52b13daa1b59dd62db3a77845294d6c52cc2936b983ebf704d9e9a7b82787633",
+            "first": 373,
+            "last": 383
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 2.5.3 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "2.5.3"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": [
+        "Incidental FieldValidationInfo deprecation note retained, but no claim about the intermediate 2.4 release is annotated."
+      ]
+    },
+    {
+      "key": "v2-validator-errors",
+      "primary_source_id": "source:52b13daa1b59dd62db3a77845294d6c52cc2936b983ebf704d9e9a7b82787633",
+      "heading_lines": [
+        468
+      ],
+      "parts": [
+        {
+          "source_id": "source:52b13daa1b59dd62db3a77845294d6c52cc2936b983ebf704d9e9a7b82787633",
+          "first": 468,
+          "last": 472,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:52b13daa1b59dd62db3a77845294d6c52cc2936b983ebf704d9e9a7b82787633",
+            "first": 470,
+            "last": 472
+          },
+          "basis_location": {
+            "source_id": "source:52b13daa1b59dd62db3a77845294d6c52cc2936b983ebf704d9e9a7b82787633",
+            "first": 470,
+            "last": 472
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 2.5.3 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "2.5.3"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v2-dump",
+      "primary_source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+      "heading_lines": [
+        17
+      ],
+      "parts": [
+        {
+          "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+          "first": 17,
+          "last": 97,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+            "first": 22,
+            "last": 27
+          },
+          "basis_location": {
+            "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+            "first": 22,
+            "last": 27
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 2.5.3 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "2.5.3"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": [
+        "Full selected code block retained, including incidental JSON round_trip example; it is not a new benchmark topic."
+      ]
+    },
+    {
+      "key": "v2-iteration",
+      "primary_source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+      "heading_lines": [
+        142
+      ],
+      "parts": [
+        {
+          "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+          "first": 142,
+          "last": 175,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+            "first": 144,
+            "last": 146
+          },
+          "basis_location": {
+            "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+            "first": 144,
+            "last": 146
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 2.5.3 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "2.5.3"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v2-nested-subclass",
+      "primary_source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+      "heading_lines": [
+        348,
+        393
+      ],
+      "parts": [
+        {
+          "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+          "first": 393,
+          "last": 429,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+            "first": 395,
+            "last": 398
+          },
+          "basis_location": {
+            "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+            "first": 395,
+            "last": 398
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 2.5.3 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "2.5.3"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        },
+        {
+          "kind": "transition",
+          "claim": {
+            "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+            "first": 424,
+            "last": 429
+          },
+          "basis_location": {
+            "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+            "first": 424,
+            "last": 429
+          },
+          "basis": "The quoted passage explicitly describes a V1/V2 change. Endpoint policy maps those release families only to selected 1.10.13 and 2.5.3; no intervening or future release claim.",
+          "applies_to": [],
+          "transition_source": [
+            "1.10.13"
+          ],
+          "transition_target": [
+            "2.5.3"
+          ]
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v2-nested-filter",
+      "primary_source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+      "heading_lines": [
+        495
+      ],
+      "parts": [
+        {
+          "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+          "first": 495,
+          "last": 535,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+            "first": 497,
+            "last": 498
+          },
+          "basis_location": {
+            "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+            "first": 497,
+            "last": 498
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 2.5.3 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "2.5.3"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v2-sequence-filter",
+      "primary_source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+      "heading_lines": [
+        495
+      ],
+      "parts": [
+        {
+          "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+          "first": 537,
+          "last": 638,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+            "first": 537,
+            "last": 539
+          },
+          "basis_location": {
+            "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+            "first": 537,
+            "last": 539
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 2.5.3 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "2.5.3"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "v2-config",
+      "primary_source_id": "source:3177ac9c7416d2cb5eff4207e35a6740c9f2feb34908de1e60817435b30bd10a",
+      "heading_lines": [],
+      "parts": [
+        {
+          "source_id": "source:3177ac9c7416d2cb5eff4207e35a6740c9f2feb34908de1e60817435b30bd10a",
+          "first": 1,
+          "last": 26,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "behavior",
+          "claim": {
+            "source_id": "source:3177ac9c7416d2cb5eff4207e35a6740c9f2feb34908de1e60817435b30bd10a",
+            "first": 1,
+            "last": 2
+          },
+          "basis_location": {
+            "source_id": "source:3177ac9c7416d2cb5eff4207e35a6740c9f2feb34908de1e60817435b30bd10a",
+            "first": 1,
+            "last": 2
+          },
+          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 2.5.3 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "applies_to": [
+            "2.5.3"
+          ],
+          "transition_source": [],
+          "transition_target": []
+        },
+        {
+          "kind": "transition",
+          "claim": {
+            "source_id": "source:3177ac9c7416d2cb5eff4207e35a6740c9f2feb34908de1e60817435b30bd10a",
+            "first": 4,
+            "last": 5
+          },
+          "basis_location": {
+            "source_id": "source:3177ac9c7416d2cb5eff4207e35a6740c9f2feb34908de1e60817435b30bd10a",
+            "first": 4,
+            "last": 5
+          },
+          "basis": "The quoted passage explicitly describes a V1/V2 change. Endpoint policy maps those release families only to selected 1.10.13 and 2.5.3; no intervening or future release claim.",
+          "applies_to": [],
+          "transition_source": [
+            "1.10.13"
+          ],
+          "transition_target": [
+            "2.5.3"
+          ]
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "migration-methods",
+      "primary_source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+      "heading_lines": [
+        74,
+        78
+      ],
+      "parts": [
+        {
+          "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+          "first": 78,
+          "last": 95,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "transition",
+          "claim": {
+            "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+            "first": 78,
+            "last": 95
+          },
+          "basis_location": {
+            "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+            "first": 78,
+            "last": 95
+          },
+          "basis": "The quoted passage explicitly describes a V1/V2 change. Endpoint policy maps those release families only to selected 1.10.13 and 2.5.3; no intervening or future release claim.",
+          "applies_to": [],
+          "transition_source": [
+            "1.10.13"
+          ],
+          "transition_target": [
+            "2.5.3"
+          ]
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "migration-from-orm",
+      "primary_source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+      "heading_lines": [
+        74,
+        78
+      ],
+      "parts": [
+        {
+          "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+          "first": 99,
+          "last": 100,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "transition",
+          "claim": {
+            "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+            "first": 99,
+            "last": 100
+          },
+          "basis_location": {
+            "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+            "first": 99,
+            "last": 100
+          },
+          "basis": "The quoted passage explicitly describes a V1/V2 change. Endpoint policy maps those release families only to selected 1.10.13 and 2.5.3; no intervening or future release claim.",
+          "applies_to": [],
+          "transition_source": [
+            "1.10.13"
+          ],
+          "transition_target": [
+            "2.5.3"
+          ]
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "migration-subclasses",
+      "primary_source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+      "heading_lines": [
+        74,
+        78
+      ],
+      "parts": [
+        {
+          "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+          "first": 124,
+          "last": 129,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "transition",
+          "claim": {
+            "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+            "first": 124,
+            "last": 129
+          },
+          "basis_location": {
+            "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+            "first": 124,
+            "last": 129
+          },
+          "basis": "The quoted passage explicitly describes a V1/V2 change. Endpoint policy maps those release families only to selected 1.10.13 and 2.5.3; no intervening or future release claim.",
+          "applies_to": [],
+          "transition_source": [
+            "1.10.13"
+          ],
+          "transition_target": [
+            "2.5.3"
+          ]
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "migration-config",
+      "primary_source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+      "heading_lines": [
+        74,
+        202
+      ],
+      "parts": [
+        {
+          "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+          "first": 202,
+          "last": 206,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "transition",
+          "claim": {
+            "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+            "first": 202,
+            "last": 206
+          },
+          "basis_location": {
+            "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+            "first": 202,
+            "last": 206
+          },
+          "basis": "The quoted passage explicitly describes a V1/V2 change. Endpoint policy maps those release families only to selected 1.10.13 and 2.5.3; no intervening or future release claim.",
+          "applies_to": [],
+          "transition_source": [
+            "1.10.13"
+          ],
+          "transition_target": [
+            "2.5.3"
+          ]
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "migration-validator",
+      "primary_source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+      "heading_lines": [
+        74,
+        236,
+        238
+      ],
+      "parts": [
+        {
+          "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+          "first": 238,
+          "last": 249,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "transition",
+          "claim": {
+            "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+            "first": 238,
+            "last": 249
+          },
+          "basis_location": {
+            "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+            "first": 238,
+            "last": 249
+          },
+          "basis": "The quoted passage explicitly describes a V1/V2 change. Endpoint policy maps those release families only to selected 1.10.13 and 2.5.3; no intervening or future release claim.",
+          "applies_to": [],
+          "transition_source": [
+            "1.10.13"
+          ],
+          "transition_target": [
+            "2.5.3"
+          ]
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "migration-typeerror",
+      "primary_source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+      "heading_lines": [
+        74,
+        236,
+        315
+      ],
+      "parts": [
+        {
+          "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+          "first": 315,
+          "last": 343,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "transition",
+          "claim": {
+            "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+            "first": 315,
+            "last": 343
+          },
+          "basis_location": {
+            "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+            "first": 315,
+            "last": 343
+          },
+          "basis": "The quoted passage explicitly describes a V1/V2 change. Endpoint policy maps those release families only to selected 1.10.13 and 2.5.3; no intervening or future release claim.",
+          "applies_to": [],
+          "transition_source": [
+            "1.10.13"
+          ],
+          "transition_target": [
+            "2.5.3"
+          ]
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "migration-nullable",
+      "primary_source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+      "heading_lines": [
+        74,
+        494,
+        526
+      ],
+      "parts": [
+        {
+          "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+          "first": 526,
+          "last": 575,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "transition",
+          "claim": {
+            "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+            "first": 526,
+            "last": 575
+          },
+          "basis_location": {
+            "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+            "first": 526,
+            "last": 575
+          },
+          "basis": "The quoted passage explicitly describes a V1/V2 change. Endpoint policy maps those release families only to selected 1.10.13 and 2.5.3; no intervening or future release claim.",
+          "applies_to": [],
+          "transition_source": [
+            "1.10.13"
+          ],
+          "transition_target": [
+            "2.5.3"
+          ]
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": []
+    },
+    {
+      "key": "migration-orm-setting",
+      "primary_source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+      "heading_lines": [
+        74,
+        202
+      ],
+      "parts": [
+        {
+          "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+          "first": 222,
+          "last": 222,
+          "role": "primary_explanation",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+          "first": 230,
+          "last": 230,
+          "role": "supporting_explanation",
+          "prefix": "",
+          "suffix": ""
+        }
+      ],
+      "includes": [],
+      "assertions": [
+        {
+          "kind": "transition",
+          "claim": {
+            "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+            "first": 230,
+            "last": 230
+          },
+          "basis_location": {
+            "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+            "first": 230,
+            "last": 230
+          },
+          "basis": "The quoted passage explicitly describes a V1/V2 change. Endpoint policy maps those release families only to selected 1.10.13 and 2.5.3; no intervening or future release claim.",
+          "applies_to": [],
+          "transition_source": [
+            "1.10.13"
+          ],
+          "transition_target": [
+            "2.5.3"
+          ]
+        }
+      ],
+      "review_status": "pending_human_review",
+      "notes": [
+        "Only the renamed-settings parent bullet and orm_mode entry are retained; other settings are excluded."
+      ]
+    }
+  ]
+}
