@@ -1,0 +1,268 @@
+{
+  "selection_version": 1,
+  "archive_policy": "Retain full original files; only sections below are eligible for later extraction. Examples remain companions, never automatically standalone evidence. No generated includes or outputs.",
+  "sources": [
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/usage/models.md",
+      "document_type": "conceptual_guide",
+      "sections": [
+        "ORM Mode (aka Arbitrary Class Instances): L122-L133",
+        "Error Handling: L172-L179 (rule only; exclude following examples)",
+        "Helper Functions: L227-L238; parse_obj entry and matching example portion only; exclude parse_raw/parse_file",
+        "Required fields / Required Optional fields: L431-L457"
+      ],
+      "companion_of": null
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/usage/exporting_models.md",
+      "document_type": "conceptual_guide",
+      "sections": [
+        "model.dict(...): L4-L23",
+        "dict(model) and iteration: L25-L33",
+        "Advanced include and exclude: L133-L149; exclude model/field-level settings"
+      ],
+      "companion_of": null
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/usage/validators.md",
+      "document_type": "conceptual_guide",
+      "sections": [
+        "Untitled introduction: L1-L31, including assert warning",
+        "Pre and per-item validators: L33-L45; contextual evidence, not detailed v2 ordering comparison"
+      ],
+      "companion_of": null
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/usage/model_config.md",
+      "document_type": "conceptual_guide",
+      "sections": [
+        "Opening Config statement/example: L1-L3",
+        "Options / extra: L34-L38",
+        "Options / orm_mode: L85-L86"
+      ],
+      "companion_of": null
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/models_orm_mode.py",
+      "document_type": "documentation_example",
+      "sections": [
+        "ORM Mode: complete example; ORM library behavior is out of scope"
+      ],
+      "companion_of": "docs/usage/models.md"
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/models_parse.py",
+      "document_type": "documentation_example",
+      "sections": [
+        "Helper Functions: imports/model setup and parse_obj calls only; exclude parse_raw/parse_file and file-writing code"
+      ],
+      "companion_of": "docs/usage/models.md"
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/models_required_fields.py",
+      "document_type": "documentation_example",
+      "sections": [
+        "Required fields: complete example"
+      ],
+      "companion_of": "docs/usage/models.md"
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/models_required_field_optional.py",
+      "document_type": "documentation_example",
+      "sections": [
+        "Required Optional fields: complete example"
+      ],
+      "companion_of": "docs/usage/models.md"
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/exporting_models_dict.py",
+      "document_type": "documentation_example",
+      "sections": [
+        "model.dict(...): complete example"
+      ],
+      "companion_of": "docs/usage/exporting_models.md"
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/exporting_models_iterate.py",
+      "document_type": "documentation_example",
+      "sections": [
+        "dict(model) and iteration: complete example"
+      ],
+      "companion_of": "docs/usage/exporting_models.md"
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/exporting_models_exclude1.py",
+      "document_type": "documentation_example",
+      "sections": [
+        "Advanced include and exclude: complete example"
+      ],
+      "companion_of": "docs/usage/exporting_models.md"
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/exporting_models_exclude2.py",
+      "document_type": "documentation_example",
+      "sections": [
+        "Advanced include and exclude: complete example"
+      ],
+      "companion_of": "docs/usage/exporting_models.md"
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/validators_simple.py",
+      "document_type": "documentation_example",
+      "sections": [
+        "Introduction: complete example"
+      ],
+      "companion_of": "docs/usage/validators.md"
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/validators_pre_item.py",
+      "document_type": "documentation_example",
+      "sections": [
+        "Pre and per-item validators: complete example"
+      ],
+      "companion_of": "docs/usage/validators.md"
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/model_config_main.py",
+      "document_type": "documentation_example",
+      "sections": [
+        "Opening Config example; incidental options are not additional query topics"
+      ],
+      "companion_of": "docs/usage/model_config.md"
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "2.5.3",
+      "discovery_tag": "v2.5.3",
+      "commit": "9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+      "path": "docs/concepts/models.md",
+      "document_type": "conceptual_guide",
+      "sections": [
+        "Arbitrary class instances: L233-L290",
+        "Helper functions: L427-L460; model_validate entry, setup and matching example only; exclude model_validate_json",
+        "Required fields: L1317-L1340",
+        "Extra fields: L1612-L1649; ignore/forbid only"
+      ],
+      "companion_of": null
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "2.5.3",
+      "discovery_tag": "v2.5.3",
+      "commit": "9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+      "path": "docs/concepts/validators.md",
+      "document_type": "conceptual_guide",
+      "sections": [
+        "Field validators: L298-L391",
+        "Handling errors in validators: L468-L472; exclude following custom-error example"
+      ],
+      "companion_of": null
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "2.5.3",
+      "discovery_tag": "v2.5.3",
+      "commit": "9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+      "path": "docs/concepts/serialization.md",
+      "document_type": "conceptual_guide",
+      "sections": [
+        "model.model_dump(...): L17-L97",
+        "dict(model) and iteration: L142-L175",
+        "Subclass instances for fields of BaseModel, dataclasses, TypedDict: L393-L429; BaseModel claims only; historical v1 behavior is described in this v2 document",
+        "Advanced include and exclude: L495-L638"
+      ],
+      "companion_of": null
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "2.5.3",
+      "discovery_tag": "v2.5.3",
+      "commit": "9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+      "path": "docs/concepts/config.md",
+      "document_type": "conceptual_guide",
+      "sections": [
+        "Untitled opening and model_config example: L1-L26"
+      ],
+      "companion_of": null
+    },
+    {
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "2.5.3",
+      "discovery_tag": "v2.5.3",
+      "commit": "9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+      "path": "docs/migration.md",
+      "document_type": "migration_guide",
+      "sections": [
+        "Changes to pydantic.BaseModel: L78-L95; introduction and coherent rename table; query targets dict/parse_obj",
+        "Changes to pydantic.BaseModel: L99-L100; from_orm",
+        "Changes to pydantic.BaseModel: L124-L129; nested subclasses",
+        "Changes to config: L202-L206; Config/model_config",
+        "Changes to config: L222-L230; parent context and orm_mode/from_attributes entry only",
+        "@validator and @root_validator are deprecated: L238-L249; @validator bullet only",
+        "TypeError is no longer converted to ValidationError in validators: L315-L343",
+        "Required, optional, and nullable fields: L526-L575"
+      ],
+      "companion_of": null
+    }
+  ]
+}
