@@ -1,0 +1,435 @@
+{
+  "draft_format": "m1.3a-query-draft-v0",
+  "review_status": "draft",
+  "human_review_status": "pending",
+  "split": "dev",
+  "artifact_bindings": {
+    "data/pydantic/extraction/recipe.json": "sha256:463863b09732eff7e769568633318508202ebe633685cb67b4440ca0538ecfd9",
+    "data/pydantic/extraction/derived/evidence.json": "sha256:bce9dfa1709d6114d967fa4042fb2a33fc011bfd1d9573234b6818cd64a1f798"
+  },
+  "instructions": "Draft wrapper, not Benchmark or reviewed GoldJudgment. Only retriever_input may be passed to retrieval; all other fields are curation-only. AI-authored after corpus inspection. Evaluation families reserved from future tuning; not blind or independently authored.",
+  "corpus_review": {
+    "unit_count": 34,
+    "assertion_count": 38,
+    "scope": "All 34 complete content strings, including examples and incidental text, reviewed for the six absence proposals. Assertions do not exhaust content support.",
+    "reviewed_inspection_keys": [
+      "migration-config",
+      "migration-from-orm",
+      "migration-methods",
+      "migration-nullable",
+      "migration-orm-setting",
+      "migration-subclasses",
+      "migration-typeerror",
+      "migration-validator",
+      "v1-config",
+      "v1-dict",
+      "v1-errors",
+      "v1-extra",
+      "v1-iteration",
+      "v1-nested-filter",
+      "v1-nullable",
+      "v1-orm",
+      "v1-orm-option",
+      "v1-parse-obj",
+      "v1-pre-item",
+      "v1-required",
+      "v1-sequence-filter",
+      "v1-validators",
+      "v2-attributes",
+      "v2-config",
+      "v2-dump",
+      "v2-extra",
+      "v2-field-validators",
+      "v2-iteration",
+      "v2-model-validate",
+      "v2-nested-filter",
+      "v2-nested-subclass",
+      "v2-required",
+      "v2-sequence-filter",
+      "v2-validator-errors"
+    ]
+  },
+  "queries": [
+    {
+      "retriever_input": {
+        "query_id": "q:a7c2",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "In Pydantic 1.10.13, if my @validator raises TypeError, does the caller receive TypeError or ValidationError?",
+        "query_kind": "lookup",
+        "source_version": null,
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13"
+        }
+      },
+      "curation": {
+        "primary_category": "exact_identifier",
+        "change_family": "validation",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "Both the endpoint note and explicit historical statement establish the proposed wrapping answer.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "v1-errors",
+            "evidence_id": "evidence:d7267def0efc3affe89aebfe80b279bd6910209fc2db679c5c98f16571254127",
+            "potential_role": "requested_behavior",
+            "rationale": "Explicitly includes TypeError among caught validation exceptions."
+          },
+          {
+            "inspection_key": "migration-typeerror",
+            "evidence_id": "evidence:4bd23223de4ab66136b4944b2145e5c28ddbbc025f58c337cac6bf182c323bc5",
+            "potential_role": "requested_behavior",
+            "rationale": "Historical wrapping statement in a v2 document describes v1."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [
+          {
+            "inspection_key": "v2-validator-errors",
+            "evidence_id": "evidence:a9c73c27473d19d0472e7ebb2f5a313950f5cc6ce9c5b3100f9aff1a5ece31ff",
+            "potential_role": "requested_behavior",
+            "rationale": "Directly addresses validator TypeError but gives the opposite endpoint's wrapping rule. migration-typeerror explicitly establishes the contrast; candidate invalidity is for this lookup, not for source-side migration use.",
+            "review_status": "draft"
+          }
+        ],
+        "wrong_version_rationale": "One plausible directly relevant opposite-endpoint candidate, justified by an explicit historical transition rather than document-version inequality.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:e19b",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "In Pydantic 2.5.3, does a TypeError inside @field_validator get wrapped in ValidationError?",
+        "query_kind": "lookup",
+        "source_version": null,
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "exact_identifier",
+        "change_family": "validation",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "Target and transition prose directly address this exception.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "v2-validator-errors",
+            "evidence_id": "evidence:a9c73c27473d19d0472e7ebb2f5a313950f5cc6ce9c5b3100f9aff1a5ece31ff",
+            "potential_role": "requested_behavior",
+            "rationale": "Explicit unwrapped propagation rule."
+          },
+          {
+            "inspection_key": "migration-typeerror",
+            "evidence_id": "evidence:4bd23223de4ab66136b4944b2145e5c28ddbbc025f58c337cac6bf182c323bc5",
+            "potential_role": "requested_behavior",
+            "rationale": "Explicit target rule covers all validation decorators."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [
+          {
+            "inspection_key": "v1-errors",
+            "evidence_id": "evidence:d7267def0efc3affe89aebfe80b279bd6910209fc2db679c5c98f16571254127",
+            "potential_role": "requested_behavior",
+            "rationale": "Directly addresses validator TypeError but gives the opposite endpoint's wrapping rule. migration-typeerror explicitly establishes the contrast; candidate invalidity is for this lookup, not for source-side migration use.",
+            "review_status": "draft"
+          }
+        ],
+        "wrong_version_rationale": "One plausible directly relevant opposite-endpoint candidate, justified by an explicit historical transition rather than document-version inequality.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:7bd4",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "Will assert checks in my @field_validator still protect the model when I run Python with -O in Pydantic 2.5.3?",
+        "query_kind": "lookup",
+        "source_version": null,
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "exact_identifier",
+        "change_family": "validation",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "The warning addresses assert-based checks only, not all validators.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "v2-field-validators",
+            "evidence_id": "evidence:5ed599d618c2a175889d935bc3f49c783f312ea2c927b24eadc9e72166b05bb6",
+            "potential_role": "requested_behavior",
+            "rationale": "Conditional warning says -O disables assert checks."
+          }
+        ],
+        "illustrative_background_evidence": [
+          {
+            "inspection_key": "v1-validators",
+            "evidence_id": "evidence:de3bf67621ae0433616b3b88bbad1052768664fea091db62c16a5f92c19fd83b",
+            "potential_role": "background",
+            "rationale": "Same conditional warning documents a stable source-endpoint control."
+          }
+        ],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:39fa",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "After upgrading from Pydantic 1.10.13 to 2.5.3, calling a function with the wrong signature inside my field validator raises TypeError directly instead of wrapping it in ValidationError. What changed?",
+        "query_kind": "migration",
+        "source_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13"
+        },
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "natural_language_migration",
+        "change_family": "validation",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "The question explicitly specifies a wrong-function-signature call raising TypeError inside a validator. The retained migration passage describes that scenario and the wrapping change; source and target evidence support both endpoints, not a rule about all programming errors. Wording clarified as a draft revision; human review remains pending.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "migration-typeerror",
+            "evidence_id": "evidence:4bd23223de4ab66136b4944b2145e5c28ddbbc025f58c337cac6bf182c323bc5",
+            "potential_role": "transition",
+            "rationale": "Explains bad-signature TypeError and the wrapping change."
+          },
+          {
+            "inspection_key": "v1-errors",
+            "evidence_id": "evidence:d7267def0efc3affe89aebfe80b279bd6910209fc2db679c5c98f16571254127",
+            "potential_role": "source_behavior",
+            "rationale": "Old wrapping rule."
+          },
+          {
+            "inspection_key": "v2-validator-errors",
+            "evidence_id": "evidence:a9c73c27473d19d0472e7ebb2f5a313950f5cc6ce9c5b3100f9aff1a5ece31ff",
+            "potential_role": "target_behavior",
+            "rationale": "New propagation rule."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:c801",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "Moving from Pydantic 1.10.13 to 2.5.3, how should I express a nonnegative check for every integer in a list using the new field-validation approach?",
+        "query_kind": "migration",
+        "source_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13"
+        },
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "natural_language_migration",
+        "change_family": "validation",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "Source per-item mechanism and concrete target annotation pattern are both retained.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "v1-pre-item",
+            "evidence_id": "evidence:e621fdbd4927656e460324576059d928af9ebbfd21ed0a445ecf0fa47cb5aab3",
+            "potential_role": "source_behavior",
+            "rationale": "Per-item validation setting."
+          },
+          {
+            "inspection_key": "migration-validator",
+            "evidence_id": "evidence:ea1ecf63c526ef552a3561a457e351903d098554729c0b4c6b3e786eefe66be3",
+            "potential_role": "transition",
+            "rationale": "New decorator lacks each_item; gives List[Annotated[int, Field(ge=0)]]."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:62de",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "After moving from Pydantic 1.10.13 to 2.5.3, can my old field-check functions still receive the field descriptor and model settings as named arguments?",
+        "query_kind": "migration",
+        "source_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13"
+        },
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "natural_language_migration",
+        "change_family": "validation",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "Question asks whether old signatures remain allowed, not for the replacement access API, whose details are outside this selection.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "v1-validators",
+            "evidence_id": "evidence:de3bf67621ae0433616b3b88bbad1052768664fea091db62c16a5f92c19fd83b",
+            "potential_role": "source_behavior",
+            "rationale": "Lists field/config signature arguments."
+          },
+          {
+            "inspection_key": "migration-validator",
+            "evidence_id": "evidence:ea1ecf63c526ef552a3561a457e351903d098554729c0b4c6b3e786eefe66be3",
+            "potential_role": "transition",
+            "rationale": "Even deprecated validator no longer accepts those arguments."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:b503",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "Can a Pydantic 2.5.3 field validator await a database lookup, and how should I declare it?",
+        "query_kind": "lookup",
+        "source_version": null,
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "no_supported_evidence",
+        "change_family": "validation",
+        "proposed_answerability": "unanswerable",
+        "answerability_rationale": "All 34 contents inspected: none establishes coroutine support, awaiting, or an asynchronous validator declaration. Synchronous examples do not prove async is unsupported.",
+        "candidate_supporting_evidence": [],
+        "illustrative_background_evidence": [
+          {
+            "inspection_key": "v2-field-validators",
+            "evidence_id": "evidence:5ed599d618c2a175889d935bc3f49c783f312ea2c927b24eadc9e72166b05bb6",
+            "potential_role": "background",
+            "rationale": "Synchronous examples and signature notes, not await semantics."
+          },
+          {
+            "inspection_key": "migration-validator",
+            "evidence_id": "evidence:ea1ecf63c526ef552a3561a457e351903d098554729c0b4c6b3e786eefe66be3",
+            "potential_role": "background",
+            "rationale": "Decorator migration, not asynchronous execution."
+          }
+        ],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy.",
+          "Absence is scoped to all 34 indexed contents, not all retained files or Pydantic's capabilities."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:04ad",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "How much validation throughput should I expect from Pydantic 2.5.3 for a batch of customer records?",
+        "query_kind": "lookup",
+        "source_version": null,
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "no_supported_evidence",
+        "change_family": "validation",
+        "proposed_answerability": "unanswerable",
+        "answerability_rationale": "All 34 contents inspected: no throughput measurements, benchmark environment, batch sizes or performance model. Example outputs are not timing data.",
+        "candidate_supporting_evidence": [],
+        "illustrative_background_evidence": [
+          {
+            "inspection_key": "v2-field-validators",
+            "evidence_id": "evidence:5ed599d618c2a175889d935bc3f49c783f312ea2c927b24eadc9e72166b05bb6",
+            "potential_role": "background",
+            "rationale": "Functional examples but no measured workload or timing."
+          },
+          {
+            "inspection_key": "v2-validator-errors",
+            "evidence_id": "evidence:a9c73c27473d19d0472e7ebb2f5a313950f5cc6ce9c5b3100f9aff1a5ece31ff",
+            "potential_role": "background",
+            "rationale": "Exception behavior supplies no throughput evidence."
+          }
+        ],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy.",
+          "Absence is scoped to all 34 indexed contents, not all retained files or Pydantic's capabilities."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    }
+  ]
+}

@@ -1,0 +1,807 @@
+{
+  "draft_format": "m1.3a-query-draft-v0",
+  "review_status": "draft",
+  "human_review_status": "pending",
+  "split": "eval",
+  "artifact_bindings": {
+    "data/pydantic/extraction/recipe.json": "sha256:463863b09732eff7e769568633318508202ebe633685cb67b4440ca0538ecfd9",
+    "data/pydantic/extraction/derived/evidence.json": "sha256:bce9dfa1709d6114d967fa4042fb2a33fc011bfd1d9573234b6818cd64a1f798"
+  },
+  "instructions": "Draft wrapper, not Benchmark or reviewed GoldJudgment. Only retriever_input may be passed to retrieval; all other fields are curation-only. AI-authored after corpus inspection. Evaluation families reserved from future tuning; not blind or independently authored.",
+  "corpus_review": {
+    "unit_count": 34,
+    "assertion_count": 38,
+    "scope": "All 34 complete content strings, including examples and incidental text, reviewed for the six absence proposals. Assertions do not exhaust content support.",
+    "reviewed_inspection_keys": [
+      "migration-config",
+      "migration-from-orm",
+      "migration-methods",
+      "migration-nullable",
+      "migration-orm-setting",
+      "migration-subclasses",
+      "migration-typeerror",
+      "migration-validator",
+      "v1-config",
+      "v1-dict",
+      "v1-errors",
+      "v1-extra",
+      "v1-iteration",
+      "v1-nested-filter",
+      "v1-nullable",
+      "v1-orm",
+      "v1-orm-option",
+      "v1-parse-obj",
+      "v1-pre-item",
+      "v1-required",
+      "v1-sequence-filter",
+      "v1-validators",
+      "v2-attributes",
+      "v2-config",
+      "v2-dump",
+      "v2-extra",
+      "v2-field-validators",
+      "v2-iteration",
+      "v2-model-validate",
+      "v2-nested-filter",
+      "v2-nested-subclass",
+      "v2-required",
+      "v2-sequence-filter",
+      "v2-validator-errors"
+    ]
+  },
+  "queries": [
+    {
+      "retriever_input": {
+        "query_id": "q:d92e",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "In Pydantic 1.10.13, can I omit a field declared as a: Optional[int] with no assigned default?",
+        "query_kind": "lookup",
+        "source_version": null,
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13"
+        }
+      },
+      "curation": {
+        "primary_category": "exact_identifier",
+        "change_family": "required_nullable",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "Retained content outside the narrow nullable assertion supplies the needed annotation-only example.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "v1-nullable",
+            "evidence_id": "evidence:dbe99fbadce62a074aa9f9cfd04fefb4f64e6b3c6ceb094a6dc7a5bb5eb6cced",
+            "potential_role": "requested_behavior",
+            "rationale": "Companion declaration and prose explicitly say a is optional."
+          },
+          {
+            "inspection_key": "v2-required",
+            "evidence_id": "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+            "potential_role": "requested_behavior",
+            "rationale": "Explicit historical v1 implicit-default statement."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:16cf",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "In Pydantic 2.5.3, does Optional[str] without a default let me leave the field out, or only pass None?",
+        "query_kind": "lookup",
+        "source_version": null,
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "exact_identifier",
+        "change_family": "required_nullable",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "Both requiredness and nullability are explicitly supported.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "migration-nullable",
+            "evidence_id": "evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8",
+            "potential_role": "requested_behavior",
+            "rationale": "Target table and note distinguish missing from None."
+          },
+          {
+            "inspection_key": "v2-required",
+            "evidence_id": "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+            "potential_role": "requested_behavior",
+            "rationale": "No implicit defaults in v2."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [
+          {
+            "inspection_key": "v1-nullable",
+            "evidence_id": "evidence:dbe99fbadce62a074aa9f9cfd04fefb4f64e6b3c6ceb094a6dc7a5bb5eb6cced",
+            "potential_role": "requested_behavior",
+            "rationale": "For the requested annotation-only omission-versus-None fact at 2.5.3, S1 docs/examples/models_required_field_optional.py L5-L8 and docs/usage/models.md L456-L457 say annotation-only a is optional, unlike explicit-required b/c. S2 docs/migration.md L536-L547 states annotation-only Optional[str] is required but nullable and calls this a breaking change from V1; S2 docs/concepts/models.md L1337-L1340 confirms the implicit-default change. Under endpoint policy, transferring the old omission rule gives the wrong target requiredness answer. The old unit genuinely supports None acceptance and explicit-ellipsis requiredness, but neither establishes target omission without a default. The int example illustrates the general Optional rule confirmed by the transition, not a coercion claim about int versus str. Candidate invalidity is relative to this requested fact, not every sentence or a source-side migration role.",
+            "review_status": "draft"
+          }
+        ],
+        "wrong_version_rationale": "One pending-review candidate grounded in the explicit requiredness transition, not version inequality. Shared nullability support is acknowledged; no gold label assigned.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy.",
+          "Review query-relative wrong-version treatment despite shared None acceptance and explicit-required examples; the narrow applicability assertion does not exhaust unit content."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:90b7",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "In Pydantic 1.10.13, will model.dict(exclude_none=True) omit a field explicitly set to None?",
+        "query_kind": "lookup",
+        "source_version": null,
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13"
+        }
+      },
+      "curation": {
+        "primary_category": "exact_identifier",
+        "change_family": "serialization",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "The option definition covers None-valued fields regardless of explicit assignment.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "v1-dict",
+            "evidence_id": "evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c",
+            "potential_role": "requested_behavior",
+            "rationale": "exclude_none is value-based; exclude_unset is separately defined."
+          },
+          {
+            "inspection_key": "v2-dump",
+            "evidence_id": "evidence:ff1f3e3ee236ff1387cd370b65854454999d9ee70de571433c98a6e65aed1f1d",
+            "potential_role": "background",
+            "rationale": "Target example also omits None; not a wrong-version negative merely by date."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:f03c",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "How do I pass {'id': 123, 'name': 'James'} to model_validate() for a Pydantic 2.5.3 User model?",
+        "query_kind": "lookup",
+        "source_version": null,
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "exact_identifier",
+        "change_family": "parsing",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "Answer limited to the documented User declaration and input, not every dictionary.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "v2-model-validate",
+            "evidence_id": "evidence:7f401a00baab9c24c6506ed641ec655534f5cbec1fe540ba9cfe9de8f66c2301",
+            "potential_role": "requested_behavior",
+            "rationale": "Corrected assertion and retained example contain exactly this documented call."
+          },
+          {
+            "inspection_key": "migration-methods",
+            "evidence_id": "evidence:b7182dc833aa33ab0c632c644e5bf752f05782964ec65a2ea7bc36fdd5780d97",
+            "potential_role": "background",
+            "rationale": "Method name mapping, not the full usage example."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:55e8",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "In Pydantic 1.10.13, does Config.extra='forbid' reject unexpected input fields or silently discard them?",
+        "query_kind": "lookup",
+        "source_version": null,
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13"
+        }
+      },
+      "curation": {
+        "primary_category": "exact_identifier",
+        "change_family": "configuration",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "Initialization behavior is explicit; assignment after construction is not asked.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "v1-extra",
+            "evidence_id": "evidence:b84bfd24fd6881120fb7e04bfe9f7c5dc9b6eb258d64c94e4abc927cb51d4a27",
+            "potential_role": "requested_behavior",
+            "rationale": "Explicit forbid versus ignore distinction."
+          },
+          {
+            "inspection_key": "v1-config",
+            "evidence_id": "evidence:b6cb2402ea041bab4b014f341d2434c8ed8615cda00a26a1fa398719ffa13c80",
+            "potential_role": "background",
+            "rationale": "Shows inner Config placement."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:2ab0",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "After upgrading from Pydantic 1.10.13 to 2.5.3, a nullable text field that I used to omit is now required. How can I keep allowing both omission and null?",
+        "query_kind": "migration",
+        "source_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13"
+        },
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "natural_language_migration",
+        "change_family": "required_nullable",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "Interpret as annotation-only nullable field without an explicit default; target table supplies the repair.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "v1-nullable",
+            "evidence_id": "evidence:dbe99fbadce62a074aa9f9cfd04fefb4f64e6b3c6ceb094a6dc7a5bb5eb6cced",
+            "potential_role": "source_behavior",
+            "rationale": "Annotation-only omission in v1."
+          },
+          {
+            "inspection_key": "migration-nullable",
+            "evidence_id": "evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8",
+            "potential_role": "transition",
+            "rationale": "Explicit None default restores omission while allowing None."
+          },
+          {
+            "inspection_key": "v2-required",
+            "evidence_id": "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+            "potential_role": "transition",
+            "rationale": "Implicit-default change."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:81d6",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "Moving from Pydantic 1.10.13 to 2.5.3, why does my field that accepts any type no longer get a null default when I leave it out?",
+        "query_kind": "migration",
+        "source_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13"
+        },
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "natural_language_migration",
+        "change_family": "required_nullable",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "Interpret the field as typing.Any without a default, not object or an arbitrary custom type.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "v2-required",
+            "evidence_id": "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+            "potential_role": "transition",
+            "rationale": "Explicit historical Any default and target change."
+          },
+          {
+            "inspection_key": "migration-nullable",
+            "evidence_id": "evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8",
+            "potential_role": "transition",
+            "rationale": "Any rows distinguish absent and explicit None default."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:6f21",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "After upgrading from Pydantic 1.10.13 to 2.5.3, why did extra fields on a more specific nested model disappear from my exported dictionary?",
+        "query_kind": "migration",
+        "source_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13"
+        },
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "natural_language_migration",
+        "change_family": "serialization",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "Assumes normal default export and a field annotated as the base model; source behavior is explicitly retrospective, not invented v1 material.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "migration-subclasses",
+            "evidence_id": "evidence:b35a6a3ea3647392d775a0ffcc87965fb59371889f6636cc74403594c32f63e0",
+            "potential_role": "transition",
+            "rationale": "Explicit old/all versus target/annotated fields."
+          },
+          {
+            "inspection_key": "v2-nested-subclass",
+            "evidence_id": "evidence:f7b5629735f7a4a5e01a76beab4f534816e11a77e6223d001a9f49ceed710c8e",
+            "potential_role": "target_behavior",
+            "rationale": "Concrete annotated User and UserLogin example plus historical warning."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:bb48",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "When upgrading from Pydantic 1.10.13 to 2.5.3, where should I put model-wide settings now, and must I immediately remove the old inner settings class?",
+        "query_kind": "migration",
+        "source_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13"
+        },
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "natural_language_migration",
+        "change_family": "configuration",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "Both new placement and compatibility are supported; deprecated is not removed.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "migration-config",
+            "evidence_id": "evidence:883046956d69fc69fa76cd3a28d772a46f067d517f5d679bb3e3a6dfcc7b3383",
+            "potential_role": "transition",
+            "rationale": "New dictionary class attribute and deprecated inner class."
+          },
+          {
+            "inspection_key": "v2-config",
+            "evidence_id": "evidence:6602b94e99222b815990638bbc8d9db96a5fc0bea5e270819c6c8b6ae326221b",
+            "potential_role": "target_behavior",
+            "rationale": "Explicitly still supported but deprecated."
+          },
+          {
+            "inspection_key": "v1-config",
+            "evidence_id": "evidence:b6cb2402ea041bab4b014f341d2434c8ed8615cda00a26a1fa398719ffa13c80",
+            "potential_role": "source_behavior",
+            "rationale": "Old placement."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:30e5",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "Moving from Pydantic 1.10.13 to 2.5.3, what is the recommended way to create a model from an ORM object's attributes?",
+        "query_kind": "migration",
+        "source_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13"
+        },
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "natural_language_migration",
+        "change_family": "attribute_input",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "The required flag and method are both retained; no universal ORM compatibility guarantee.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "v1-orm",
+            "evidence_id": "evidence:812c551c52b07ddf921401d978ad281a6d4604f27ddc2f0215961bed9e107fec",
+            "potential_role": "source_behavior",
+            "rationale": "Old enabling flag and constructor."
+          },
+          {
+            "inspection_key": "migration-from-orm",
+            "evidence_id": "evidence:da3e85d95eeb3b3bd713254506e0318c573ace5ae089e9651ea775a077f034bc",
+            "potential_role": "transition",
+            "rationale": "Replacement with enabling condition."
+          },
+          {
+            "inspection_key": "v2-attributes",
+            "evidence_id": "evidence:e7d14e6e4abdf8b91c69ecbfe2d73153531359feb2017b8dc967a8fc5f3d01ab",
+            "potential_role": "target_behavior",
+            "rationale": "Target configuration and concrete attribute-loading call."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:4ac9",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "As I upgrade from Pydantic 1.10.13 to 2.5.3, what should replace my model's dictionary-export call while still converting ordinary nested models to dictionaries?",
+        "query_kind": "migration",
+        "source_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13"
+        },
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "natural_language_migration",
+        "change_family": "serialization",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "Both method replacement and ordinary nested-model behavior are supported; do not extend to RootModel.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "migration-methods",
+            "evidence_id": "evidence:b7182dc833aa33ab0c632c644e5bf752f05782964ec65a2ea7bc36fdd5780d97",
+            "potential_role": "transition",
+            "rationale": "dict to model_dump name mapping."
+          },
+          {
+            "inspection_key": "v1-dict",
+            "evidence_id": "evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c",
+            "potential_role": "source_behavior",
+            "rationale": "Old recursive export."
+          },
+          {
+            "inspection_key": "v2-dump",
+            "evidence_id": "evidence:ff1f3e3ee236ff1387cd370b65854454999d9ee70de571433c98a6e65aed1f1d",
+            "potential_role": "target_behavior",
+            "rationale": "New recursive export with RootModel exception."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:ed72",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "After moving from Pydantic 1.10.13 to 2.5.3, will unknown input fields still be ignored by default, and can I still choose to reject them?",
+        "query_kind": "migration",
+        "source_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13"
+        },
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "natural_language_migration",
+        "change_family": "configuration",
+        "proposed_answerability": "answerable",
+        "answerability_rationale": "Stable behavior control across the endpoints, not a change assumed from the upgrade.",
+        "candidate_supporting_evidence": [
+          {
+            "inspection_key": "v1-extra",
+            "evidence_id": "evidence:b84bfd24fd6881120fb7e04bfe9f7c5dc9b6eb258d64c94e4abc927cb51d4a27",
+            "potential_role": "source_behavior",
+            "rationale": "Default ignore and forbid behavior."
+          },
+          {
+            "inspection_key": "v2-extra",
+            "evidence_id": "evidence:7b7cf7427e97588af230e2fbe78f40e686c952b53e3f2b1b05757058020df09c",
+            "potential_role": "target_behavior",
+            "rationale": "Default ignoring and configured rejection example."
+          }
+        ],
+        "illustrative_background_evidence": [],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:09f1",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "Which JSON Schema draft does Pydantic 2.5.3 generate by default?",
+        "query_kind": "lookup",
+        "source_version": null,
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "no_supported_evidence",
+        "change_family": "schema_output",
+        "proposed_answerability": "unanswerable",
+        "answerability_rationale": "All 34 contents inspected: schema names and links occur, but no default JSON Schema dialect is established. Links are not indexed target content.",
+        "candidate_supporting_evidence": [],
+        "illustrative_background_evidence": [
+          {
+            "inspection_key": "migration-methods",
+            "evidence_id": "evidence:b7182dc833aa33ab0c632c644e5bf752f05782964ec65a2ea7bc36fdd5780d97",
+            "potential_role": "background",
+            "rationale": "Schema method rename does not specify a dialect."
+          },
+          {
+            "inspection_key": "v2-required",
+            "evidence_id": "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+            "potential_role": "background",
+            "rationale": "Field customization link is not schema dialect content."
+          }
+        ],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy.",
+          "Absence is scoped to all 34 indexed contents, not all retained files or Pydantic's capabilities."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:a46d",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "How should I handle cyclic ORM relationships when loading them into Pydantic 2.5.3 models?",
+        "query_kind": "lookup",
+        "source_version": null,
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "no_supported_evidence",
+        "change_family": "attribute_input",
+        "proposed_answerability": "unanswerable",
+        "answerability_rationale": "All 34 contents inspected: nested examples are acyclic; no cycle detection, recursion policy or cyclic ORM remedy is established.",
+        "candidate_supporting_evidence": [],
+        "illustrative_background_evidence": [
+          {
+            "inspection_key": "v2-attributes",
+            "evidence_id": "evidence:e7d14e6e4abdf8b91c69ecbfe2d73153531359feb2017b8dc967a8fc5f3d01ab",
+            "potential_role": "background",
+            "rationale": "Flat ORM example and attribute access switch."
+          },
+          {
+            "inspection_key": "migration-from-orm",
+            "evidence_id": "evidence:da3e85d95eeb3b3bd713254506e0318c573ace5ae089e9651ea775a077f034bc",
+            "potential_role": "background",
+            "rationale": "Loading migration, not cycle handling."
+          }
+        ],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy.",
+          "Absence is scoped to all 34 indexed contents, not all retained files or Pydantic's capabilities."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:73be",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "Does dictionary export in Pydantic 2.5.3 convert timezone-aware datetime values to UTC?",
+        "query_kind": "lookup",
+        "source_version": null,
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3"
+        }
+      },
+      "curation": {
+        "primary_category": "no_supported_evidence",
+        "change_family": "serialization",
+        "proposed_answerability": "unanswerable",
+        "answerability_rationale": "All 34 contents inspected: datetime/date values and imports occur, but no timezone-aware export example or timezone-normalization rule establishes whether dictionary export converts values to UTC.",
+        "candidate_supporting_evidence": [],
+        "illustrative_background_evidence": [
+          {
+            "inspection_key": "v2-nested-filter",
+            "evidence_id": "evidence:f6f7fddb0625fd25e1f626799e80adcdaecdce0b25fcb829f01e735375425cae",
+            "potential_role": "background",
+            "rationale": "Shows which fields are omitted, not timezone normalization."
+          },
+          {
+            "inspection_key": "v2-dump",
+            "evidence_id": "evidence:ff1f3e3ee236ff1387cd370b65854454999d9ee70de571433c98a6e65aed1f1d",
+            "potential_role": "background",
+            "rationale": "Recursive export examples do not establish timezone conversion."
+          }
+        ],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy.",
+          "Absence is scoped to all 34 indexed contents, not all retained files or Pydantic's capabilities."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    },
+    {
+      "retriever_input": {
+        "query_id": "q:cc10",
+        "ecosystem_id": "pypi:pydantic",
+        "query_text": "When parsing a JSON request with duplicate keys in Pydantic 1.10.13, which value wins?",
+        "query_kind": "lookup",
+        "source_version": null,
+        "requested_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13"
+        }
+      },
+      "curation": {
+        "primary_category": "no_supported_evidence",
+        "change_family": "parsing",
+        "proposed_answerability": "unanswerable",
+        "answerability_rationale": "All 34 contents inspected: no duplicate-key decoding rule. JSON export and incidental JSON examples elsewhere do not show repeated keys; no parser behavior is inferred.",
+        "candidate_supporting_evidence": [],
+        "illustrative_background_evidence": [
+          {
+            "inspection_key": "v1-parse-obj",
+            "evidence_id": "evidence:80a4ff35755ad525346d42bc58e669c02c3c045fff9b6930b838e42b182895bb",
+            "potential_role": "background",
+            "rationale": "Already-decoded dictionary example cannot establish duplicate JSON-key handling."
+          },
+          {
+            "inspection_key": "v1-dict",
+            "evidence_id": "evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c",
+            "potential_role": "background",
+            "rationale": "Exports models; does not define JSON input decoding."
+          }
+        ],
+        "candidate_wrong_version_evidence": [],
+        "wrong_version_rationale": "No whole-unit invalidity candidate established. Source-side migration evidence remains useful; stable behavior, deprecation, and missing applicability are not invalidity.",
+        "uncertainties": [
+          "Human review of answerability and the stated interpretation is pending.",
+          "Candidate relevance and applicability are separate proposals; endpoint mapping depends on snapshot policy.",
+          "Absence is scoped to all 34 indexed contents, not all retained files or Pydantic's capabilities."
+        ],
+        "review_status": "draft",
+        "human_review_status": "pending"
+      }
+    }
+  ]
+}
