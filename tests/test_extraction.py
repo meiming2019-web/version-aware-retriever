@@ -338,6 +338,70 @@ def test_real_corpus_representatives() -> None:
         assert "{!" not in record.content
 
 
+@pytest.mark.parametrize(
+    "key,first,last,old_first,old_last,expected,excluded",
+    [
+        (
+            "v1-required",
+            440,
+            441,
+            433,
+            434,
+            "Here `a`, `b` and `c` are all required.",
+            "using just an annotation",
+        ),
+        (
+            "v2-model-validate",
+            443,
+            451,
+            431,
+            433,
+            "User.model_validate({'id': 123, 'name': 'James'})",
+            "a `ValidationError` will be raised",
+        ),
+    ],
+)
+def test_corrected_real_assertion_scopes(
+    key: str,
+    first: int,
+    last: int,
+    old_first: int,
+    old_last: int,
+    expected: str,
+    excluded: str,
+) -> None:
+    recipe, sources, records = prepare(RECIPE, SELECTION, FROZEN)
+    record = dict(records)[key]
+    assertion = record.applicability[0]
+    assert assertion.content_locator is not None
+    _, start, end = assertion.content_locator.split(":")
+    claim = record.content[int(start) : int(end)]
+    assert claim == sources[record.source_id].read(
+        Span(source_id=record.source_id, first=first, last=last)
+    )
+    assert expected in claim
+    assert excluded not in claim
+    assert excluded in record.content  # Source quotation is preserved, not rewritten.
+    assert assertion.basis_source_id == record.source_id
+    assert assertion.basis_locator == f"L{first}-L{last}"
+    assert record.curator_notes is not None
+    assert "Pending human review" in record.curator_notes
+    spec = copy.deepcopy(next(u for u in recipe["units"] if u["key"] == key))
+    assert spec["review_status"] == "pending_human_review"
+    for field in ("claim", "basis_location"):
+        spec["assertions"][0][field].update(first=old_first, last=old_last)
+    old_scope = assemble(spec, sources, recipe["policy"])
+    assert old_scope.evidence_id != record.evidence_id
+    assert (
+        replace(
+            old_scope,
+            evidence_id=record.evidence_id,
+            applicability=record.applicability,
+        )
+        == record
+    )
+
+
 def test_real_build_is_deterministic_and_does_not_rewrite(tmp_path: Path) -> None:
     first, second = tmp_path / "first", tmp_path / "second"
     build(RECIPE, SELECTION, FROZEN, first)

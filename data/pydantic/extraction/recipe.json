@@ -512,15 +512,15 @@
           "kind": "behavior",
           "claim": {
             "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
-            "first": 433,
-            "last": 434
+            "first": 440,
+            "last": 441
           },
           "basis_location": {
             "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
-            "first": 433,
-            "last": 434
+            "first": 440,
+            "last": 441
           },
-          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 1.10.13 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "basis": "Endpoint policy: the documented statement that the demonstrated int fields a, b, and c are required is proposed for 1.10.13 only, preserving its mypy caveat. Interpret docs/usage/models.md L440-L441 with the existing companion docs/examples/models_required_fields.py L4-L7. This does not assert unconditional requiredness for annotation-only Optional, Any, or every field declaration. Documentation is evidence, not runtime verification; human review remains pending.",
           "applies_to": [
             "1.10.13"
           ],
@@ -1177,15 +1177,15 @@
           "kind": "behavior",
           "claim": {
             "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
-            "first": 431,
-            "last": 433
+            "first": 443,
+            "last": 451
           },
           "basis_location": {
             "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
-            "first": 431,
-            "last": 433
+            "first": 443,
+            "last": 451
           },
-          "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 2.5.3 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
+          "basis": "Endpoint policy: the retained User example documents model_validate dictionary-input usage at docs/concepts/models.md L443-L451, particularly the call at L449, proposed for 2.5.3 only. The displayed output is quoted documentation, not independently executed behavior. This does not assert that every dictionary input is valid or that all non-dictionary/non-model inputs are rejected. Human review remains pending.",
           "applies_to": [
             "2.5.3"
           ],

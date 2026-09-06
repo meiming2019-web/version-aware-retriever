@@ -2428,7 +2428,7 @@ Declared source assembly and marker replacements:
 
 ## v1-required
 
-Evidence ID: `evidence:cfa1a921c269243040783482084b070ec57bcb0c038358956a1c2a0b199b9756`
+Evidence ID: `evidence:886499a7f09a03b7574da0a604b79dd83457ff6bbd5625d7bb934176175698be`
 
 Original sources (document versions are not applicability labels):
 
@@ -2478,10 +2478,10 @@ Provenance and proposed applicability:
           "value": "1.10.13"
         }
       ],
-      "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 1.10.13 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
-      "basis_locator": "L433-L434",
+      "basis": "Endpoint policy: the documented statement that the demonstrated int fields a, b, and c are required is proposed for 1.10.13 only, preserving its mypy caveat. Interpret docs/usage/models.md L440-L441 with the existing companion docs/examples/models_required_fields.py L4-L7. This does not assert unconditional requiredness for annotation-only Optional, Any, or every field declaration. Documentation is evidence, not runtime verification; human review remains pending.",
+      "basis_locator": "L440-L441",
       "basis_source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
-      "content_locator": "chars:20:147",
+      "content_locator": "chars:357:526",
       "kind": "behavior",
       "transition_source": [],
       "transition_target": []
@@ -2514,7 +2514,7 @@ Provenance and proposed applicability:
   ],
   "curator_notes": "Pending human review. ",
   "ecosystem_id": "pypi:pydantic",
-  "evidence_id": "evidence:cfa1a921c269243040783482084b070ec57bcb0c038358956a1c2a0b199b9756",
+  "evidence_id": "evidence:886499a7f09a03b7574da0a604b79dd83457ff6bbd5625d7bb934176175698be",
   "section_path": [
     "docs/usage/models.md",
     "Required fields"
@@ -3847,7 +3847,7 @@ Declared source assembly and marker replacements:
 
 ## v2-model-validate
 
-Evidence ID: `evidence:cae566f167e2068f921889ec5036bb29cc1befc06f96f105252ae4a895a4a119`
+Evidence ID: `evidence:7f401a00baab9c24c6506ed641ec655534f5cbec1fe540ba9cfe9de8f66c2301`
 
 Original sources (document versions are not applicability labels):
 
@@ -3909,10 +3909,10 @@ Provenance and proposed applicability:
           "value": "2.5.3"
         }
       ],
-      "basis": "Endpoint policy: an unqualified behavior statement in this exact release documentation is proposed for 2.5.3 only. Historical qualifiers and deprecated compatibility are retained; documentation is evidence, not runtime verification.",
-      "basis_locator": "L431-L433",
+      "basis": "Endpoint policy: the retained User example documents model_validate dictionary-input usage at docs/concepts/models.md L443-L451, particularly the call at L449, proposed for 2.5.3 only. The displayed output is quoted documentation, not independently executed behavior. This does not assert that every dictionary input is valid or that all non-dictionary/non-model inputs are rejected. Human review remains pending.",
+      "basis_locator": "L443-L451",
       "basis_source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
-      "content_locator": "chars:21:360",
+      "content_locator": "chars:476:682",
       "kind": "behavior",
       "transition_source": [],
       "transition_target": []
@@ -3945,7 +3945,7 @@ Provenance and proposed applicability:
   ],
   "curator_notes": "Pending human review. Closing Markdown code fence inserted after the selected example; no model_validate_json content included.",
   "ecosystem_id": "pypi:pydantic",
-  "evidence_id": "evidence:cae566f167e2068f921889ec5036bb29cc1befc06f96f105252ae4a895a4a119",
+  "evidence_id": "evidence:7f401a00baab9c24c6506ed641ec655534f5cbec1fe540ba9cfe9de8f66c2301",
   "section_path": [
     "docs/concepts/models.md",
     "Helper functions"
