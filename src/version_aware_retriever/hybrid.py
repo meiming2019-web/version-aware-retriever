@@ -144,15 +144,20 @@ def source_rankings(
 
 
 def run_development(
-    root: Path, *, sources: tuple[SourcePin, ...] = SOURCES
+    root: Path,
+    *,
+    sources: tuple[SourcePin, ...] = SOURCES,
+    public_queries: str = QUERIES,
+    output_path: str = OUTPUT,
+    expected_queries: int = 8,
 ) -> dict[str, Any]:
     """Read exactly four input files; output is read only for no-op rewrite checks."""
     require(
         tuple(s.method for s in sources) == ("bm25", "dense"),
         "expected two fixed methods",
     )
-    paths = [root / EVIDENCE, root / QUERIES, *(root / s.path for s in sources)]
-    output = root / OUTPUT
+    paths = [root / EVIDENCE, root / public_queries, *(root / s.path for s in sources)]
+    output = root / output_path
     require(len({p.resolve() for p in (*paths, output)}) == 5, "overlapping paths")
     evidence_bytes, query_bytes, bm25_bytes, dense_bytes = [
         p.read_bytes() for p in paths
@@ -165,8 +170,8 @@ def run_development(
     queries = queries_from_public(decode(query_bytes))
     known = {d.evidence_id for d in documents}
     require(
-        len(documents) == len(known) == 34 and len(queries) == 8,
-        "expected 34 unique documents and eight public queries",
+        len(documents) == len(known) == 34 and len(queries) == expected_queries,
+        f"expected 34 unique documents and {expected_queries} public queries",
     )
     require(
         all(q.ecosystem_id in {d.ecosystem_id for d in documents} for q in queries),

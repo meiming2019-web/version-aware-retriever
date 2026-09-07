@@ -1,0 +1,222 @@
+[
+  {
+    "query_id": "q:d92e",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "In Pydantic 1.10.13, can I omit a field declared as a: Optional[int] with no assigned default?",
+    "query_kind": "lookup",
+    "source_version": null,
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "1.10.13"
+    }
+  },
+  {
+    "query_id": "q:16cf",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "In Pydantic 2.5.3, does Optional[str] without a default let me leave the field out, or only pass None?",
+    "query_kind": "lookup",
+    "source_version": null,
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:90b7",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "In Pydantic 1.10.13, will model.dict(exclude_none=True) omit a field explicitly set to None?",
+    "query_kind": "lookup",
+    "source_version": null,
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "1.10.13"
+    }
+  },
+  {
+    "query_id": "q:f03c",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "How do I pass {'id': 123, 'name': 'James'} to model_validate() for a Pydantic 2.5.3 User model?",
+    "query_kind": "lookup",
+    "source_version": null,
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:55e8",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "In Pydantic 1.10.13, does Config.extra='forbid' reject unexpected input fields or silently discard them?",
+    "query_kind": "lookup",
+    "source_version": null,
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "1.10.13"
+    }
+  },
+  {
+    "query_id": "q:2ab0",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "After upgrading from Pydantic 1.10.13 to 2.5.3, a nullable text field that I used to omit is now required. How can I keep allowing both omission and null?",
+    "query_kind": "migration",
+    "source_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "1.10.13"
+    },
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:81d6",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "Moving from Pydantic 1.10.13 to 2.5.3, why does my field that accepts any type no longer get a null default when I leave it out?",
+    "query_kind": "migration",
+    "source_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "1.10.13"
+    },
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:6f21",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "After upgrading from Pydantic 1.10.13 to 2.5.3, why did extra fields on a more specific nested model disappear from my exported dictionary?",
+    "query_kind": "migration",
+    "source_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "1.10.13"
+    },
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:bb48",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "When upgrading from Pydantic 1.10.13 to 2.5.3, where should I put model-wide settings now, and must I immediately remove the old inner settings class?",
+    "query_kind": "migration",
+    "source_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "1.10.13"
+    },
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:30e5",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "Moving from Pydantic 1.10.13 to 2.5.3, what is the recommended way to create a model from an ORM object's attributes?",
+    "query_kind": "migration",
+    "source_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "1.10.13"
+    },
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:4ac9",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "As I upgrade from Pydantic 1.10.13 to 2.5.3, what should replace my model's dictionary-export call while still converting ordinary nested models to dictionaries?",
+    "query_kind": "migration",
+    "source_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "1.10.13"
+    },
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:ed72",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "After moving from Pydantic 1.10.13 to 2.5.3, will unknown input fields still be ignored by default, and can I still choose to reject them?",
+    "query_kind": "migration",
+    "source_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "1.10.13"
+    },
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:09f1",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "Which JSON Schema draft does Pydantic 2.5.3 generate by default?",
+    "query_kind": "lookup",
+    "source_version": null,
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:a46d",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "How should I handle cyclic ORM relationships when loading them into Pydantic 2.5.3 models?",
+    "query_kind": "lookup",
+    "source_version": null,
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:73be",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "Does dictionary export in Pydantic 2.5.3 convert timezone-aware datetime values to UTC?",
+    "query_kind": "lookup",
+    "source_version": null,
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:cc10",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "When parsing a JSON request with duplicate keys in Pydantic 1.10.13, which value wins?",
+    "query_kind": "lookup",
+    "source_version": null,
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "1.10.13"
+    }
+  }
+]

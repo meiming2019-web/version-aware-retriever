@@ -222,6 +222,7 @@ def run_development(
     *,
     fresh: bool = False,
     encoder: Encoder | None = None,
+    expected_queries: int = 8,
 ) -> dict[str, Any]:
     require(
         len({p.resolve() for p in (evidence, public_queries, output, cache)}) == 4,
@@ -236,7 +237,8 @@ def run_development(
     )
     queries = queries_from_public(json.loads(query_bytes))
     require(
-        len(documents) == 34 and len(queries) == 8, "expected 34 documents/8 queries"
+        len(documents) == 34 and len(queries) == expected_queries,
+        "unexpected document/query count",
     )
     require(
         all(q.ecosystem_id in {d.ecosystem_id for d in documents} for q in queries),
@@ -323,7 +325,7 @@ def run_development(
             "max_query": max(artifact["lengths"][34:]),
             "truncations": 0,
         },
-        "vector_shapes": [[34, len(vectors[0])], [8, len(vectors[0])]],
+        "vector_shapes": [[34, len(vectors[0])], [len(queries), len(vectors[0])]],
         "run_depth": 34,
         "results": results,
         "diagnostics": diagnostics,

@@ -204,7 +204,7 @@ def canonical(value: object) -> bytes:
 
 
 def run_development(
-    evidence: Path, public_queries: Path, output: Path
+    evidence: Path, public_queries: Path, output: Path, *, expected_queries: int = 8
 ) -> dict[str, Any]:
     """Read only the specified evidence/public inputs; never load authoring drafts."""
     require(
@@ -214,7 +214,7 @@ def run_development(
     evidence_bytes, query_bytes = evidence.read_bytes(), public_queries.read_bytes()
     documents = documents_from_artifact(json.loads(evidence_bytes))
     queries = queries_from_public(json.loads(query_bytes))
-    require(len(queries) == 8, "development batch requires eight queries")
+    require(len(queries) == expected_queries, "unexpected query batch size")
     ecosystems = {d.ecosystem_id for d in documents}
     require(
         all(q.ecosystem_id in ecosystems for q in queries),
