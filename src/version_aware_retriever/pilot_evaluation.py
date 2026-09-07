@@ -628,8 +628,17 @@ def main() -> None:
         action="store_true",
         help="Retain the score at the fixed development-results path",
     )
+    parser.add_argument(
+        "--include-hybrid",
+        action="store_true",
+        help="Score the frozen RRF run too; save a separate three-method result",
+    )
     args = parser.parse_args()
     require(not args.save or args.command == "score", "--save requires score")
+    require(
+        not args.include_hybrid or args.command == "score",
+        "--include-hybrid requires score",
+    )
     pilot = load_pilot(args.root)
     decision_bytes = (args.root / DECISIONS).read_bytes()
     decisions = decode_json(decision_bytes)
@@ -638,13 +647,29 @@ def main() -> None:
     else:
         # Gate before even reading saved retrieval results.
         reviewed_benchmark(pilot, decisions)
-        body = result_bytes(
-            pilot, decision_bytes, tuple((args.root / p).read_bytes() for p in RUNS)
-        )
-        if args.save:
-            save_result(
-                args.root / "data/pydantic/results/dev-pilot.bm25-vs-dense.json", body
+        runs = tuple((args.root / p).read_bytes() for p in RUNS)
+        result_name = "dev-pilot.bm25-vs-dense.json"
+        if args.include_hybrid:
+            hybrid = (
+                args.root / "data/pydantic/runs/rrf-hybrid.dev.unscored.json"
+            ).read_bytes()
+            expected_sources = [
+                {
+                    "method": method,
+                    "run_id": decode_json(source)["run_id"],
+                    "content_hash": digest(source),
+                }
+                for method, source in zip(("bm25", "dense"), runs, strict=True)
+            ]
+            require(
+                decode_json(hybrid)["source_runs"] == expected_sources,
+                "hybrid lineage does not match submitted source runs",
             )
+            runs = (*runs, hybrid)
+            result_name = "dev-pilot.bm25-vs-dense-vs-hybrid.json"
+        body = result_bytes(pilot, decision_bytes, runs)
+        if args.save:
+            save_result(args.root / "data/pydantic/results" / result_name, body)
         print(body.decode("utf-8"), end="")
         return
     print(json.dumps(result, indent=2, ensure_ascii=False, allow_nan=False))

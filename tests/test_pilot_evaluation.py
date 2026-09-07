@@ -35,6 +35,7 @@ from version_aware_retriever.pilot_evaluation import (
     Pilot,
     adapt_run,
     load_pilot,
+    main,
     read_json,
     result_bytes,
     review,
@@ -582,3 +583,67 @@ def test_explicitly_human_approved_real_batch_read_only(tmp_path: Path) -> None:
     assert body == result_bytes(pilot, (root / DECISIONS).read_bytes(), bodies)
     save_result(tmp_path / "real-format-result-copy.json", body)
     assert before == {p: (p.read_bytes(), p.stat().st_mtime_ns) for p in paths}
+
+
+def test_three_method_cli_preserves_two_method_result(
+    fictional: tuple[Pilot, dict[str, Any], bytes],
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    pilot, decisions, bm25 = fictional
+    (tmp_path / DECISIONS).write_text(json.dumps(decisions))
+    dense = json.loads(bm25)
+    dense["run_id"] = "fictional:dense"
+    dense_bytes = json.dumps(dense).encode()
+    (tmp_path / RUNS[1]).write_bytes(dense_bytes)
+    hybrid = copy.deepcopy(dense)
+    hybrid["run_id"] = "fictional:hybrid"
+    hybrid["source_runs"] = [
+        {
+            "method": method,
+            "run_id": json.loads(body)["run_id"],
+            "content_hash": digest(body),
+        }
+        for method, body in zip(("bm25", "dense"), (bm25, dense_bytes), strict=True)
+    ]
+    hybrid_path = tmp_path / "data/pydantic/runs/rrf-hybrid.dev.unscored.json"
+    hybrid_path.write_text(json.dumps(hybrid))
+    old_path = tmp_path / "data/pydantic/results/dev-pilot.bm25-vs-dense.json"
+    old_path.parent.mkdir(parents=True, exist_ok=True)
+    old_path.write_bytes(b"Existing two-method artifact must not be overwritten.")
+    old_bytes = old_path.read_bytes()
+    monkeypatch.setattr(
+        "sys.argv",
+        [
+            "pilot_evaluation",
+            "score",
+            "--root",
+            str(tmp_path),
+            "--include-hybrid",
+            "--save",
+        ],
+    )
+    main()
+    stdout = capsys.readouterr().out
+    new_path = old_path.with_name("dev-pilot.bm25-vs-dense-vs-hybrid.json")
+    assert stdout.encode() == new_path.read_bytes()
+    mtime = new_path.stat().st_mtime_ns
+    main()
+    assert capsys.readouterr().out == stdout
+    assert new_path.stat().st_mtime_ns == mtime
+    assert old_path.read_bytes() == old_bytes
+    report = json.loads(stdout)
+    benchmark = reviewed_benchmark(pilot, decisions)
+    for body, row in zip(
+        (bm25, dense_bytes, hybrid_path.read_bytes()), report["runs"], strict=True
+    ):
+        adapted = adapt_run(pilot, benchmark, body)
+        assert row["evaluation"] == json.loads(
+            json.dumps(asdict(evaluate(benchmark, adapted)))
+        )
+    hybrid["source_runs"][0]["content_hash"] = "wrong parent revision"
+    hybrid_path.write_text(json.dumps(hybrid))
+    with pytest.raises(ValueError, match="lineage"):
+        main()
+    assert new_path.read_bytes() == stdout.encode()
