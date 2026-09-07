@@ -1,0 +1,15 @@
+{
+  "format": "development-pilot-review-v1",
+  "status": "pending",
+  "bindings": {
+    "pilot": "sha256:ea6c78d733ee5ce4a1d565e7e7fb72d8165e229f1df3ab756fea3f5d881cf7ca",
+    "development_queries": "sha256:d9953c2c651314f658aa1e29c6aa7e0fba5215c1bfc9a2cb84316901fe2ac240",
+    "public_queries": "sha256:08641c1371d0a6814a0224904d39a6d03f020270f5becadb96fefc306dd525d1",
+    "evidence": "sha256:bce9dfa1709d6114d967fa4042fb2a33fc011bfd1d9573234b6818cd64a1f798",
+    "manifest": "sha256:ff6459b7d027b07c09c66b46776b2c6f0412a01c8ea7940973ffeb2b33369519",
+    "labeling_policy": "sha256:7a29e1454e730eb47e3274122954195b7a6c9a290e3d215345cd563c757427c9"
+  },
+  "question_decisions": [],
+  "pair_decisions": [],
+  "unresolved_issues": []
+}
