@@ -29,7 +29,7 @@ from version_aware_retriever.contracts import (
     VersionApplicability,
     VersionSelector,
 )
-from version_aware_retriever.evaluation import evaluate
+from version_aware_retriever.evaluation import CUTOFFS, evaluate
 from version_aware_retriever.lexical import (
     RetrievalQuery,
     canonical,
@@ -571,21 +571,82 @@ def score(
     }
 
 
+def result_bytes(pilot: Pilot, decisions: bytes, runs: tuple[bytes, ...]) -> bytes:
+    """Retain existing scores with deterministic provenance; no new metrics."""
+    result = score(pilot, decode_json(decisions), runs)
+    result.update(
+        {
+            "format_version": 1,
+            "status": "reviewed-development-pilot",
+            "review_decisions_hash": digest(decisions),
+            "evaluator": {
+                "source_hash": digest(
+                    Path(__file__).with_name("evaluation.py").read_bytes()
+                ),
+                "contracts_hash": digest(
+                    Path(__file__).with_name("contracts.py").read_bytes()
+                ),
+                "cutoffs": list(CUTOFFS),
+                "mrr": "full-submitted-list; answerable-query macro mean",
+                "recall": (
+                    "version-valid evidence-unit recall; answerable-query macro mean"
+                ),
+                "wrong_version_rate": (
+                    "item-weighted directly relevant version-invalid returns"
+                ),
+                "ufpr": (
+                    "nonempty accepted list on corpus-relative unanswerable questions"
+                ),
+            },
+        }
+    )
+    result["result_id"] = "development-pilot-result:" + digest(canonical(result))[7:]
+    return (
+        json.dumps(
+            result, sort_keys=True, indent=2, ensure_ascii=False, allow_nan=False
+        )
+        + "\n"
+    ).encode("utf-8")
+
+
+def save_result(path: Path, body: bytes) -> None:
+    require(
+        not any(p.is_symlink() for p in (path, *path.parents)), "result path symlink"
+    )
+    if path.exists() and path.read_bytes() == body:
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(body)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("command", choices=("readiness", "score"))
     parser.add_argument("--root", type=Path, default=Path("."))
+    parser.add_argument(
+        "--save",
+        action="store_true",
+        help="Retain the score at the fixed development-results path",
+    )
     args = parser.parse_args()
+    require(not args.save or args.command == "score", "--save requires score")
     pilot = load_pilot(args.root)
-    decisions = read_json(args.root / DECISIONS)
+    decision_bytes = (args.root / DECISIONS).read_bytes()
+    decisions = decode_json(decision_bytes)
     if args.command == "readiness":
         result = review(pilot, decisions)[0]
     else:
         # Gate before even reading saved retrieval results.
         reviewed_benchmark(pilot, decisions)
-        result = score(
-            pilot, decisions, tuple((args.root / p).read_bytes() for p in RUNS)
+        body = result_bytes(
+            pilot, decision_bytes, tuple((args.root / p).read_bytes() for p in RUNS)
         )
+        if args.save:
+            save_result(
+                args.root / "data/pydantic/results/dev-pilot.bm25-vs-dense.json", body
+            )
+        print(body.decode("utf-8"), end="")
+        return
     print(json.dumps(result, indent=2, ensure_ascii=False, allow_nan=False))
 
 

@@ -27,6 +27,7 @@ from version_aware_retriever.contracts import (
 from version_aware_retriever.evaluation import evaluate
 from version_aware_retriever.lexical import RetrievalQuery
 from version_aware_retriever.pilot_evaluation import (
+    DECISIONS,
     FORMAT,
     PATHS,
     PILOT_IDS,
@@ -35,8 +36,10 @@ from version_aware_retriever.pilot_evaluation import (
     adapt_run,
     load_pilot,
     read_json,
+    result_bytes,
     review,
     reviewed_benchmark,
+    save_result,
     score,
 )
 
@@ -487,3 +490,95 @@ def test_additional_review_gates(
         decisions["pair_decisions"].pop()
     with pytest.raises(ValueError):
         score(pilot, decisions, (body,))
+
+
+def test_deterministic_serialization(
+    fictional: tuple[Pilot, dict[str, Any], bytes],
+    tmp_path: Path,
+) -> None:
+    pilot, decisions, run = fictional
+    decision_bytes = json.dumps(decisions).encode()
+    body = result_bytes(pilot, decision_bytes, (run,))
+    assert body == result_bytes(pilot, decision_bytes, (run,))
+    result = json.loads(body)
+    assert result["review_decisions_hash"] == digest(decision_bytes)
+    assert result["evaluator"]["cutoffs"] == [1, 3, 5]
+    assert result["runs"][0]["original_run_hash"] == digest(run)
+    target = tmp_path / "results" / "fictional.json"
+    save_result(target, body)
+    before = (target.read_bytes(), target.stat().st_mtime_ns)
+    save_result(target, body)
+    assert before == (target.read_bytes(), target.stat().st_mtime_ns)
+    link = tmp_path / "symlink.json"
+    link.symlink_to(target)
+    with pytest.raises(ValueError, match="symlink"):
+        save_result(link, body)
+
+
+def test_explicitly_human_approved_real_batch_read_only(tmp_path: Path) -> None:
+    """User-approved batch, not fabricated test approval; no inference or file edits."""
+    root = Path(__file__).resolve().parents[1]
+    paths = [root / p for p in (*PATHS.values(), DECISIONS, *RUNS)]
+    before = {p: (p.read_bytes(), p.stat().st_mtime_ns) for p in paths}
+    pilot = load_pilot(root)
+    decisions = read_json(root / DECISIONS)
+    state = review(pilot, decisions)[0]
+    assert state["scoring_permitted"]
+    assert state["question_decisions"] == {"reviewed": 4, "pending": 0}
+    assert state["pair_decisions"] == {"reviewed": 136, "pending": 0}
+    assert state["unresolved_issues"] == []
+    assert pilot.bindings["pilot"] == (
+        "sha256:ea6c78d733ee5ce4a1d565e7e7fb72d8165e229f1df3ab756fea3f5d881cf7ca"
+    )
+    benchmark = reviewed_benchmark(pilot, decisions)
+    proposals = {(j.query_id, j.evidence_id): j for j in pilot.proposals}
+    policy_b = (
+        "q:7bd4",
+        "evidence:de3bf67621ae0433616b3b88bbad1052768664fea091db62c16a5f92c19fd83b",
+    )
+    for judgment in benchmark.judgments:
+        pair = (judgment.query_id, judgment.evidence_id)
+        old = proposals[pair]
+        assert old.review_status is ReviewStatus.DRAFT
+        assert judgment.review_status is ReviewStatus.REVIEWED
+        if pair == policy_b:
+            assert judgment.topical_relevance == 1
+            assert judgment.version_applicability is VersionApplicability.VALID
+            assert judgment.evidence_roles == (EvidenceRole.BACKGROUND,)
+            assert not judgment.hard_negative
+        else:
+            for field in (
+                "topical_relevance",
+                "version_applicability",
+                "evidence_roles",
+                "hard_negative",
+            ):
+                assert getattr(judgment, field) == getattr(old, field)
+    assert {q.query_id: q.answerability.value for q in benchmark.queries} == {
+        "q:a7c2": "answerable",
+        "q:39fa": "answerable",
+        "q:7bd4": "answerable",
+        "q:b503": "unanswerable",
+    }
+    assert {
+        q: sum(j.query_id == q and j.is_valid_positive for j in benchmark.judgments)
+        for q in PILOT_IDS
+    } == {"q:a7c2": 2, "q:39fa": 3, "q:7bd4": 1, "q:b503": 0}
+    bodies = tuple((root / p).read_bytes() for p in RUNS)
+    body = result_bytes(pilot, (root / DECISIONS).read_bytes(), bodies)
+    report = json.loads(body)
+    for original, retained in zip(bodies, report["runs"], strict=True):
+        adapted = adapt_run(pilot, benchmark, original)
+        original_results = {
+            r["query_id"]: tuple(r["evidence_ids"])
+            for r in json.loads(original)["results"]
+        }
+        assert all(
+            r.evidence_ids == original_results[r.query_id] for r in adapted.results
+        )
+        assert retained["evaluation"] == json.loads(
+            json.dumps(asdict(evaluate(benchmark, adapted)))
+        )
+    assert body == result_bytes(pilot, (root / DECISIONS).read_bytes(), bodies)
+    save_result(tmp_path / "real-format-result-copy.json", body)
+    assert before == {p: (p.read_bytes(), p.stat().st_mtime_ns) for p in paths}

@@ -1,6 +1,6 @@
 {
   "format": "development-pilot-review-v1",
-  "status": "pending",
+  "status": "reviewed",
   "bindings": {
     "pilot": "sha256:ea6c78d733ee5ce4a1d565e7e7fb72d8165e229f1df3ab756fea3f5d881cf7ca",
     "development_queries": "sha256:d9953c2c651314f658aa1e29c6aa7e0fba5215c1bfc9a2cb84316901fe2ac240",
@@ -9,7 +9,1988 @@
     "manifest": "sha256:ff6459b7d027b07c09c66b46776b2c6f0412a01c8ea7940973ffeb2b33369519",
     "labeling_policy": "sha256:7a29e1454e730eb47e3274122954195b7a6c9a290e3d215345cd563c757427c9"
   },
-  "question_decisions": [],
-  "pair_decisions": [],
+  "question_decisions": [
+    {
+      "query_id": "q:a7c2",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "answerability": "answerable",
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Both the endpoint note and explicit historical statement establish the proposed wrapping answer.",
+      "reviewed_all_evidence": true,
+      "supporting_evidence": [
+        {
+          "evidence_id": "evidence:4bd23223de4ab66136b4944b2145e5c28ddbbc025f58c337cac6bf182c323bc5",
+          "locator": "chars:76:443"
+        },
+        {
+          "evidence_id": "evidence:d7267def0efc3affe89aebfe80b279bd6910209fc2db679c5c98f16571254127",
+          "locator": "chars:129:367"
+        }
+      ],
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "answerability": "answerable",
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. The question explicitly specifies a wrong-function-signature call raising TypeError inside a validator. The retained migration passage describes that scenario and the wrapping change; source and target evidence support both endpoints, not a rule about all programming errors. Wording clarified as a draft revision; human review remains pending.",
+      "reviewed_all_evidence": true,
+      "supporting_evidence": [
+        {
+          "evidence_id": "evidence:4bd23223de4ab66136b4944b2145e5c28ddbbc025f58c337cac6bf182c323bc5",
+          "locator": "chars:76:443"
+        },
+        {
+          "evidence_id": "evidence:d7267def0efc3affe89aebfe80b279bd6910209fc2db679c5c98f16571254127",
+          "locator": "chars:129:367"
+        },
+        {
+          "evidence_id": "evidence:a9c73c27473d19d0472e7ebb2f5a313950f5cc6ce9c5b3100f9aff1a5ece31ff",
+          "locator": "chars:336:432"
+        }
+      ],
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "answerability": "answerable",
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. The warning addresses assert-based checks only, not all validators.",
+      "reviewed_all_evidence": true,
+      "supporting_evidence": [
+        {
+          "evidence_id": "evidence:5ed599d618c2a175889d935bc3f49c783f312ea2c927b24eadc9e72166b05bb6",
+          "locator": "chars:2739:2995"
+        }
+      ],
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "answerability": "unanswerable",
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. All 34 contents inspected: none establishes coroutine support, awaiting, or an asynchronous validator declaration. Synchronous examples do not prove async is unsupported. Approved only relative to all 34 current searchable units: no unit directly supports the requested coroutine-awaiting behavior and async declaration method; this is not a claim that Pydantic has no async capability.",
+      "reviewed_all_evidence": true,
+      "supporting_evidence": [],
+      "unresolved_issues": []
+    }
+  ],
+  "pair_decisions": [
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:883046956d69fc69fa76cd3a28d772a46f067d517f5d679bb3e3a6dfcc7b3383",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Inner Config to model_config placement and deprecation; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:333"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:da3e85d95eeb3b3bd713254506e0318c573ace5ae089e9651ea775a077f034bc",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Attribute-loading constructor migration and its configuration condition; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:226"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:b7182dc833aa33ab0c632c644e5bf752f05782964ec65a2ea7bc36fdd5780d97",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. BaseModel method/attribute renames, including the internal validators name; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:808"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Requiredness, None acceptance and defaults; its ValidationError example concerns null input; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:2183"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:60c76235152cb5d1ae54f8cd577c0779be723e81729971c54eae67cddf89c2c1",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. orm_mode configuration rename; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:88"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:b35a6a3ea3647392d775a0ffcc87965fb59371889f6636cc74403594c32f63e0",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Nested subclass export-field changes; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:644"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:4bd23223de4ab66136b4944b2145e5c28ddbbc025f58c337cac6bf182c323bc5",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. The historical wrapping statement in this v2 document directly answers the v1 lookup; target propagation is not applied to v1.",
+      "supporting_locators": [
+        "chars:76:443"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:ea1ecf63c526ef552a3561a457e351903d098554729c0b4c6b3e786eefe66be3",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Decorator migration contextualizes the named validator; no rule here establishes the requested v1 TypeError outcome.",
+      "supporting_locators": [
+        "chars:56:960"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:b6cb2402ea041bab4b014f341d2434c8ed8615cda00a26a1fa398719ffa13c80",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. String-length configuration and error-message templates, not exceptions raised by custom validators; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:440"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Recursive dictionary export and omission options; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1394"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:d7267def0efc3affe89aebfe80b279bd6910209fc2db679c5c98f16571254127",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Explicitly catches validator TypeError into ValidationError at the requested v1 endpoint under snapshot policy.",
+      "supporting_locators": [
+        "chars:129:367"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:b84bfd24fd6881120fb7e04bfe9f7c5dc9b6eb258d64c94e4abc927cb51d4a27",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Treatment of unexpected initialization fields; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:410"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:6a88147979a8479686c02647b54f0d0bdd5bb6b1033480da56d019f52353c7ae",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Raw-value model iteration; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:622"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:066375dd8bb4dd93910cb6c4aaa4fba632ca2a055579368f5aae15ac072f27da",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Nested export include/exclude selection; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:945"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:dbe99fbadce62a074aa9f9cfd04fefb4f64e6b3c6ceb094a6dc7a5bb5eb6cced",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Nullable required declarations and missing-field errors; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:966"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:812c551c52b07ddf921401d978ad281a6d4604f27ddc2f0215961bed9e107fec",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Synchronous ORM attribute loading with a SQLAlchemy example; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1334"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:dabe9d5ec1597dbefad71ecda95e40df288cb31a0cca8ccb300ee1f10f245da3",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. ORM-mode enablement; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:104"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:80a4ff35755ad525346d42bc58e669c02c3c045fff9b6930b838e42b182895bb",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Dictionary-input parsing and a non-dictionary ValidationError, not a function-call TypeError; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:560"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:e621fdbd4927656e460324576059d928af9ebbfd21ed0a445ecf0fa47cb5aab3",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Old field-check examples raise ValueError/assert and catch ValidationError, but never demonstrate TypeError wrapping.",
+      "supporting_locators": [
+        "chars:653:813"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:886499a7f09a03b7574da0a604b79dd83457ff6bbd5625d7bb934176175698be",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Required int declarations and a mypy caveat; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:526"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:481e2f537c4f907d0b6d4f5c2c693d96e3d4569ed296d5b84a3067683769be4e",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Sequence export filtering by index or __all__; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1958"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:de3bf67621ae0433616b3b88bbad1052768664fea091db62c16a5f92c19fd83b",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Recommends raising TypeError in v1 callbacks, useful context but does not explicitly say what exception reaches the caller.",
+      "supporting_locators": [
+        "chars:1794:1941"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:e7d14e6e4abdf8b91c69ecbfe2d73153531359feb2017b8dc967a8fc5f3d01ab",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. ORM attribute loading with model_validate and a SQLAlchemy object; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1855"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:6602b94e99222b815990638bbc8d9db96a5fc0bea5e270819c6c8b6ae326221b",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Model configuration and string-length errors; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:685"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:ff1f3e3ee236ff1387cd370b65854454999d9ee70de571433c98a6e65aed1f1d",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Recursive dictionary export, omission options and JSON round-trip examples; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:2320"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:7b7cf7427e97588af230e2fbe78f40e686c952b53e3f2b1b05757058020df09c",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Unexpected-field ignoring/rejection; its assert is a demonstration, not a field validator; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:724"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:5ed599d618c2a175889d935bc3f49c783f312ea2c927b24eadc9e72166b05bb6",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Callback and ValueError/assert examples contextualize validation, but establish neither v1 TypeError behavior nor applicability of these target signatures to v1.",
+      "supporting_locators": [
+        "chars:2423:2737"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:d92505ddf3dab1bc30ce5846bb6ff07b452d74c73a7257de03624d2bddc53e00",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Raw-value iteration and RootModel representation; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:886"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:7f401a00baab9c24c6506ed641ec655534f5cbec1fe540ba9cfe9de8f66c2301",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Dictionary usage and non-dictionary input errors, not callback TypeError or async execution; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:958"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:f6f7fddb0625fd25e1f626799e80adcdaecdce0b25fcb829f01e735375425cae",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Nested dictionary export filtering; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1034"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:f7b5629735f7a4a5e01a76beab4f534816e11a77e6223d001a9f49ceed710c8e",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Annotated-type export and subclass-field omission; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1383"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Required int fields, mypy caveat and implicit-default history; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:862"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:d72bdda37f9d3c26b38333eb7b8715f7db7ec9e7d80897904b014a3dcc6b61b0",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Sequence export inclusion/exclusion; does not address the caller-visible validator TypeError outcome. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:2485"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:a7c2",
+      "evidence_id": "evidence:a9c73c27473d19d0472e7ebb2f5a313950f5cc6ce9c5b3100f9aff1a5ece31ff",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Directly states unwrapped TypeError, contrary to requested v1 wrapping documented in v1-errors and migration-typeerror. Other shared exception rules do not answer this TypeError fact.",
+      "supporting_locators": [
+        "chars:336:432"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:883046956d69fc69fa76cd3a28d772a46f067d517f5d679bb3e3a6dfcc7b3383",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Inner Config to model_config placement and deprecation; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:333"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:da3e85d95eeb3b3bd713254506e0318c573ace5ae089e9651ea775a077f034bc",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Attribute-loading constructor migration and its configuration condition; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:226"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:b7182dc833aa33ab0c632c644e5bf752f05782964ec65a2ea7bc36fdd5780d97",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. BaseModel method/attribute renames, including the internal validators name; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:808"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Requiredness, None acceptance and defaults; its ValidationError example concerns null input; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:2183"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:60c76235152cb5d1ae54f8cd577c0779be723e81729971c54eae67cddf89c2c1",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. orm_mode configuration rename; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:88"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:b35a6a3ea3647392d775a0ffcc87965fb59371889f6636cc74403594c32f63e0",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Nested subclass export-field changes; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:644"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:4bd23223de4ab66136b4944b2145e5c28ddbbc025f58c337cac6bf182c323bc5",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Explicit wrong-signature scenario and old wrapping/new propagation explain the exact migration; family history is bounded by endpoint policy.",
+      "supporting_locators": [
+        "chars:76:443",
+        "chars:445:566"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:ea1ecf63c526ef552a3561a457e351903d098554729c0b4c6b3e786eefe66be3",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Changes callback APIs and signatures; useful nearby migration context, but its validator-argument changes are not the wrong function call inside the callback.",
+      "supporting_locators": [
+        "chars:56:960"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:b6cb2402ea041bab4b014f341d2434c8ed8615cda00a26a1fa398719ffa13c80",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. String-length configuration and error-message templates, not exceptions raised by custom validators; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:440"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Recursive dictionary export and omission options; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1394"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:d7267def0efc3affe89aebfe80b279bd6910209fc2db679c5c98f16571254127",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Direct source-side wrapping rule supports one essential half of the migration; it does not by itself establish the new behavior.",
+      "supporting_locators": [
+        "chars:129:367"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:b84bfd24fd6881120fb7e04bfe9f7c5dc9b6eb258d64c94e4abc927cb51d4a27",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Treatment of unexpected initialization fields; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:410"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:6a88147979a8479686c02647b54f0d0bdd5bb6b1033480da56d019f52353c7ae",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Raw-value model iteration; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:622"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:066375dd8bb4dd93910cb6c4aaa4fba632ca2a055579368f5aae15ac072f27da",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Nested export include/exclude selection; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:945"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:dbe99fbadce62a074aa9f9cfd04fefb4f64e6b3c6ceb094a6dc7a5bb5eb6cced",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Nullable required declarations and missing-field errors; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:966"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:812c551c52b07ddf921401d978ad281a6d4604f27ddc2f0215961bed9e107fec",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Synchronous ORM attribute loading with a SQLAlchemy example; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1334"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:dabe9d5ec1597dbefad71ecda95e40df288cb31a0cca8ccb300ee1f10f245da3",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. ORM-mode enablement; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:104"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:80a4ff35755ad525346d42bc58e669c02c3c045fff9b6930b838e42b182895bb",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Dictionary-input parsing and a non-dictionary ValidationError, not a function-call TypeError; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:560"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:e621fdbd4927656e460324576059d928af9ebbfd21ed0a445ecf0fa47cb5aab3",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Source callback examples illustrate validation exceptions, not a wrong-signature TypeError transition.",
+      "supporting_locators": [
+        "chars:653:813"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:886499a7f09a03b7574da0a604b79dd83457ff6bbd5625d7bb934176175698be",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Required int declarations and a mypy caveat; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:526"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:481e2f537c4f907d0b6d4f5c2c693d96e3d4569ed296d5b84a3067683769be4e",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Sequence export filtering by index or __all__; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1958"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:de3bf67621ae0433616b3b88bbad1052768664fea091db62c16a5f92c19fd83b",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Old callback guidance permits raising TypeError; context for the source side, without explicit wrapping or the transition.",
+      "supporting_locators": [
+        "chars:1794:1941"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:e7d14e6e4abdf8b91c69ecbfe2d73153531359feb2017b8dc967a8fc5f3d01ab",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. ORM attribute loading with model_validate and a SQLAlchemy object; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1855"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:6602b94e99222b815990638bbc8d9db96a5fc0bea5e270819c6c8b6ae326221b",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Model configuration and string-length errors; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:685"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:ff1f3e3ee236ff1387cd370b65854454999d9ee70de571433c98a6e65aed1f1d",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Recursive dictionary export, omission options and JSON round-trip examples; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:2320"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:7b7cf7427e97588af230e2fbe78f40e686c952b53e3f2b1b05757058020df09c",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Unexpected-field ignoring/rejection; its assert is a demonstration, not a field validator; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:724"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:5ed599d618c2a175889d935bc3f49c783f312ea2c927b24eadc9e72166b05bb6",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Target callback examples and allowed validation exceptions explain context, but omission of TypeError is not proof of propagation.",
+      "supporting_locators": [
+        "chars:2423:2737"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:d92505ddf3dab1bc30ce5846bb6ff07b452d74c73a7257de03624d2bddc53e00",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Raw-value iteration and RootModel representation; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:886"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:7f401a00baab9c24c6506ed641ec655534f5cbec1fe540ba9cfe9de8f66c2301",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Dictionary usage and non-dictionary input errors, not callback TypeError or async execution; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:958"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:f6f7fddb0625fd25e1f626799e80adcdaecdce0b25fcb829f01e735375425cae",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Nested dictionary export filtering; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1034"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:f7b5629735f7a4a5e01a76beab4f534816e11a77e6223d001a9f49ceed710c8e",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Annotated-type export and subclass-field omission; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1383"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Required int fields, mypy caveat and implicit-default history; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:862"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:d72bdda37f9d3c26b38333eb7b8715f7db7ec9e7d80897904b014a3dcc6b61b0",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Sequence export inclusion/exclusion; does not address the wrong-signature TypeError wrapping change. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:2485"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:39fa",
+      "evidence_id": "evidence:a9c73c27473d19d0472e7ebb2f5a313950f5cc6ce9c5b3100f9aff1a5ece31ff",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Direct target-side TypeError propagation supports the new outcome, not the historical half alone.",
+      "supporting_locators": [
+        "chars:336:432"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:883046956d69fc69fa76cd3a28d772a46f067d517f5d679bb3e3a6dfcc7b3383",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Inner Config to model_config placement and deprecation; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:333"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:da3e85d95eeb3b3bd713254506e0318c573ace5ae089e9651ea775a077f034bc",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Attribute-loading constructor migration and its configuration condition; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:226"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:b7182dc833aa33ab0c632c644e5bf752f05782964ec65a2ea7bc36fdd5780d97",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. BaseModel method/attribute renames, including the internal validators name; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:808"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Requiredness, None acceptance and defaults; its ValidationError example concerns null input; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:2183"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:60c76235152cb5d1ae54f8cd577c0779be723e81729971c54eae67cddf89c2c1",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. orm_mode configuration rename; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:88"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:b35a6a3ea3647392d775a0ffcc87965fb59371889f6636cc74403594c32f63e0",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Nested subclass export-field changes; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:644"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:4bd23223de4ab66136b4944b2145e5c28ddbbc025f58c337cac6bf182c323bc5",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Validator TypeError wrapping transition; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:902"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:ea1ecf63c526ef552a3561a457e351903d098554729c0b4c6b3e786eefe66be3",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Identifies the target field-validator replacement; background for the named hook, not an optimization rule.",
+      "supporting_locators": [
+        "chars:56:960"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:b6cb2402ea041bab4b014f341d2434c8ed8615cda00a26a1fa398719ffa13c80",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. String-length configuration and error-message templates, not exceptions raised by custom validators; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:440"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Recursive dictionary export and omission options; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1394"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:d7267def0efc3affe89aebfe80b279bd6910209fc2db679c5c98f16571254127",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Lists AssertionError as a validation failure, but says nothing about optimization disabling assert; v1 TypeError treatment must not be transferred to target.",
+      "supporting_locators": [
+        "chars:129:367"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:b84bfd24fd6881120fb7e04bfe9f7c5dc9b6eb258d64c94e4abc927cb51d4a27",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Treatment of unexpected initialization fields; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:410"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:6a88147979a8479686c02647b54f0d0bdd5bb6b1033480da56d019f52353c7ae",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Raw-value model iteration; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:622"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:066375dd8bb4dd93910cb6c4aaa4fba632ca2a055579368f5aae15ac072f27da",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Nested export include/exclude selection; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:945"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:dbe99fbadce62a074aa9f9cfd04fefb4f64e6b3c6ceb094a6dc7a5bb5eb6cced",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Nullable required declarations and missing-field errors; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:966"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:812c551c52b07ddf921401d978ad281a6d4604f27ddc2f0215961bed9e107fec",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Synchronous ORM attribute loading with a SQLAlchemy example; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1334"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:dabe9d5ec1597dbefad71ecda95e40df288cb31a0cca8ccb300ee1f10f245da3",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. ORM-mode enablement; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:104"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:80a4ff35755ad525346d42bc58e669c02c3c045fff9b6930b838e42b182895bb",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Dictionary-input parsing and a non-dictionary ValidationError, not a function-call TypeError; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:560"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:e621fdbd4927656e460324576059d928af9ebbfd21ed0a445ecf0fa47cb5aab3",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Assert-based old callback examples show the kind of check at issue, but have no -O rule and do not establish target validity of each_item syntax.",
+      "supporting_locators": [
+        "chars:653:813"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:886499a7f09a03b7574da0a604b79dd83457ff6bbd5625d7bb934176175698be",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Required int declarations and a mypy caveat; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:526"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:481e2f537c4f907d0b6d4f5c2c693d96e3d4569ed296d5b84a3067683769be4e",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Sequence export filtering by index or __all__; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1958"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:de3bf67621ae0433616b3b88bbad1052768664fea091db62c16a5f92c19fd83b",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "correct",
+      "correction": {
+        "topical_relevance": 1,
+        "version_applicability": "valid",
+        "evidence_roles": [
+          "background"
+        ],
+        "hard_negative": false
+      },
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Policy B (target-API policy), explicitly approved: the v1 passage documents the same Python -O / assert rule and is not incorrect, but this question explicitly asks about Pydantic 2.5.3 @field_validator. Direct support should come from target-version documentation; the older passage remains valid background. Source: frozen S1 docs/usage/validators.md L19-L21, corroborated by S2 docs/concepts/validators.md L380-L383. No invalidity is inferred from snapshot age.",
+      "supporting_locators": [
+        "chars:1943:2199"
+      ],
+      "issue_resolution": "Policy B (target-API policy), explicitly approved: the v1 passage documents the same Python -O / assert rule and is not incorrect, but this question explicitly asks about Pydantic 2.5.3 @field_validator. Direct support should come from target-version documentation; the older passage remains valid background. Source: frozen S1 docs/usage/validators.md L19-L21, corroborated by S2 docs/concepts/validators.md L380-L383. No invalidity is inferred from snapshot age.",
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:e7d14e6e4abdf8b91c69ecbfe2d73153531359feb2017b8dc967a8fc5f3d01ab",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. ORM attribute loading with model_validate and a SQLAlchemy object; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1855"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:6602b94e99222b815990638bbc8d9db96a5fc0bea5e270819c6c8b6ae326221b",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Model configuration and string-length errors; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:685"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:ff1f3e3ee236ff1387cd370b65854454999d9ee70de571433c98a6e65aed1f1d",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Recursive dictionary export, omission options and JSON round-trip examples; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:2320"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:7b7cf7427e97588af230e2fbe78f40e686c952b53e3f2b1b05757058020df09c",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Unexpected-field ignoring/rejection; its assert is a demonstration, not a field validator; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:724"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:5ed599d618c2a175889d935bc3f49c783f312ea2c927b24eadc9e72166b05bb6",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Explicit conditional -O warning directly answers target assert-check behavior; not a claim that all validators stop.",
+      "supporting_locators": [
+        "chars:2739:2995"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:d92505ddf3dab1bc30ce5846bb6ff07b452d74c73a7257de03624d2bddc53e00",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Raw-value iteration and RootModel representation; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:886"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:7f401a00baab9c24c6506ed641ec655534f5cbec1fe540ba9cfe9de8f66c2301",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Dictionary usage and non-dictionary input errors, not callback TypeError or async execution; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:958"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:f6f7fddb0625fd25e1f626799e80adcdaecdce0b25fcb829f01e735375425cae",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Nested dictionary export filtering; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1034"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:f7b5629735f7a4a5e01a76beab4f534816e11a77e6223d001a9f49ceed710c8e",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Annotated-type export and subclass-field omission; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1383"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Required int fields, mypy caveat and implicit-default history; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:862"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:d72bdda37f9d3c26b38333eb7b8715f7db7ec9e7d80897904b014a3dcc6b61b0",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Sequence export inclusion/exclusion; does not address assert checks under Python -O. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:2485"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:7bd4",
+      "evidence_id": "evidence:a9c73c27473d19d0472e7ebb2f5a313950f5cc6ce9c5b3100f9aff1a5ece31ff",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Target prose allows assert-generated AssertionError for validation failure, but does not describe -O disabling it.",
+      "supporting_locators": [
+        "chars:34:432"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:883046956d69fc69fa76cd3a28d772a46f067d517f5d679bb3e3a6dfcc7b3383",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Inner Config to model_config placement and deprecation; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:333"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:da3e85d95eeb3b3bd713254506e0318c573ace5ae089e9651ea775a077f034bc",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Attribute-loading constructor migration and its configuration condition; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:226"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:b7182dc833aa33ab0c632c644e5bf752f05782964ec65a2ea7bc36fdd5780d97",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. BaseModel method/attribute renames, including the internal validators name; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:808"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Requiredness, None acceptance and defaults; its ValidationError example concerns null input; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:2183"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:60c76235152cb5d1ae54f8cd577c0779be723e81729971c54eae67cddf89c2c1",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. orm_mode configuration rename; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:88"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:b35a6a3ea3647392d775a0ffcc87965fb59371889f6636cc74403594c32f63e0",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Nested subclass export-field changes; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:644"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:4bd23223de4ab66136b4944b2145e5c28ddbbc025f58c337cac6bf182c323bc5",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Validator TypeError wrapping transition; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:902"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:ea1ecf63c526ef552a3561a457e351903d098554729c0b4c6b3e786eefe66be3",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Target replacement decorator and signature changes provide hook context, not evidence for or against awaiting database work.",
+      "supporting_locators": [
+        "chars:56:960"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:b6cb2402ea041bab4b014f341d2434c8ed8615cda00a26a1fa398719ffa13c80",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. String-length configuration and error-message templates, not exceptions raised by custom validators; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:440"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Recursive dictionary export and omission options; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1394"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:d7267def0efc3affe89aebfe80b279bd6910209fc2db679c5c98f16571254127",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Exceptions collected into ValidationError; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:367"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:b84bfd24fd6881120fb7e04bfe9f7c5dc9b6eb258d64c94e4abc927cb51d4a27",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Treatment of unexpected initialization fields; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:410"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:6a88147979a8479686c02647b54f0d0bdd5bb6b1033480da56d019f52353c7ae",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Raw-value model iteration; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:622"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:066375dd8bb4dd93910cb6c4aaa4fba632ca2a055579368f5aae15ac072f27da",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Nested export include/exclude selection; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:945"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:dbe99fbadce62a074aa9f9cfd04fefb4f64e6b3c6ceb094a6dc7a5bb5eb6cced",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Nullable required declarations and missing-field errors; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:966"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:812c551c52b07ddf921401d978ad281a6d4604f27ddc2f0215961bed9e107fec",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Old SQLAlchemy loading example is related database context, but establishes neither a target async hook nor coroutine execution.",
+      "supporting_locators": [
+        "chars:45:149"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:dabe9d5ec1597dbefad71ecda95e40df288cb31a0cca8ccb300ee1f10f245da3",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. ORM-mode enablement; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:104"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:80a4ff35755ad525346d42bc58e669c02c3c045fff9b6930b838e42b182895bb",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Dictionary-input parsing and a non-dictionary ValidationError, not a function-call TypeError; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:560"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:e621fdbd4927656e460324576059d928af9ebbfd21ed0a445ecf0fa47cb5aab3",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Old per-item synchronous checks illustrate callback use; neither target applicability of those signatures nor coroutine handling is established.",
+      "supporting_locators": [
+        "chars:32:76"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:886499a7f09a03b7574da0a604b79dd83457ff6bbd5625d7bb934176175698be",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Required int declarations and a mypy caveat; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:526"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:481e2f537c4f907d0b6d4f5c2c693d96e3d4569ed296d5b84a3067683769be4e",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Sequence export filtering by index or __all__; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1958"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:de3bf67621ae0433616b3b88bbad1052768664fea091db62c16a5f92c19fd83b",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Old synchronous callbacks and signatures illustrate hooks, but do not establish target async capability; lack of async code is not invalidity.",
+      "supporting_locators": [
+        "chars:0:108"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:e7d14e6e4abdf8b91c69ecbfe2d73153531359feb2017b8dc967a8fc5f3d01ab",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Target SQLAlchemy example reads an existing object's attributes, not an awaited database query in a field validator; only the loading context is supported.",
+      "supporting_locators": [
+        "chars:74:315"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:6602b94e99222b815990638bbc8d9db96a5fc0bea5e270819c6c8b6ae326221b",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Model configuration and string-length errors; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:685"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:ff1f3e3ee236ff1387cd370b65854454999d9ee70de571433c98a6e65aed1f1d",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Recursive dictionary export, omission options and JSON round-trip examples; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:2320"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:7b7cf7427e97588af230e2fbe78f40e686c952b53e3f2b1b05757058020df09c",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Unexpected-field ignoring/rejection; its assert is a demonstration, not a field validator; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:724"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:5ed599d618c2a175889d935bc3f49c783f312ea2c927b24eadc9e72166b05bb6",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Target field-hook declaration and synchronous examples help locate the extension point; no coroutine awaiting or async declaration semantics.",
+      "supporting_locators": [
+        "chars:157:267"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:d92505ddf3dab1bc30ce5846bb6ff07b452d74c73a7257de03624d2bddc53e00",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Raw-value iteration and RootModel representation; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:886"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:7f401a00baab9c24c6506ed641ec655534f5cbec1fe540ba9cfe9de8f66c2301",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Dictionary usage and non-dictionary input errors, not callback TypeError or async execution; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:958"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:f6f7fddb0625fd25e1f626799e80adcdaecdce0b25fcb829f01e735375425cae",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Nested dictionary export filtering; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1034"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:f7b5629735f7a4a5e01a76beab4f534816e11a77e6223d001a9f49ceed710c8e",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Annotated-type export and subclass-field omission; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:1383"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Required int fields, mypy caveat and implicit-default history; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:862"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:d72bdda37f9d3c26b38333eb7b8715f7db7ec9e7d80897904b014a3dcc6b61b0",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Sequence export inclusion/exclusion; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:2485"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    },
+    {
+      "query_id": "q:b503",
+      "evidence_id": "evidence:a9c73c27473d19d0472e7ebb2f5a313950f5cc6ce9c5b3100f9aff1a5ece31ff",
+      "status": "reviewed",
+      "reviewer": "Human reviewer (explicit complete-batch approval supplied by the user; name not supplied)",
+      "action": "confirm",
+      "correction": {},
+      "rationale": "Explicit human approval of the complete 136-pair development-pilot batch proposal. Exceptions raised within validators; does not address awaiting a database lookup in a field validator. Query-relative applicability is not established.",
+      "supporting_locators": [
+        "chars:0:432"
+      ],
+      "issue_resolution": null,
+      "unresolved_issues": []
+    }
+  ],
   "unresolved_issues": []
 }
