@@ -256,8 +256,14 @@ def text(value: Any, label: str) -> None:
 
 
 def review(
-    pilot: Pilot, decisions: dict[str, Any]
+    pilot: Pilot, decisions: dict[str, Any], *, heldout: bool = False
 ) -> tuple[dict[str, Any], tuple[BenchmarkQuery, ...], tuple[GoldJudgment, ...]]:
+    # Reuse the explicit decision gate for the fixed 16-question held-out batch.
+    # No held-out scoring route is exposed here.
+    ids = tuple(q.query_id for q in pilot.public) if heldout else PILOT_IDS
+    require(not heldout or len(ids) == len(set(ids)) == 16, "expected 16 held-out IDs")
+    question_count = len(ids)
+    pair_count = question_count * len(pilot.evidence) if heldout else 136
     require(
         set(decisions)
         == {
@@ -270,7 +276,10 @@ def review(
         },
         "unexpected sidecar fields",
     )
-    require(decisions["format"] == FORMAT, "unsupported review format")
+    require(
+        decisions["format"] == ("heldout-review-v1" if heldout else FORMAT),
+        "unsupported review format",
+    )
     require(decisions["bindings"] == pilot.bindings, "stale review bindings")
     require(decisions["status"] in ("pending", "reviewed"), "invalid review status")
     require(isinstance(decisions["unresolved_issues"], list), "issues must be a list")
@@ -313,7 +322,7 @@ def review(
         common(row)
         qid = row["query_id"]
         require(
-            qid in PILOT_IDS and qid not in questions,
+            qid in ids and qid not in questions,
             "unknown or duplicate question decision",
         )
         require(
@@ -406,7 +415,7 @@ def review(
     for pair, issues in pilot.issues.items():
         if pair not in judgments:
             unresolved.extend(f"{pair[0]} / {pair[1]}: {s}" for s in issues)
-    complete = len(questions) == 4 and len(judgments) == 136
+    complete = len(questions) == question_count and len(judgments) == pair_count
     require(
         decisions["status"] != "reviewed" or complete,
         "reviewed sidecar has missing decisions",
@@ -426,17 +435,17 @@ def review(
             "bindings": pilot.bindings,
             "question_decisions": {
                 "reviewed": len(questions),
-                "pending": 4 - len(questions),
+                "pending": question_count - len(questions),
             },
             "pair_decisions": {
                 "reviewed": len(judgments),
-                "pending": 136 - len(judgments),
+                "pending": pair_count - len(judgments),
             },
             "unresolved_issues": unresolved,
             "sidecar_status": decisions["status"],
             "scoring_permitted": ready,
         },
-        tuple(questions[q] for q in PILOT_IDS if q in questions),
+        tuple(questions[q] for q in ids if q in questions),
         tuple(judgments[p] for p in sorted(judgments)),
     )
 
@@ -488,7 +497,7 @@ def saved_results(pilot: Pilot, body: bytes) -> tuple[RankedResult, ...]:
         for r in data["results"]
     )
     require(
-        len(results) == 8
+        len(results) == len(pilot.public)
         and {r.query_id for r in results} == {q.query_id for q in pilot.public},
         "missing or duplicate run queries",
     )
@@ -496,7 +505,7 @@ def saved_results(pilot: Pilot, body: bytes) -> tuple[RankedResult, ...]:
     require(all(set(r.evidence_ids) <= known for r in results), "unknown result IDs")
     diagnostics = data["diagnostics"]
     require(
-        len(diagnostics) == 8
+        len(diagnostics) == len(pilot.public)
         and {d["query_id"] for d in diagnostics} == {r.query_id for r in results},
         "invalid run diagnostics",
     )
@@ -633,11 +642,26 @@ def main() -> None:
         action="store_true",
         help="Score the frozen RRF run too; save a separate three-method result",
     )
+    parser.add_argument(
+        "--include-version-aware",
+        action="store_true",
+        help="Include hybrid and frozen positive applicability-aware runs",
+    )
+    parser.add_argument(
+        "--include-cross-encoder",
+        action="store_true",
+        help="Include frozen cross-encoder plus hybrid and positive-aware runs",
+    )
     args = parser.parse_args()
     require(not args.save or args.command == "score", "--save requires score")
     require(
-        not args.include_hybrid or args.command == "score",
-        "--include-hybrid requires score",
+        not (
+            args.include_hybrid
+            or args.include_version_aware
+            or args.include_cross_encoder
+        )
+        or args.command == "score",
+        "run inclusion flags require score",
     )
     pilot = load_pilot(args.root)
     decision_bytes = (args.root / DECISIONS).read_bytes()
@@ -649,7 +673,11 @@ def main() -> None:
         reviewed_benchmark(pilot, decisions)
         runs = tuple((args.root / p).read_bytes() for p in RUNS)
         result_name = "dev-pilot.bm25-vs-dense.json"
-        if args.include_hybrid:
+        if (
+            args.include_hybrid
+            or args.include_version_aware
+            or args.include_cross_encoder
+        ):
             hybrid = (
                 args.root / "data/pydantic/runs/rrf-hybrid.dev.unscored.json"
             ).read_bytes()
@@ -667,6 +695,47 @@ def main() -> None:
             )
             runs = (*runs, hybrid)
             result_name = "dev-pilot.bm25-vs-dense-vs-hybrid.json"
+            if args.include_version_aware or args.include_cross_encoder:
+                version_aware = (
+                    args.root / "data/pydantic/runs/version-aware-rrf.dev.unscored.json"
+                ).read_bytes()
+                require(
+                    decode_json(version_aware)["source_rrf"]
+                    == {
+                        "run_id": decode_json(hybrid)["run_id"],
+                        "content_hash": digest(hybrid),
+                    },
+                    "version-aware lineage does not match submitted RRF run",
+                )
+                runs = (*runs, version_aware)
+                result_name = "dev-pilot.bm25-vs-dense-vs-hybrid-vs-version-aware.json"
+            if args.include_cross_encoder:
+                cross_encoder = (
+                    args.root
+                    / "data/pydantic/runs/cross-encoder-reranked.dev.unscored.json"
+                ).read_bytes()
+                data = decode_json(cross_encoder)
+                require(
+                    data["source_rrf"]
+                    == {
+                        "run_id": decode_json(hybrid)["run_id"],
+                        "content_hash": digest(hybrid),
+                    },
+                    "cross-encoder lineage does not match submitted RRF run",
+                )
+                parents = {
+                    r["query_id"]: r["evidence_ids"][:20]
+                    for r in decode_json(hybrid)["results"]
+                }
+                require(data["run_depth"] == 20, "cross-encoder depth must be 20")
+                for row in saved_results(pilot, cross_encoder):
+                    require(
+                        len(row.evidence_ids) == 20
+                        and set(row.evidence_ids) == set(parents[row.query_id]),
+                        "cross-encoder must preserve RRF top-20 candidates",
+                    )
+                runs = (*runs, cross_encoder)
+                result_name = "dev-pilot.with-cross-encoder.json"
         body = result_bytes(pilot, decision_bytes, runs)
         if args.save:
             save_result(args.root / "data/pydantic/results" / result_name, body)

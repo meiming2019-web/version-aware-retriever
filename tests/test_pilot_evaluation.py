@@ -585,11 +585,16 @@ def test_explicitly_human_approved_real_batch_read_only(tmp_path: Path) -> None:
     assert before == {p: (p.read_bytes(), p.stat().st_mtime_ns) for p in paths}
 
 
-def test_three_method_cli_preserves_two_method_result(
+@pytest.mark.parametrize(
+    "four_methods,five_methods", [(False, False), (True, False), (True, True)]
+)
+def test_extended_cli_preserves_previous_result(
     fictional: tuple[Pilot, dict[str, Any], bytes],
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
     capsys: pytest.CaptureFixture[str],
+    four_methods: bool,
+    five_methods: bool,
 ) -> None:
     pilot, decisions, bm25 = fictional
     (tmp_path / DECISIONS).write_text(json.dumps(decisions))
@@ -609,6 +614,25 @@ def test_three_method_cli_preserves_two_method_result(
     ]
     hybrid_path = tmp_path / "data/pydantic/runs/rrf-hybrid.dev.unscored.json"
     hybrid_path.write_text(json.dumps(hybrid))
+    fourth = copy.deepcopy(hybrid)
+    fourth["run_id"] = "fictional:version-aware"
+    fourth["source_rrf"] = {
+        "run_id": hybrid["run_id"],
+        "content_hash": digest(hybrid_path.read_bytes()),
+    }
+    fourth_path = tmp_path / "data/pydantic/runs/version-aware-rrf.dev.unscored.json"
+    fourth_path.write_text(json.dumps(fourth))
+    fifth = copy.deepcopy(fourth)
+    fifth["run_id"] = "fictional:cross-encoder"
+    fifth["run_depth"] = 20
+    for result in fifth["results"]:
+        result["evidence_ids"] = result["evidence_ids"][:20]
+    for diagnostic in fifth["diagnostics"]:
+        diagnostic["scores"] = diagnostic["scores"][:20]
+    fifth_path = (
+        tmp_path / "data/pydantic/runs/cross-encoder-reranked.dev.unscored.json"
+    )
+    fifth_path.write_text(json.dumps(fifth))
     old_path = tmp_path / "data/pydantic/results/dev-pilot.bm25-vs-dense.json"
     old_path.parent.mkdir(parents=True, exist_ok=True)
     old_path.write_bytes(b"Existing two-method artifact must not be overwritten.")
@@ -620,13 +644,21 @@ def test_three_method_cli_preserves_two_method_result(
             "score",
             "--root",
             str(tmp_path),
-            "--include-hybrid",
+            "--include-cross-encoder"
+            if five_methods
+            else ("--include-version-aware" if four_methods else "--include-hybrid"),
             "--save",
         ],
     )
     main()
     stdout = capsys.readouterr().out
     new_path = old_path.with_name("dev-pilot.bm25-vs-dense-vs-hybrid.json")
+    if four_methods:
+        new_path = old_path.with_name(
+            "dev-pilot.bm25-vs-dense-vs-hybrid-vs-version-aware.json"
+        )
+    if five_methods:
+        new_path = old_path.with_name("dev-pilot.with-cross-encoder.json")
     assert stdout.encode() == new_path.read_bytes()
     mtime = new_path.stat().st_mtime_ns
     main()
@@ -635,15 +667,33 @@ def test_three_method_cli_preserves_two_method_result(
     assert old_path.read_bytes() == old_bytes
     report = json.loads(stdout)
     benchmark = reviewed_benchmark(pilot, decisions)
-    for body, row in zip(
-        (bm25, dense_bytes, hybrid_path.read_bytes()), report["runs"], strict=True
-    ):
+    bodies: tuple[bytes, ...] = (bm25, dense_bytes, hybrid_path.read_bytes())
+    if four_methods:
+        bodies = (*bodies, fourth_path.read_bytes())
+    if five_methods:
+        bodies = (*bodies, fifth_path.read_bytes())
+    for body, row in zip(bodies, report["runs"], strict=True):
         adapted = adapt_run(pilot, benchmark, body)
         assert row["evaluation"] == json.loads(
             json.dumps(asdict(evaluate(benchmark, adapted)))
         )
-    hybrid["source_runs"][0]["content_hash"] = "wrong parent revision"
-    hybrid_path.write_text(json.dumps(hybrid))
+    if five_methods:
+        valid = fifth_path.read_bytes()
+        fifth["results"][0]["evidence_ids"][0] = hybrid["results"][0]["evidence_ids"][
+            20
+        ]
+        fifth_path.write_text(json.dumps(fifth))
+        with pytest.raises(ValueError, match="top-20"):
+            main()
+        fifth = json.loads(valid)
+        fifth["source_rrf"]["content_hash"] = "wrong parent revision"
+        fifth_path.write_text(json.dumps(fifth))
+    elif four_methods:
+        fourth["source_rrf"]["content_hash"] = "wrong parent revision"
+        fourth_path.write_text(json.dumps(fourth))
+    else:
+        hybrid["source_runs"][0]["content_hash"] = "wrong parent revision"
+        hybrid_path.write_text(json.dumps(hybrid))
     with pytest.raises(ValueError, match="lineage"):
         main()
     assert new_path.read_bytes() == stdout.encode()
