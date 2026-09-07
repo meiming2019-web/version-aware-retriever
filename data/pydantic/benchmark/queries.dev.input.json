@@ -1,0 +1,110 @@
+[
+  {
+    "query_id": "q:a7c2",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "In Pydantic 1.10.13, if my @validator raises TypeError, does the caller receive TypeError or ValidationError?",
+    "query_kind": "lookup",
+    "source_version": null,
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "1.10.13"
+    }
+  },
+  {
+    "query_id": "q:e19b",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "In Pydantic 2.5.3, does a TypeError inside @field_validator get wrapped in ValidationError?",
+    "query_kind": "lookup",
+    "source_version": null,
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:7bd4",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "Will assert checks in my @field_validator still protect the model when I run Python with -O in Pydantic 2.5.3?",
+    "query_kind": "lookup",
+    "source_version": null,
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:39fa",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "After upgrading from Pydantic 1.10.13 to 2.5.3, calling a function with the wrong signature inside my field validator raises TypeError directly instead of wrapping it in ValidationError. What changed?",
+    "query_kind": "migration",
+    "source_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "1.10.13"
+    },
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:c801",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "Moving from Pydantic 1.10.13 to 2.5.3, how should I express a nonnegative check for every integer in a list using the new field-validation approach?",
+    "query_kind": "migration",
+    "source_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "1.10.13"
+    },
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:62de",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "After moving from Pydantic 1.10.13 to 2.5.3, can my old field-check functions still receive the field descriptor and model settings as named arguments?",
+    "query_kind": "migration",
+    "source_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "1.10.13"
+    },
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:b503",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "Can a Pydantic 2.5.3 field validator await a database lookup, and how should I declare it?",
+    "query_kind": "lookup",
+    "source_version": null,
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  },
+  {
+    "query_id": "q:04ad",
+    "ecosystem_id": "pypi:pydantic",
+    "query_text": "How much validation throughput should I expect from Pydantic 2.5.3 for a batch of customer records?",
+    "query_kind": "lookup",
+    "source_version": null,
+    "requested_version": {
+      "kind": "exact",
+      "scheme": "pep440",
+      "value": "2.5.3"
+    }
+  }
+]

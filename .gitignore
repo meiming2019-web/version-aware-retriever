@@ -1,4 +1,5 @@
 .venv/
+.dense-cache/
 venv/
 
 __pycache__/
