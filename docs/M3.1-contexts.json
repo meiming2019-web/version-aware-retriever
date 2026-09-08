@@ -1,0 +1,402 @@
+{
+  "status": "context_only_no_generation",
+  "examples": [
+    {
+      "query_id": "q:90b7",
+      "context": {
+        "query": "In Pydantic 1.10.13, will model.dict(exclude_none=True) omit a field explicitly set to None?",
+        "evidence": [
+          {
+            "evidence_id": "evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c",
+            "ecosystem": "pypi:pydantic",
+            "section": [
+              "docs/usage/exporting_models.md",
+              "`model.dict(...)`"
+            ],
+            "provenance": [
+              {
+                "document_snapshot": "1.10.13 @ 8822578619bf8d0bb754b1cf7a2a905b50240d01",
+                "document_type": "conceptual_guide",
+                "source": "docs/usage/exporting_models.md",
+                "title": "docs/usage/exporting_models.md",
+                "source_locator": "L4-L22",
+                "content_start": 0,
+                "content_end": 1037
+              },
+              {
+                "document_snapshot": "1.10.13 @ 8822578619bf8d0bb754b1cf7a2a905b50240d01",
+                "document_type": "documentation_example",
+                "source": "docs/examples/exporting_models_dict.py",
+                "title": "docs/examples/exporting_models_dict.py",
+                "source_locator": "L1-L19",
+                "content_start": 1037,
+                "content_end": 1394
+              }
+            ],
+            "content": "## `model.dict(...)`\n\nThis is the primary way of converting a model to a dictionary. Sub-models will be recursively converted to dictionaries.\n\nArguments:\n\n* `include`: fields to include in the returned dictionary; see [below](#advanced-include-and-exclude)\n* `exclude`: fields to exclude from the returned dictionary; see [below](#advanced-include-and-exclude)\n* `by_alias`: whether field aliases should be used as keys in the returned dictionary; default `False`\n* `exclude_unset`: whether fields which were not explicitly set when creating the model should\n  be excluded from the returned dictionary; default `False`.\n  Prior to **v1.0**, `exclude_unset` was known as `skip_defaults`; use of `skip_defaults` is now deprecated\n* `exclude_defaults`: whether fields which are equal to their default values (whether set or otherwise) should\n  be excluded from the returned dictionary; default `False`\n* `exclude_none`: whether fields which are equal to `None` should be excluded from the returned dictionary; default\n  `False`\n\nExample:\n\n```python\nfrom pydantic import BaseModel\n\n\nclass BarModel(BaseModel):\n    whatever: int\n\n\nclass FooBarModel(BaseModel):\n    banana: float\n    foo: str\n    bar: BarModel\n\n\nm = FooBarModel(banana=3.14, foo='hello', bar={'whatever': 123})\n\n# returns a dictionary:\nprint(m.dict())\nprint(m.dict(include={'foo', 'bar'}))\nprint(m.dict(exclude={'foo', 'bar'}))\n```\n"
+          },
+          {
+            "evidence_id": "evidence:dbe99fbadce62a074aa9f9cfd04fefb4f64e6b3c6ceb094a6dc7a5bb5eb6cced",
+            "ecosystem": "pypi:pydantic",
+            "section": [
+              "docs/usage/models.md",
+              "Required fields",
+              "Required Optional fields"
+            ],
+            "provenance": [
+              {
+                "document_snapshot": "1.10.13 @ 8822578619bf8d0bb754b1cf7a2a905b50240d01",
+                "document_type": "conceptual_guide",
+                "source": "docs/usage/models.md",
+                "title": "docs/usage/models.md",
+                "source_locator": "L443-L453",
+                "content_start": 0,
+                "content_end": 496
+              },
+              {
+                "document_snapshot": "1.10.13 @ 8822578619bf8d0bb754b1cf7a2a905b50240d01",
+                "document_type": "documentation_example",
+                "source": "docs/examples/models_required_field_optional.py",
+                "title": "docs/examples/models_required_field_optional.py",
+                "source_locator": "L1-L15",
+                "content_start": 496,
+                "content_end": 793
+              },
+              {
+                "document_snapshot": "1.10.13 @ 8822578619bf8d0bb754b1cf7a2a905b50240d01",
+                "document_type": "conceptual_guide",
+                "source": "docs/usage/models.md",
+                "title": "docs/usage/models.md",
+                "source_locator": "L455-L457",
+                "content_start": 793,
+                "content_end": 966
+              }
+            ],
+            "content": "### Required Optional fields\n\n!!! warning\n    Since version **v1.2** annotation only nullable (`Optional[...]`, `Union[None, ...]` and `Any`) fields and nullable\n    fields with an ellipsis (`...`) as the default value, no longer mean the same thing.\n\n    In some situations this may cause **v1.2** to not be entirely backwards compatible with earlier **v1.*** releases.\n\nIf you want to specify a field that can take a `None` value while still being required,\nyou can use `Optional` with `...`:\n\n```python\nfrom typing import Optional\nfrom pydantic import BaseModel, Field, ValidationError\n\n\nclass Model(BaseModel):\n    a: Optional[int]\n    b: Optional[int] = ...\n    c: Optional[int] = Field(...)\n\n\nprint(Model(b=1, c=2))\ntry:\n    Model(a=1, b=2)\nexcept ValidationError as e:\n    print(e)\n```\n\nIn this model, `a`, `b`, and `c` can take `None` as a value. But `a` is optional, while `b` and `c` are required.\n`b` and `c` require a value, even if the value is `None`.\n"
+          },
+          {
+            "evidence_id": "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+            "ecosystem": "pypi:pydantic",
+            "section": [
+              "docs/concepts/models.md",
+              "Required fields"
+            ],
+            "provenance": [
+              {
+                "document_snapshot": "2.5.3 @ 9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+                "document_type": "conceptual_guide",
+                "source": "docs/concepts/models.md",
+                "title": "docs/concepts/models.md",
+                "source_locator": "L1317-L1340",
+                "content_start": 0,
+                "content_end": 862
+              }
+            ],
+            "content": "## Required fields\n\nTo declare a field as required, you may declare it using just an annotation, or you may use `Ellipsis`/`...`\nas the value:\n\n```py\nfrom pydantic import BaseModel, Field\n\n\nclass Model(BaseModel):\n    a: int\n    b: int = ...\n    c: int = Field(...)\n```\n\nWhere `Field` refers to the [field function](json_schema.md#field-customization).\n\nHere `a`, `b` and `c` are all required. However, this use of `b: int = ...` does not work properly\nwith [mypy](../integrations/mypy.md), and as of **v1.0** should be avoided in most cases.\n\n!!! note\n    In Pydantic V1, fields annotated with `Optional` or `Any` would be given an implicit default of `None` even if no\n    default was explicitly specified. This behavior has changed in Pydantic V2, and there are no longer any type\n    annotations that will result in a field having an implicit default value.\n"
+          },
+          {
+            "evidence_id": "evidence:ff1f3e3ee236ff1387cd370b65854454999d9ee70de571433c98a6e65aed1f1d",
+            "ecosystem": "pypi:pydantic",
+            "section": [
+              "docs/concepts/serialization.md",
+              "`model.model_dump(...)`"
+            ],
+            "provenance": [
+              {
+                "document_snapshot": "2.5.3 @ 9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+                "document_type": "conceptual_guide",
+                "source": "docs/concepts/serialization.md",
+                "title": "docs/concepts/serialization.md",
+                "source_locator": "L17-L97",
+                "content_start": 0,
+                "content_end": 2320
+              }
+            ],
+            "content": "## `model.model_dump(...)`\n\n??? api \"API Documentation\"\n    [`pydantic.main.BaseModel.model_dump`][pydantic.main.BaseModel.model_dump]<br>\n\nThis is the primary way of converting a model to a dictionary. Sub-models will be recursively converted to dictionaries.\n\n!!! note\n    The one exception to sub-models being converted to dictionaries is that [`RootModel`](models.md#rootmodel-and-custom-root-types)\n    and its subclasses will have the `root` field value dumped directly, without a wrapping dictionary. This is also\n    done recursively.\n\n\n!!! note\n    You can use [computed fields](../api/fields.md#pydantic.fields.computed_field) to include `property` and\n    `cached_property` data in the `model.model_dump(...)` output.\n\nExample:\n\n```py\nfrom typing import Any, List, Optional\n\nfrom pydantic import BaseModel, Field, Json\n\n\nclass BarModel(BaseModel):\n    whatever: int\n\n\nclass FooBarModel(BaseModel):\n    banana: Optional[float] = 1.1\n    foo: str = Field(serialization_alias='foo_alias')\n    bar: BarModel\n\n\nm = FooBarModel(banana=3.14, foo='hello', bar={'whatever': 123})\n\n# returns a dictionary:\nprint(m.model_dump())\n#> {'banana': 3.14, 'foo': 'hello', 'bar': {'whatever': 123}}\nprint(m.model_dump(include={'foo', 'bar'}))\n#> {'foo': 'hello', 'bar': {'whatever': 123}}\nprint(m.model_dump(exclude={'foo', 'bar'}))\n#> {'banana': 3.14}\nprint(m.model_dump(by_alias=True))\n#> {'banana': 3.14, 'foo_alias': 'hello', 'bar': {'whatever': 123}}\nprint(\n    FooBarModel(foo='hello', bar={'whatever': 123}).model_dump(\n        exclude_unset=True\n    )\n)\n#> {'foo': 'hello', 'bar': {'whatever': 123}}\nprint(\n    FooBarModel(banana=1.1, foo='hello', bar={'whatever': 123}).model_dump(\n        exclude_defaults=True\n    )\n)\n#> {'foo': 'hello', 'bar': {'whatever': 123}}\nprint(\n    FooBarModel(foo='hello', bar={'whatever': 123}).model_dump(\n        exclude_defaults=True\n    )\n)\n#> {'foo': 'hello', 'bar': {'whatever': 123}}\nprint(\n    FooBarModel(banana=None, foo='hello', bar={'whatever': 123}).model_dump(\n        exclude_none=True\n    )\n)\n#> {'foo': 'hello', 'bar': {'whatever': 123}}\n\n\nclass Model(BaseModel):\n    x: List[Json[Any]]\n\n\nprint(Model(x=['{\"a\": 1}', '[1, 2]']).model_dump())\n#> {'x': [{'a': 1}, [1, 2]]}\nprint(Model(x=['{\"a\": 1}', '[1, 2]']).model_dump(round_trip=True))\n#> {'x': ['{\"a\":1}', '[1,2]']}\n```\n"
+          },
+          {
+            "evidence_id": "evidence:f6f7fddb0625fd25e1f626799e80adcdaecdce0b25fcb829f01e735375425cae",
+            "ecosystem": "pypi:pydantic",
+            "section": [
+              "docs/concepts/serialization.md",
+              "Advanced include and exclude"
+            ],
+            "provenance": [
+              {
+                "document_snapshot": "2.5.3 @ 9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+                "document_type": "conceptual_guide",
+                "source": "docs/concepts/serialization.md",
+                "title": "docs/concepts/serialization.md",
+                "source_locator": "L495-L535",
+                "content_start": 0,
+                "content_end": 1034
+              }
+            ],
+            "content": "## Advanced include and exclude\n\nThe `model_dump` and `model_dump_json` methods support `include` and `exclude` arguments which can either be\nsets or dictionaries. This allows nested selection of which fields to export:\n\n```py\nfrom pydantic import BaseModel, SecretStr\n\n\nclass User(BaseModel):\n    id: int\n    username: str\n    password: SecretStr\n\n\nclass Transaction(BaseModel):\n    id: str\n    user: User\n    value: int\n\n\nt = Transaction(\n    id='1234567890',\n    user=User(id=42, username='JohnDoe', password='hashedpassword'),\n    value=9876543210,\n)\n\n# using a set:\nprint(t.model_dump(exclude={'user', 'value'}))\n#> {'id': '1234567890'}\n\n# using a dict:\nprint(t.model_dump(exclude={'user': {'username', 'password'}, 'value': True}))\n#> {'id': '1234567890', 'user': {'id': 42}}\n\nprint(t.model_dump(include={'id': True, 'user': {'id'}}))\n#> {'id': '1234567890', 'user': {'id': 42}}\n```\n\nThe `True` indicates that we want to exclude or include an entire key, just as if we included it in a set.\nThis can be done at any depth level.\n"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q:81d6",
+      "context": {
+        "query": "Moving from Pydantic 1.10.13 to 2.5.3, why does my field that accepts any type no longer get a null default when I leave it out?",
+        "evidence": [
+          {
+            "evidence_id": "evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8",
+            "ecosystem": "pypi:pydantic",
+            "section": [
+              "docs/migration.md",
+              "Migration guide",
+              "Changes to Handling of Standard Types",
+              "Required, optional, and nullable fields"
+            ],
+            "provenance": [
+              {
+                "document_snapshot": "2.5.3 @ 9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+                "document_type": "migration_guide",
+                "source": "docs/migration.md",
+                "title": "docs/migration.md",
+                "source_locator": "L526-L575",
+                "content_start": 0,
+                "content_end": 2183
+              }
+            ],
+            "content": "#### Required, optional, and nullable fields\n\nPydantic V2 changes some of the logic for specifying whether a field annotated as `Optional` is required\n(i.e., has no default value) or not (i.e., has a default value of `None` or any other value of the corresponding type), and now more closely matches the\nbehavior of `dataclasses`. Similarly, fields annotated as `Any` no longer have a default value of `None`.\n\nThe following table describes the behavior of field annotations in V2:\n\n| State                                                 | Field Definition            |\n|-------------------------------------------------------|-----------------------------|\n| Required, cannot be `None`                            | `f1: str`                   |\n| Not required, cannot be `None`, is `'abc'` by default | `f2: str = 'abc'`           |\n| Required, can be `None`                               | `f3: Optional[str]`         |\n| Not required, can be `None`, is `None` by default     | `f4: Optional[str] = None`  |\n| Not required, can be `None`, is `'abc'` by default    | `f5: Optional[str] = 'abc'` |\n| Required, can be any type (including `None`)          | `f6: Any`                   |\n| Not required, can be any type (including `None`)      | `f7: Any = None`            |\n\n\n!!! note\n    A field annotated as `typing.Optional[T]` will be required, and will allow for a value of `None`.\n    It does not mean that the field has a default value of `None`. _(This is a breaking change from V1.)_\n\n!!! note\n    Any default value if provided makes a field not required.\n\nHere is a code example demonstrating the above:\n```py\nfrom typing import Optional\n\nfrom pydantic import BaseModel, ValidationError\n\n\nclass Foo(BaseModel):\n    f1: str  # required, cannot be None\n    f2: Optional[str]  # required, can be None - same as str | None\n    f3: Optional[str] = None  # not required, can be None\n    f4: str = 'Foobar'  # not required, but cannot be None\n\n\ntry:\n    Foo(f1=None, f2=None, f4='b')\nexcept ValidationError as e:\n    print(e)\n    \"\"\"\n    1 validation error for Foo\n    f1\n      Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    \"\"\"\n```\n"
+          },
+          {
+            "evidence_id": "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+            "ecosystem": "pypi:pydantic",
+            "section": [
+              "docs/concepts/models.md",
+              "Required fields"
+            ],
+            "provenance": [
+              {
+                "document_snapshot": "2.5.3 @ 9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+                "document_type": "conceptual_guide",
+                "source": "docs/concepts/models.md",
+                "title": "docs/concepts/models.md",
+                "source_locator": "L1317-L1340",
+                "content_start": 0,
+                "content_end": 862
+              }
+            ],
+            "content": "## Required fields\n\nTo declare a field as required, you may declare it using just an annotation, or you may use `Ellipsis`/`...`\nas the value:\n\n```py\nfrom pydantic import BaseModel, Field\n\n\nclass Model(BaseModel):\n    a: int\n    b: int = ...\n    c: int = Field(...)\n```\n\nWhere `Field` refers to the [field function](json_schema.md#field-customization).\n\nHere `a`, `b` and `c` are all required. However, this use of `b: int = ...` does not work properly\nwith [mypy](../integrations/mypy.md), and as of **v1.0** should be avoided in most cases.\n\n!!! note\n    In Pydantic V1, fields annotated with `Optional` or `Any` would be given an implicit default of `None` even if no\n    default was explicitly specified. This behavior has changed in Pydantic V2, and there are no longer any type\n    annotations that will result in a field having an implicit default value.\n"
+          },
+          {
+            "evidence_id": "evidence:dbe99fbadce62a074aa9f9cfd04fefb4f64e6b3c6ceb094a6dc7a5bb5eb6cced",
+            "ecosystem": "pypi:pydantic",
+            "section": [
+              "docs/usage/models.md",
+              "Required fields",
+              "Required Optional fields"
+            ],
+            "provenance": [
+              {
+                "document_snapshot": "1.10.13 @ 8822578619bf8d0bb754b1cf7a2a905b50240d01",
+                "document_type": "conceptual_guide",
+                "source": "docs/usage/models.md",
+                "title": "docs/usage/models.md",
+                "source_locator": "L443-L453",
+                "content_start": 0,
+                "content_end": 496
+              },
+              {
+                "document_snapshot": "1.10.13 @ 8822578619bf8d0bb754b1cf7a2a905b50240d01",
+                "document_type": "documentation_example",
+                "source": "docs/examples/models_required_field_optional.py",
+                "title": "docs/examples/models_required_field_optional.py",
+                "source_locator": "L1-L15",
+                "content_start": 496,
+                "content_end": 793
+              },
+              {
+                "document_snapshot": "1.10.13 @ 8822578619bf8d0bb754b1cf7a2a905b50240d01",
+                "document_type": "conceptual_guide",
+                "source": "docs/usage/models.md",
+                "title": "docs/usage/models.md",
+                "source_locator": "L455-L457",
+                "content_start": 793,
+                "content_end": 966
+              }
+            ],
+            "content": "### Required Optional fields\n\n!!! warning\n    Since version **v1.2** annotation only nullable (`Optional[...]`, `Union[None, ...]` and `Any`) fields and nullable\n    fields with an ellipsis (`...`) as the default value, no longer mean the same thing.\n\n    In some situations this may cause **v1.2** to not be entirely backwards compatible with earlier **v1.*** releases.\n\nIf you want to specify a field that can take a `None` value while still being required,\nyou can use `Optional` with `...`:\n\n```python\nfrom typing import Optional\nfrom pydantic import BaseModel, Field, ValidationError\n\n\nclass Model(BaseModel):\n    a: Optional[int]\n    b: Optional[int] = ...\n    c: Optional[int] = Field(...)\n\n\nprint(Model(b=1, c=2))\ntry:\n    Model(a=1, b=2)\nexcept ValidationError as e:\n    print(e)\n```\n\nIn this model, `a`, `b`, and `c` can take `None` as a value. But `a` is optional, while `b` and `c` are required.\n`b` and `c` require a value, even if the value is `None`.\n"
+          },
+          {
+            "evidence_id": "evidence:4bd23223de4ab66136b4944b2145e5c28ddbbc025f58c337cac6bf182c323bc5",
+            "ecosystem": "pypi:pydantic",
+            "section": [
+              "docs/migration.md",
+              "Migration guide",
+              "Changes to validators",
+              "`TypeError` is no longer converted to `ValidationError` in validators"
+            ],
+            "provenance": [
+              {
+                "document_snapshot": "2.5.3 @ 9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+                "document_type": "migration_guide",
+                "source": "docs/migration.md",
+                "title": "docs/migration.md",
+                "source_locator": "L315-L343",
+                "content_start": 0,
+                "content_end": 902
+              }
+            ],
+            "content": "#### `TypeError` is no longer converted to `ValidationError` in validators\n\nPreviously, when raising a `TypeError` within a validator function, that error would be wrapped into a `ValidationError`\nand, in some cases (such as with FastAPI), these errors might be displayed to end users. This led to a variety of\nundesirable behavior &mdash; for example, calling a function with the wrong signature might produce a user-facing\n`ValidationError`.\n\nHowever, in Pydantic V2, when a `TypeError` is raised in a validator, it is no longer converted into a\n`ValidationError`:\n\n```python\nimport pytest\n\nfrom pydantic import BaseModel, field_validator  # or validator\n\n\nclass Model(BaseModel):\n    x: int\n\n    @field_validator('x')\n    def val_x(cls, v: int) -> int:\n        return str.lower(v)  # raises a TypeError\n\n\nwith pytest.raises(TypeError):\n    Model(x=1)\n```\n\nThis applies to all validation decorators.\n"
+          },
+          {
+            "evidence_id": "evidence:f7b5629735f7a4a5e01a76beab4f534816e11a77e6223d001a9f49ceed710c8e",
+            "ecosystem": "pypi:pydantic",
+            "section": [
+              "docs/concepts/serialization.md",
+              "Serializing subclasses",
+              "Subclass instances for fields of `BaseModel`, dataclasses, `TypedDict`"
+            ],
+            "provenance": [
+              {
+                "document_snapshot": "2.5.3 @ 9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+                "document_type": "conceptual_guide",
+                "source": "docs/concepts/serialization.md",
+                "title": "docs/concepts/serialization.md",
+                "source_locator": "L393-L429",
+                "content_start": 0,
+                "content_end": 1383
+              }
+            ],
+            "content": "### Subclass instances for fields of `BaseModel`, dataclasses, `TypedDict`\n\nWhen using fields whose annotations are themselves struct-like types (e.g., `BaseModel` subclasses, dataclasses, etc.),\nthe default behavior is to serialize the attribute value as though it was an instance of the annotated type,\neven if it is a subclass. More specifically, only the fields from the _annotated_ type will be included in the\ndumped object:\n\n```py\nfrom pydantic import BaseModel\n\n\nclass User(BaseModel):\n    name: str\n\n\nclass UserLogin(User):\n    password: str\n\n\nclass OuterModel(BaseModel):\n    user: User\n\n\nuser = UserLogin(name='pydantic', password='hunter2')\n\nm = OuterModel(user=user)\nprint(m)\n#> user=UserLogin(name='pydantic', password='hunter2')\nprint(m.model_dump())  # note: the password field is not included\n#> {'user': {'name': 'pydantic'}}\n```\n!!! warning \"Migration Warning\"\n    This behavior is different from how things worked in Pydantic V1, where we would always include\n    all (subclass) fields when recursively dumping models to dicts. The motivation behind this change in\n    behavior is that it helps ensure that you know precisely which fields could be included when serializing,\n    even if subclasses get passed when instantiating the object. In particular, this can help prevent surprises\n    when adding sensitive information like secrets as fields of subclasses.\n"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "q:09f1",
+      "context": {
+        "query": "Which JSON Schema draft does Pydantic 2.5.3 generate by default?",
+        "evidence": [
+          {
+            "evidence_id": "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+            "ecosystem": "pypi:pydantic",
+            "section": [
+              "docs/concepts/models.md",
+              "Required fields"
+            ],
+            "provenance": [
+              {
+                "document_snapshot": "2.5.3 @ 9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+                "document_type": "conceptual_guide",
+                "source": "docs/concepts/models.md",
+                "title": "docs/concepts/models.md",
+                "source_locator": "L1317-L1340",
+                "content_start": 0,
+                "content_end": 862
+              }
+            ],
+            "content": "## Required fields\n\nTo declare a field as required, you may declare it using just an annotation, or you may use `Ellipsis`/`...`\nas the value:\n\n```py\nfrom pydantic import BaseModel, Field\n\n\nclass Model(BaseModel):\n    a: int\n    b: int = ...\n    c: int = Field(...)\n```\n\nWhere `Field` refers to the [field function](json_schema.md#field-customization).\n\nHere `a`, `b` and `c` are all required. However, this use of `b: int = ...` does not work properly\nwith [mypy](../integrations/mypy.md), and as of **v1.0** should be avoided in most cases.\n\n!!! note\n    In Pydantic V1, fields annotated with `Optional` or `Any` would be given an implicit default of `None` even if no\n    default was explicitly specified. This behavior has changed in Pydantic V2, and there are no longer any type\n    annotations that will result in a field having an implicit default value.\n"
+          },
+          {
+            "evidence_id": "evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8",
+            "ecosystem": "pypi:pydantic",
+            "section": [
+              "docs/migration.md",
+              "Migration guide",
+              "Changes to Handling of Standard Types",
+              "Required, optional, and nullable fields"
+            ],
+            "provenance": [
+              {
+                "document_snapshot": "2.5.3 @ 9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+                "document_type": "migration_guide",
+                "source": "docs/migration.md",
+                "title": "docs/migration.md",
+                "source_locator": "L526-L575",
+                "content_start": 0,
+                "content_end": 2183
+              }
+            ],
+            "content": "#### Required, optional, and nullable fields\n\nPydantic V2 changes some of the logic for specifying whether a field annotated as `Optional` is required\n(i.e., has no default value) or not (i.e., has a default value of `None` or any other value of the corresponding type), and now more closely matches the\nbehavior of `dataclasses`. Similarly, fields annotated as `Any` no longer have a default value of `None`.\n\nThe following table describes the behavior of field annotations in V2:\n\n| State                                                 | Field Definition            |\n|-------------------------------------------------------|-----------------------------|\n| Required, cannot be `None`                            | `f1: str`                   |\n| Not required, cannot be `None`, is `'abc'` by default | `f2: str = 'abc'`           |\n| Required, can be `None`                               | `f3: Optional[str]`         |\n| Not required, can be `None`, is `None` by default     | `f4: Optional[str] = None`  |\n| Not required, can be `None`, is `'abc'` by default    | `f5: Optional[str] = 'abc'` |\n| Required, can be any type (including `None`)          | `f6: Any`                   |\n| Not required, can be any type (including `None`)      | `f7: Any = None`            |\n\n\n!!! note\n    A field annotated as `typing.Optional[T]` will be required, and will allow for a value of `None`.\n    It does not mean that the field has a default value of `None`. _(This is a breaking change from V1.)_\n\n!!! note\n    Any default value if provided makes a field not required.\n\nHere is a code example demonstrating the above:\n```py\nfrom typing import Optional\n\nfrom pydantic import BaseModel, ValidationError\n\n\nclass Foo(BaseModel):\n    f1: str  # required, cannot be None\n    f2: Optional[str]  # required, can be None - same as str | None\n    f3: Optional[str] = None  # not required, can be None\n    f4: str = 'Foobar'  # not required, but cannot be None\n\n\ntry:\n    Foo(f1=None, f2=None, f4='b')\nexcept ValidationError as e:\n    print(e)\n    \"\"\"\n    1 validation error for Foo\n    f1\n      Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    \"\"\"\n```\n"
+          },
+          {
+            "evidence_id": "evidence:ff1f3e3ee236ff1387cd370b65854454999d9ee70de571433c98a6e65aed1f1d",
+            "ecosystem": "pypi:pydantic",
+            "section": [
+              "docs/concepts/serialization.md",
+              "`model.model_dump(...)`"
+            ],
+            "provenance": [
+              {
+                "document_snapshot": "2.5.3 @ 9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+                "document_type": "conceptual_guide",
+                "source": "docs/concepts/serialization.md",
+                "title": "docs/concepts/serialization.md",
+                "source_locator": "L17-L97",
+                "content_start": 0,
+                "content_end": 2320
+              }
+            ],
+            "content": "## `model.model_dump(...)`\n\n??? api \"API Documentation\"\n    [`pydantic.main.BaseModel.model_dump`][pydantic.main.BaseModel.model_dump]<br>\n\nThis is the primary way of converting a model to a dictionary. Sub-models will be recursively converted to dictionaries.\n\n!!! note\n    The one exception to sub-models being converted to dictionaries is that [`RootModel`](models.md#rootmodel-and-custom-root-types)\n    and its subclasses will have the `root` field value dumped directly, without a wrapping dictionary. This is also\n    done recursively.\n\n\n!!! note\n    You can use [computed fields](../api/fields.md#pydantic.fields.computed_field) to include `property` and\n    `cached_property` data in the `model.model_dump(...)` output.\n\nExample:\n\n```py\nfrom typing import Any, List, Optional\n\nfrom pydantic import BaseModel, Field, Json\n\n\nclass BarModel(BaseModel):\n    whatever: int\n\n\nclass FooBarModel(BaseModel):\n    banana: Optional[float] = 1.1\n    foo: str = Field(serialization_alias='foo_alias')\n    bar: BarModel\n\n\nm = FooBarModel(banana=3.14, foo='hello', bar={'whatever': 123})\n\n# returns a dictionary:\nprint(m.model_dump())\n#> {'banana': 3.14, 'foo': 'hello', 'bar': {'whatever': 123}}\nprint(m.model_dump(include={'foo', 'bar'}))\n#> {'foo': 'hello', 'bar': {'whatever': 123}}\nprint(m.model_dump(exclude={'foo', 'bar'}))\n#> {'banana': 3.14}\nprint(m.model_dump(by_alias=True))\n#> {'banana': 3.14, 'foo_alias': 'hello', 'bar': {'whatever': 123}}\nprint(\n    FooBarModel(foo='hello', bar={'whatever': 123}).model_dump(\n        exclude_unset=True\n    )\n)\n#> {'foo': 'hello', 'bar': {'whatever': 123}}\nprint(\n    FooBarModel(banana=1.1, foo='hello', bar={'whatever': 123}).model_dump(\n        exclude_defaults=True\n    )\n)\n#> {'foo': 'hello', 'bar': {'whatever': 123}}\nprint(\n    FooBarModel(foo='hello', bar={'whatever': 123}).model_dump(\n        exclude_defaults=True\n    )\n)\n#> {'foo': 'hello', 'bar': {'whatever': 123}}\nprint(\n    FooBarModel(banana=None, foo='hello', bar={'whatever': 123}).model_dump(\n        exclude_none=True\n    )\n)\n#> {'foo': 'hello', 'bar': {'whatever': 123}}\n\n\nclass Model(BaseModel):\n    x: List[Json[Any]]\n\n\nprint(Model(x=['{\"a\": 1}', '[1, 2]']).model_dump())\n#> {'x': [{'a': 1}, [1, 2]]}\nprint(Model(x=['{\"a\": 1}', '[1, 2]']).model_dump(round_trip=True))\n#> {'x': ['{\"a\":1}', '[1,2]']}\n```\n"
+          },
+          {
+            "evidence_id": "evidence:b7182dc833aa33ab0c632c644e5bf752f05782964ec65a2ea7bc36fdd5780d97",
+            "ecosystem": "pypi:pydantic",
+            "section": [
+              "docs/migration.md",
+              "Migration guide",
+              "Changes to `pydantic.BaseModel`"
+            ],
+            "provenance": [
+              {
+                "document_snapshot": "2.5.3 @ 9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+                "document_type": "migration_guide",
+                "source": "docs/migration.md",
+                "title": "docs/migration.md",
+                "source_locator": "L78-L95",
+                "content_start": 0,
+                "content_end": 808
+              }
+            ],
+            "content": "### Changes to `pydantic.BaseModel`\n\nVarious method names have been changed; all non-deprecated `BaseModel` methods now have names matching either the\nformat `model_.*` or `__.*pydantic.*__`. Where possible, we have retained the deprecated methods with their old names\nto help ease migration, but calling them will emit `DeprecationWarning`s.\n\n| Pydantic V1 | Pydantic V2  |\n| ----------- | ------------ |\n| `__fields__` | `model_fields` |\n| `__private_attributes__` | `__pydantic_private__` |\n| `__validators__` | `__pydantic_validator__` |\n| `construct()` | `model_construct()` |\n| `copy()` | `model_copy()` |\n| `dict()` | `model_dump()` |\n| `json_schema()` | `model_json_schema()` |\n| `json()` | `model_dump_json()` |\n| `parse_obj()` | `model_validate()` |\n| `update_forward_refs()` | `model_rebuild()` |\n"
+          },
+          {
+            "evidence_id": "evidence:066375dd8bb4dd93910cb6c4aaa4fba632ca2a055579368f5aae15ac072f27da",
+            "ecosystem": "pypi:pydantic",
+            "section": [
+              "docs/usage/exporting_models.md",
+              "Advanced include and exclude"
+            ],
+            "provenance": [
+              {
+                "document_snapshot": "1.10.13 @ 8822578619bf8d0bb754b1cf7a2a905b50240d01",
+                "document_type": "conceptual_guide",
+                "source": "docs/usage/exporting_models.md",
+                "title": "docs/usage/exporting_models.md",
+                "source_locator": "L133-L137",
+                "content_start": 0,
+                "content_end": 213
+              },
+              {
+                "document_snapshot": "1.10.13 @ 8822578619bf8d0bb754b1cf7a2a905b50240d01",
+                "document_type": "documentation_example",
+                "source": "docs/examples/exporting_models_exclude1.py",
+                "title": "docs/examples/exporting_models_exclude1.py",
+                "source_locator": "L1-L32",
+                "content_start": 213,
+                "content_end": 785
+              },
+              {
+                "document_snapshot": "1.10.13 @ 8822578619bf8d0bb754b1cf7a2a905b50240d01",
+                "document_type": "conceptual_guide",
+                "source": "docs/usage/exporting_models.md",
+                "title": "docs/usage/exporting_models.md",
+                "source_locator": "L139-L141",
+                "content_start": 785,
+                "content_end": 945
+              }
+            ],
+            "content": "## Advanced include and exclude\n\nThe `dict`, `json`, and `copy` methods support `include` and `exclude` arguments which can either be\nsets or dictionaries. This allows nested selection of which fields to export:\n\n```python\nfrom pydantic import BaseModel, SecretStr\n\n\nclass User(BaseModel):\n    id: int\n    username: str\n    password: SecretStr\n\n\nclass Transaction(BaseModel):\n    id: str\n    user: User\n    value: int\n\n\nt = Transaction(\n    id='1234567890',\n    user=User(\n        id=42,\n        username='JohnDoe',\n        password='hashedpassword'\n    ),\n    value=9876543210,\n)\n\n# using a set:\nprint(t.dict(exclude={'user', 'value'}))\n\n# using a dict:\nprint(t.dict(exclude={'user': {'username', 'password'}, 'value': True}))\n\nprint(t.dict(include={'id': True, 'user': {'id'}}))\n```\n\nThe `True` indicates that we want to exclude or include an entire key, just as if we included it in a set.\nOf course, the same can be done at any depth level.\n"
+          }
+        ]
+      }
+    }
+  ]
+}

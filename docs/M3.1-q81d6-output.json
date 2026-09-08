@@ -1,0 +1,22 @@
+{
+  "query_id": "q:81d6",
+  "model": "gpt-5.6-sol",
+  "query": "Moving from Pydantic 1.10.13 to 2.5.3, why does my field that accepts any type no longer get a null default when I leave it out?",
+  "evidence_ids": [
+    "evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8",
+    "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+    "evidence:dbe99fbadce62a074aa9f9cfd04fefb4f64e6b3c6ceb094a6dc7a5bb5eb6cced",
+    "evidence:4bd23223de4ab66136b4944b2145e5c28ddbbc025f58c337cac6bf182c323bc5",
+    "evidence:f7b5629735f7a4a5e01a76beab4f534816e11a77e6223d001a9f49ceed710c8e"
+  ],
+  "raw_output": "{\"status\":\"SUPPORTED\",\"answer\":\"This is an intentional breaking change in Pydantic V2. In Pydantic 1.10.13, a field annotated with `Any` and no explicit default received an implicit default of `None`. In Pydantic 2.5.3, annotations never create implicit defaults, so `field: Any` is required—although an explicitly supplied `None` is still valid. To preserve the old omitted-field behavior, declare the default explicitly:\\n\\n```python\\nfrom typing import Any\\nfrom pydantic import BaseModel\\n\\nclass Model(BaseModel):\\n    field: Any = None\\n```\\n\\nThis makes the field not required and defaults it to `None`. [evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373] [evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8]\",\"citations\":[\"evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373\",\"evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8\"],\"support_summary\":\"The Pydantic 2.5.3 migration and model documentation explicitly state that V1 gave `Any` fields an implicit `None` default, while V2 does not; the migration table identifies `Any` as required and `Any = None` as not required.\"}",
+  "output": {
+    "status": "SUPPORTED",
+    "answer": "This is an intentional breaking change in Pydantic V2. In Pydantic 1.10.13, a field annotated with `Any` and no explicit default received an implicit default of `None`. In Pydantic 2.5.3, annotations never create implicit defaults, so `field: Any` is required—although an explicitly supplied `None` is still valid. To preserve the old omitted-field behavior, declare the default explicitly:\n\n```python\nfrom typing import Any\nfrom pydantic import BaseModel\n\nclass Model(BaseModel):\n    field: Any = None\n```\n\nThis makes the field not required and defaults it to `None`. [evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373] [evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8]",
+    "citations": [
+      "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+      "evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8"
+    ],
+    "support_summary": "The Pydantic 2.5.3 migration and model documentation explicitly state that V1 gave `Any` fields an implicit `None` default, while V2 does not; the migration table identifies `Any` as required and `Any = None` as not required."
+  }
+}

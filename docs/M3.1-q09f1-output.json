@@ -1,0 +1,19 @@
+{
+  "query_id": "q:09f1",
+  "model": "gpt-5.6-sol",
+  "query": "Which JSON Schema draft does Pydantic 2.5.3 generate by default?",
+  "evidence_ids": [
+    "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+    "evidence:61acbc5d8912615c0a0e3598fe03c66a8fff0b5a61f7cfc6cf930276d3e51cc8",
+    "evidence:ff1f3e3ee236ff1387cd370b65854454999d9ee70de571433c98a6e65aed1f1d",
+    "evidence:b7182dc833aa33ab0c632c644e5bf752f05782964ec65a2ea7bc36fdd5780d97",
+    "evidence:066375dd8bb4dd93910cb6c4aaa4fba632ca2a055579368f5aae15ac072f27da"
+  ],
+  "raw_output": "{\"status\":\"INSUFFICIENT_EVIDENCE\",\"answer\":\"\",\"citations\":[],\"support_summary\":\"The supplied Pydantic 2.5.3 evidence mentions the JSON Schema generation method but does not identify which JSON Schema draft it generates by default.\"}",
+  "output": {
+    "status": "INSUFFICIENT_EVIDENCE",
+    "answer": "",
+    "citations": [],
+    "support_summary": "The supplied Pydantic 2.5.3 evidence mentions the JSON Schema generation method but does not identify which JSON Schema draft it generates by default."
+  }
+}
