@@ -5,10 +5,18 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "version-aware-retriever"
 version = "0.1.0"
-description = "Version-aware technical retrieval research and evaluation."
+description = "Evidence-grounded Pydantic migration answers with frozen hybrid retrieval."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
+
+[project.urls]
+Repository = "https://github.com/meiming2019-web/version-aware-retriever"
+Documentation = "https://github.com/meiming2019-web/version-aware-retriever#readme"
+Issues = "https://github.com/meiming2019-web/version-aware-retriever/issues"
+
+[project.scripts]
+version-aware-retriever = "version_aware_retriever.grounded_answer:main"
 
 [project.optional-dependencies]
 reranker = [
@@ -23,6 +31,7 @@ dense = [
     "huggingface-hub>=0.28,<1",
 ]
 dev = [
+    "build",
     "mypy",
     "pytest",
     "ruff",
@@ -30,6 +39,9 @@ dev = [
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+version_aware_retriever = ["runtime/*.json", "runtime/*-LICENSE", "runtime/NOTICE.md"]
 
 [tool.pytest.ini_options]
 addopts = "--strict-config --strict-markers"

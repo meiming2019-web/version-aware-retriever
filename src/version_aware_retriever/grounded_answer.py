@@ -8,6 +8,7 @@ import urllib.error
 import urllib.request
 from dataclasses import asdict, dataclass
 from enum import StrEnum
+from importlib.resources import files
 from pathlib import Path
 from typing import Any, Protocol
 
@@ -63,13 +64,20 @@ class RetrievedEvidence:
     content: str
 
 
-def load_corpus(root: Path) -> tuple[RetrievedEvidence, ...]:
-    """Only two pinned files are read; project an explicit metadata allowlist."""
+def load_corpus(root: Path | None = None) -> tuple[RetrievedEvidence, ...]:
+    """Read bundled pinned assets, or an explicitly selected source checkout."""
     inputs: dict[str, Any] = {}
     for name, expected in PINS.items():
-        path = root / name
-        require(not any(p.is_symlink() for p in (path, *path.parents)), "symlink")
-        body = path.read_bytes()
+        if root is None:
+            body = (
+                files("version_aware_retriever")
+                .joinpath("runtime", Path(name).name)
+                .read_bytes()
+            )
+        else:
+            path = root / name
+            require(not any(p.is_symlink() for p in (path, *path.parents)), "symlink")
+            body = path.read_bytes()
         require(digest(body) == expected, "frozen answering input hash mismatch")
         inputs[name] = decode(body)
     sources = {s["record"]["source_id"]: s for s in inputs[MANIFEST]["sources"]}
@@ -228,7 +236,7 @@ def synthesize(
 
 
 def answer(
-    query: str, root: Path, generator: Generator, encoder: Encoder | None = None
+    query: str, root: Path | None, generator: Generator, encoder: Encoder | None = None
 ) -> tuple[GroundedAnswer, tuple[RetrievedEvidence, ...]]:
     evidence = retrieve(query, load_corpus(root), encoder or SentenceEncoder())
     return synthesize(query, evidence, generator), evidence
@@ -412,7 +420,11 @@ class OpenAIGenerator:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--query", required=True)
-    parser.add_argument("--root", type=Path, default=Path("."))
+    parser.add_argument(
+        "--root",
+        type=Path,
+        help="Explicit source-checkout root; default: bundled immutable corpus",
+    )
     parser.add_argument("--context-only", action="store_true")
     parser.add_argument("--model", default=os.environ.get("OPENAI_MODEL", ""))
     args = parser.parse_args()

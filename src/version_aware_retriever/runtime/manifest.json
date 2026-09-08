@@ -1,0 +1,642 @@
+{
+  "format_version": 1,
+  "selection_hash": "sha256:57d033da5f5bd98cb0ae33d3135795378067100fc0bab28be1a5dfd60a8de2ea",
+  "sources": [
+    {
+      "record": {
+        "source_id": "source:46173620f65358541d4ef5041bb4b10973373ddf7c1c50301a82d8c07e1a0f98",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "conceptual_guide",
+        "title": "docs/usage/models.md",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/usage/models.md",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/usage/models.md",
+        "content_hash": "sha256:93a04c0e93631d0e7be8910014a3176b07502b4852e5ba606ffa693d7c2a6c21",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:20.211446+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/usage/models.md",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/usage/models.md"
+    },
+    {
+      "record": {
+        "source_id": "source:d4cedfb24a1d1ff67c772d182fde9f6ec76dd3900a466b3f17cdade3617f669c",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "conceptual_guide",
+        "title": "docs/usage/exporting_models.md",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/usage/exporting_models.md",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/usage/exporting_models.md",
+        "content_hash": "sha256:a03261c6f99e155cbc6f302c6558478a6b21535c1f70c3d467ceffbf9ea05139",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:20.802378+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/usage/exporting_models.md",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/usage/exporting_models.md"
+    },
+    {
+      "record": {
+        "source_id": "source:f0bc9c56bef004636f0b9ea6ab1f9ac8d45e25726093f01a3f5f449bd7995aad",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "conceptual_guide",
+        "title": "docs/usage/validators.md",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/usage/validators.md",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/usage/validators.md",
+        "content_hash": "sha256:d310eb09d07df7eb75382fca955e2fdc38af5d7f89ce329afe818177cab4088d",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:21.372882+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/usage/validators.md",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/usage/validators.md"
+    },
+    {
+      "record": {
+        "source_id": "source:e3ef0609f76c2aa3569eab65f599c520c7ed78b9f373bc3a63e22e0a9916a45e",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "conceptual_guide",
+        "title": "docs/usage/model_config.md",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/usage/model_config.md",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/usage/model_config.md",
+        "content_hash": "sha256:61536853429f1286b9d024e3f9fa3461cd88c78a217e58968e9d23fdaf3d191d",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:21.954596+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/usage/model_config.md",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/usage/model_config.md"
+    },
+    {
+      "record": {
+        "source_id": "source:42a7f99d419ff673c85f2bd317253ca1fd15ab38066f1bccc537b2b7b8b4bf72",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "documentation_example",
+        "title": "docs/examples/models_orm_mode.py",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/models_orm_mode.py",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/models_orm_mode.py",
+        "content_hash": "sha256:d6b7c74f36e6e508d895145e5af0062e5f0354764d40646f8d194596855e4a2b",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:22.553169+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/models_orm_mode.py",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/models_orm_mode.py"
+    },
+    {
+      "record": {
+        "source_id": "source:bface2a509d560bcca49984aa3863bad490c5673ee18dc28532a0b1919d10d34",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "documentation_example",
+        "title": "docs/examples/models_parse.py",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/models_parse.py",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/models_parse.py",
+        "content_hash": "sha256:4f1c98d462e5cc18b5e09ff97ac57ffc030018d47f650f01d91d56348667fa97",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:23.144450+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/models_parse.py",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/models_parse.py"
+    },
+    {
+      "record": {
+        "source_id": "source:23bb35430dac787c94d4aa8ebc0a1072429d7e4efd4f06b7df0a3cb0e0bbe058",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "documentation_example",
+        "title": "docs/examples/models_required_fields.py",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/models_required_fields.py",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/models_required_fields.py",
+        "content_hash": "sha256:d93b7dd933edc8092dd0aab1f4e55c15e47545b5d88d75c7dfebd91b642f982d",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:23.933535+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/models_required_fields.py",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/models_required_fields.py"
+    },
+    {
+      "record": {
+        "source_id": "source:7cc2e598ca6e3adf75a17e29ad5006c795c9909e1ed7361cae49020446168429",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "documentation_example",
+        "title": "docs/examples/models_required_field_optional.py",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/models_required_field_optional.py",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/models_required_field_optional.py",
+        "content_hash": "sha256:88691fc4f56f93aa118fb3b789685cc801af5b5d93bac3e3d68ed91209d8510d",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:24.526849+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/models_required_field_optional.py",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/models_required_field_optional.py"
+    },
+    {
+      "record": {
+        "source_id": "source:8b9b8d6e289d40f980a6f71f7e3fbcc39dae3523a2d56701f0eeb946dc89ab95",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "documentation_example",
+        "title": "docs/examples/exporting_models_dict.py",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/exporting_models_dict.py",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/exporting_models_dict.py",
+        "content_hash": "sha256:4683e7bc7218ffb7332a3970672f41cecc2da7829ee60f1f003646a824369511",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:25.202976+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/exporting_models_dict.py",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/exporting_models_dict.py"
+    },
+    {
+      "record": {
+        "source_id": "source:b9335424ac067acc0027f439fabc55dea8fe4a07602e9566a961a933b8c491b4",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "documentation_example",
+        "title": "docs/examples/exporting_models_iterate.py",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/exporting_models_iterate.py",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/exporting_models_iterate.py",
+        "content_hash": "sha256:0ebbcba20e3f9666fb4515fe78ae46ebee1079ddf555cdb2235ecba6e5a109ea",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:25.866352+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/exporting_models_iterate.py",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/exporting_models_iterate.py"
+    },
+    {
+      "record": {
+        "source_id": "source:d4f8355782fb6357698ace44703691836ab577709fe135d58240b7658d0eff5c",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "documentation_example",
+        "title": "docs/examples/exporting_models_exclude1.py",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/exporting_models_exclude1.py",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/exporting_models_exclude1.py",
+        "content_hash": "sha256:ef48913ab2389bfe361a4e54d2574ee250d8ed012cfd96ad9ccff461fef4dcf7",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:26.470750+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/exporting_models_exclude1.py",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/exporting_models_exclude1.py"
+    },
+    {
+      "record": {
+        "source_id": "source:d86c4e4fa1cddbf1b37bc4a16b701e16027257cd2f3fe625a1f0c47c2f6cce0f",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "documentation_example",
+        "title": "docs/examples/exporting_models_exclude2.py",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/exporting_models_exclude2.py",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/exporting_models_exclude2.py",
+        "content_hash": "sha256:7008346032ebc5d0d45c11575f025603f49d7f5bf6f6957115f5a72637bb1395",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:27.046391+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/exporting_models_exclude2.py",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/exporting_models_exclude2.py"
+    },
+    {
+      "record": {
+        "source_id": "source:1b5a90b71c4385b0f2245630f20cc2976310d2863abaa08f080472a678514894",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "documentation_example",
+        "title": "docs/examples/validators_simple.py",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/validators_simple.py",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/validators_simple.py",
+        "content_hash": "sha256:f04032a3791a01aff1ec8db580486a90e591dfcf96d7c3baeee8801be8b6b80b",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:27.626710+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/validators_simple.py",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/validators_simple.py"
+    },
+    {
+      "record": {
+        "source_id": "source:ce5afe23ec92adab45b63afbd17b3db48433e07aa48b00301375b143d8cc66dd",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "documentation_example",
+        "title": "docs/examples/validators_pre_item.py",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/validators_pre_item.py",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/validators_pre_item.py",
+        "content_hash": "sha256:627d4b911804d6f141679f528199c3e0c70cadfe88613a0b402117e47a797504",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:28.213474+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/validators_pre_item.py",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/validators_pre_item.py"
+    },
+    {
+      "record": {
+        "source_id": "source:cdcbaf4b67aef9a7e11e1030e58c4e024c6a0f2dc856df6321932cc29046ed47",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "documentation_example",
+        "title": "docs/examples/model_config_main.py",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/model_config_main.py",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/model_config_main.py",
+        "content_hash": "sha256:2d5f423feb2e2baf0e2c63df94ef2183b0b212984a167dd7ebbe67650132b9f2",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "1.10.13",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:28.807798+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/8822578619bf8d0bb754b1cf7a2a905b50240d01/docs/examples/model_config_main.py",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "1.10.13",
+      "discovery_tag": "v1.10.13",
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "path": "docs/examples/model_config_main.py"
+    },
+    {
+      "record": {
+        "source_id": "source:5e1f0d63d88386df85842d93d2a20a3c0047012c4a957cbdaa2e02780dabaa0d",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "conceptual_guide",
+        "title": "docs/concepts/models.md",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/docs/concepts/models.md",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/docs/concepts/models.md",
+        "content_hash": "sha256:ef0fb3734042b6b36d7da69fb3f4801af6eae4285b447854ff4a287993c8f42c",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:29.401537+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/docs/concepts/models.md",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "2.5.3",
+      "discovery_tag": "v2.5.3",
+      "commit": "9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+      "path": "docs/concepts/models.md"
+    },
+    {
+      "record": {
+        "source_id": "source:52b13daa1b59dd62db3a77845294d6c52cc2936b983ebf704d9e9a7b82787633",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "conceptual_guide",
+        "title": "docs/concepts/validators.md",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/docs/concepts/validators.md",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/docs/concepts/validators.md",
+        "content_hash": "sha256:0eb8d911ec997065bfe7bd82bfe94bf00ba2f687a92e00e5377b6d5b2e9d9d72",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:29.997228+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/docs/concepts/validators.md",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "2.5.3",
+      "discovery_tag": "v2.5.3",
+      "commit": "9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+      "path": "docs/concepts/validators.md"
+    },
+    {
+      "record": {
+        "source_id": "source:8ef3fd8a16591505025f689b7d6b3f99da3f6dd631138c9704c7b590155e5955",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "conceptual_guide",
+        "title": "docs/concepts/serialization.md",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/docs/concepts/serialization.md",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/docs/concepts/serialization.md",
+        "content_hash": "sha256:81c9d6d63677846feebdd0c5bc9770fa3a37078007468044b188dc988756da7e",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:30.574592+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/docs/concepts/serialization.md",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "2.5.3",
+      "discovery_tag": "v2.5.3",
+      "commit": "9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+      "path": "docs/concepts/serialization.md"
+    },
+    {
+      "record": {
+        "source_id": "source:3177ac9c7416d2cb5eff4207e35a6740c9f2feb34908de1e60817435b30bd10a",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "conceptual_guide",
+        "title": "docs/concepts/config.md",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/docs/concepts/config.md",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/docs/concepts/config.md",
+        "content_hash": "sha256:32f8bb5dbf52003c25fed28ed0d483f2d2d5d1fc7addfebd402c5c96677b8947",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:31.161768+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/docs/concepts/config.md",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "2.5.3",
+      "discovery_tag": "v2.5.3",
+      "commit": "9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+      "path": "docs/concepts/config.md"
+    },
+    {
+      "record": {
+        "source_id": "source:5eb2ab457d9ecebcca1a0d169e019477ee2bc06a4f3c9159e7acae5ed5a1dd3a",
+        "ecosystem_id": "pypi:pydantic",
+        "document_type": "migration_guide",
+        "title": "docs/migration.md",
+        "canonical_url": "https://github.com/pydantic/pydantic/blob/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/docs/migration.md",
+        "snapshot_locator": "https://raw.githubusercontent.com/pydantic/pydantic/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/docs/migration.md",
+        "content_hash": "sha256:b480fcf56406e3013152cf61cd8df68b57c6ba54f7d076f8c25fc55740477d2b",
+        "document_version": {
+          "kind": "exact",
+          "scheme": "pep440",
+          "value": "2.5.3",
+          "lower": null,
+          "upper": null,
+          "lower_inclusive": null,
+          "upper_inclusive": null,
+          "open_bound_basis": null
+        },
+        "captured_at": "2026-09-06T10:14:31.767763+00:00",
+        "publisher": "Pydantic project",
+        "license": "MIT; basis: licenses/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/LICENSE (same pinned repository)",
+        "transformation_record": "none: original HTTP response bytes retained; no extraction"
+      },
+      "retained_path": "sources/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/docs/migration.md",
+      "repository": "https://github.com/pydantic/pydantic",
+      "release": "2.5.3",
+      "discovery_tag": "v2.5.3",
+      "commit": "9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+      "path": "docs/migration.md"
+    }
+  ],
+  "licenses": [
+    {
+      "commit": "8822578619bf8d0bb754b1cf7a2a905b50240d01",
+      "url": "https://raw.githubusercontent.com/pydantic/pydantic/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE",
+      "retained_path": "licenses/8822578619bf8d0bb754b1cf7a2a905b50240d01/LICENSE",
+      "content_hash": "sha256:9e3946690ac88b6b73e8f001a0586af13568be8852fd514e4393f39761764387",
+      "captured_at": "2026-09-06T10:14:32.375283+00:00"
+    },
+    {
+      "commit": "9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4",
+      "url": "https://raw.githubusercontent.com/pydantic/pydantic/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/LICENSE",
+      "retained_path": "licenses/9f58e785a5f1f2c34437f6e9b6adcd5b969e0df4/LICENSE",
+      "content_hash": "sha256:a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3",
+      "captured_at": "2026-09-06T10:14:32.986043+00:00"
+    }
+  ]
+}
