@@ -101,7 +101,7 @@ virtual environment, then install the wheel and runtime dependencies in one comm
 ```sh
 python3.12 -m venv .venv
 . .venv/bin/activate
-python -m pip install "version-aware-retriever[dense] @ https://github.com/meiming2019-web/version-aware-retriever/releases/download/v0.1.1/version_aware_retriever-0.1.1-py3-none-any.whl"
+python -m pip install "version-aware-retriever[dense] @ https://github.com/meiming2019-web/version-aware-retriever/releases/download/v0.1.2/version_aware_retriever-0.1.2-py3-none-any.whl"
 
 # One-time download of the exact dense-model snapshot into the external HF cache:
 python -m version_aware_retriever.dense prepare
@@ -148,7 +148,7 @@ never disable TLS verification or commit private CA material.
 ```sh
 git clone https://github.com/meiming2019-web/version-aware-retriever.git
 cd version-aware-retriever
-git switch --detach v0.1.1
+git switch --detach v0.1.2
 python3.12 -m venv .venv
 . .venv/bin/activate
 python -m pip install -e '.[dev]'
@@ -171,10 +171,14 @@ python -m build
 Tests use fake encoders/generators and require no model credentials or network.
 Historical reports document original experiments; their run commands are **not**
 instructions to repeat or tune the final held-out experiment. Wheel, sdist,
-checksums and [release notes](docs/releases/v0.1.1.md) are at
-[v0.1.1](https://github.com/meiming2019-web/version-aware-retriever/releases/tag/v0.1.1).
+checksums and [release notes](docs/releases/v0.1.2.md) are at
+[v0.1.2](https://github.com/meiming2019-web/version-aware-retriever/releases/tag/v0.1.2).
 The sdist retains tests and reproducibility data; wheel data is runtime-only.
 This project is not published to PyPI.
+
+For the dedicated, record-backed neural environment constraints, see
+[reproduction guidance](docs/README.md#evaluation-and-reproduction). Normal-user
+dependency ranges are unchanged; the constraints do not authorize rerunning frozen experiments.
 
 ## Repository map and detailed records
 
@@ -187,6 +191,8 @@ docs/                        design, audits, qualitative outputs
 docs/PORTFOLIO.md             resume bullets and interview material
 ```
 
+[Architecture](docs/ARCHITECTURE.md) is the canonical shipped-system description;
+the [documentation index](docs/README.md) separates current guidance from history.
 [HLD](docs/HLD.md) records the initial design; later measured decisions supersede
 exploratory filtering ideas. See [corpus fidelity](docs/M1.2c.md),
 [applicability audit](docs/M1.2c-applicability-review.md),

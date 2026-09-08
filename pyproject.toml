@@ -1,14 +1,14 @@
 [build-system]
-requires = ["setuptools>=69"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "version-aware-retriever"
-version = "0.1.1"
+version = "0.1.2"
 description = "Evidence-grounded Pydantic migration answers with frozen hybrid retrieval."
 readme = "README.md"
-license = { file = "LICENSE" }
-classifiers = ["License :: OSI Approved :: MIT License"]
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.12"
 dependencies = []
 
@@ -60,4 +60,4 @@ select = ["E", "F", "I", "UP"]
 [tool.mypy]
 python_version = "3.12"
 strict = true
-files = ["src", "tests"]
+files = ["src", "tests", "scripts"]

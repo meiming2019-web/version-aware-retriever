@@ -1,4 +1,5 @@
 include README.md pyproject.toml LICENSE
+include constraints/frozen-eval.txt scripts/check_installed.py
 recursive-include src/version_aware_retriever/runtime *.json *-LICENSE *.md
 recursive-include tests *.py
 recursive-include docs *.md *.json

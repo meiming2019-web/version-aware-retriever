@@ -1,0 +1,15 @@
+# Frozen neural-evaluation environment only; not ordinary runtime installation.
+# Authority: data/pydantic/runs/dense.eval.unscored.json, runtime.packages;
+# cross-checked with cross-encoder-reranked.eval.unscored.json, runtime.packages,
+# and docs/M2.6b-heldout-results.md (also docs/M2.1.md and docs/M2.5.md).
+# Recorded Python: 3.12.7; macOS/Darwin ARM64. This is not a full transitive lock.
+# Exact GTE/BGE model IDs/revisions: docs/ARCHITECTURE.md and docs/M2.5.md.
+# Constraints do not download weights or authorize regenerating frozen runs.
+# Neural inference is not guaranteed bit-identical across platforms/hardware.
+torch==2.6.0
+transformers==4.49.0
+sentence-transformers==3.4.1
+huggingface-hub==0.36.2
+numpy==2.5.3
+tokenizers==0.21.4
+safetensors==0.8.0
