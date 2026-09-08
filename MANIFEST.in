@@ -1,0 +1,6 @@
+include README.md pyproject.toml
+recursive-include src/version_aware_retriever/runtime *.json *-LICENSE *.md
+recursive-include tests *.py
+recursive-include docs *.md *.json
+recursive-include data/pydantic *.json *.md *.py LICENSE
+global-exclude __pycache__ *.py[cod] .DS_Store
