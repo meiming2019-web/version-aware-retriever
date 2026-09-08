@@ -1,5 +1,7 @@
 # Version-Aware RAG MVP
 
+[![CI](https://github.com/meiming2019-web/version-aware-retriever/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/meiming2019-web/version-aware-retriever/actions/workflows/ci.yml)
+
 **Relevant does not necessarily mean valid.** A measured, installable technical
 RAG system for Pydantic 1.10.13 → 2.5.3, with frozen hybrid retrieval, source-linked
 answers and explicit insufficient-evidence responses.
@@ -99,7 +101,7 @@ virtual environment, then install the wheel and runtime dependencies in one comm
 ```sh
 python3.12 -m venv .venv
 . .venv/bin/activate
-python -m pip install "version-aware-retriever[dense] @ https://github.com/meiming2019-web/version-aware-retriever/releases/download/v0.1.0/version_aware_retriever-0.1.0-py3-none-any.whl"
+python -m pip install "version-aware-retriever[dense] @ https://github.com/meiming2019-web/version-aware-retriever/releases/download/v0.1.1/version_aware_retriever-0.1.1-py3-none-any.whl"
 
 # One-time download of the exact dense-model snapshot into the external HF cache:
 python -m version_aware_retriever.dense prepare
@@ -146,7 +148,7 @@ never disable TLS verification or commit private CA material.
 ```sh
 git clone https://github.com/meiming2019-web/version-aware-retriever.git
 cd version-aware-retriever
-git switch --detach v0.1.0
+git switch --detach v0.1.1
 python3.12 -m venv .venv
 . .venv/bin/activate
 python -m pip install -e '.[dev]'
@@ -169,8 +171,8 @@ python -m build
 Tests use fake encoders/generators and require no model credentials or network.
 Historical reports document original experiments; their run commands are **not**
 instructions to repeat or tune the final held-out experiment. Wheel, sdist,
-checksums and [release notes](docs/releases/v0.1.0.md) are at
-[v0.1.0](https://github.com/meiming2019-web/version-aware-retriever/releases/tag/v0.1.0).
+checksums and [release notes](docs/releases/v0.1.1.md) are at
+[v0.1.1](https://github.com/meiming2019-web/version-aware-retriever/releases/tag/v0.1.1).
 The sdist retains tests and reproducibility data; wheel data is runtime-only.
 This project is not published to PyPI.
 
@@ -192,7 +194,7 @@ exploratory filtering ideas. See [corpus fidelity](docs/M1.2c.md),
 [retrieval results](docs/M2.6b-heldout-results.md),
 [grounded answering](docs/M3.1.md), and [portfolio](docs/PORTFOLIO.md).
 
-## Limitations and licensing
+## Limitations
 
 Small single-ecosystem corpus, shared documents, AI-assisted/non-blind authoring,
 single-human batch review, one held-out hard negative, and three qualitative
@@ -200,7 +202,9 @@ generation checks. Top 5 can omit essential evidence; valid citation IDs can fai
 to support a claim. The prompt boundary is not proven injection resistance.
 No serving/traffic, production readiness, universal superiority or answer-accuracy claim.
 
-No root license has been selected for this project's own code. Public availability
-does not grant an open-source license. Pydantic excerpts retain upstream MIT notices
-in the archive and package. Model/provider terms are separate. This is a portfolio
-engineering release, not a production service.
+## License
+
+This project's original code is licensed under the [MIT License](LICENSE).
+Third-party source material retains its original licenses and notices, including
+the upstream Pydantic MIT notices in the archive and package. Model/provider
+terms are separate. This is a portfolio engineering release, not a production service.
