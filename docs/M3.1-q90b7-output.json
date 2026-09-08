@@ -1,0 +1,21 @@
+{
+  "query_id": "q:90b7",
+  "model": "gpt-5.6-sol",
+  "query": "In Pydantic 1.10.13, will model.dict(exclude_none=True) omit a field explicitly set to None?",
+  "evidence_ids": [
+    "evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c",
+    "evidence:dbe99fbadce62a074aa9f9cfd04fefb4f64e6b3c6ceb094a6dc7a5bb5eb6cced",
+    "evidence:4e15db8c4875996cdf78901e0dc7a415c9b6ee2457f6d638ce28b96c9b4a1373",
+    "evidence:ff1f3e3ee236ff1387cd370b65854454999d9ee70de571433c98a6e65aed1f1d",
+    "evidence:f6f7fddb0625fd25e1f626799e80adcdaecdce0b25fcb829f01e735375425cae"
+  ],
+  "raw_output": "{\"status\":\"SUPPORTED\",\"answer\":\"Yes. In Pydantic 1.10.13, `model.dict(exclude_none=True)` excludes fields whose value equals `None`, including a field explicitly set to `None`. Explicit-set status is instead relevant to the separate `exclude_unset` option. [evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c]\",\"citations\":[\"evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c\"],\"support_summary\":\"The Pydantic 1.10.13 documentation states that `exclude_none` excludes fields equal to `None`, while `exclude_unset` separately concerns whether fields were explicitly set.\"}",
+  "output": {
+    "status": "SUPPORTED",
+    "answer": "Yes. In Pydantic 1.10.13, `model.dict(exclude_none=True)` excludes fields whose value equals `None`, including a field explicitly set to `None`. Explicit-set status is instead relevant to the separate `exclude_unset` option. [evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c]",
+    "citations": [
+      "evidence:4f79eb319d7c82bd8ef1e1ba845de73e6d26eb90d328d962021b9b6346a3876c"
+    ],
+    "support_summary": "The Pydantic 1.10.13 documentation states that `exclude_none` excludes fields equal to `None`, while `exclude_unset` separately concerns whether fields were explicitly set."
+  }
+}
