@@ -18,9 +18,16 @@ readiness or universal correctness.
 
 ## Resume bullets
 
-- **Applied AI Engineer:** Built and evaluated a version-sensitive documentation RAG system; fixed BM25+dense RRF achieved held-out Recall@5 **0.8111** and MRR **0.8333**, outperforming the tested cross-encoder on those measures.
-- **AI Systems / Agent Engineering:** Designed an explicit retrieval–generation–evaluation trust boundary with frozen inputs, source-linked citations and typed abstention; kept **544 human-reviewed query–evidence pairs** out of runtime and reported three predeclared qualitative checks without conflating them with accuracy.
-- **Backend-heavy AI Engineering:** Packaged a Python CLI with hash-verified corpus resources, deterministic offline tests and clean-install acceptance outside the source tree; preserved frozen experiments and surfaced sanitized provider/TLS failures without disabling verification or adding fallback behavior.
+- Built a version-aware technical RAG system combining BM25 and dense
+  retrieval with RRF; achieved 0.81 Recall@5 and 0.83 MRR on a frozen
+  16-query held-out benchmark with 544 human-reviewed query–evidence pairs.
+- Designed retrieval–generation–evaluation isolation with immutable evidence
+  provenance, source-linked citations, and explicit INSUFFICIENT_EVIDENCE
+  handling, preventing reviewed labels from entering runtime retrieval or
+  generation.
+- Shipped an installable Python CLI and GitHub release with hash-verified
+  packaged resources and 261 deterministic tests; validated clean
+  installation and retrieval outside the source checkout.
 
 This is a bounded RAG pipeline, not an autonomous agent. Human review was explicit
 single-reviewer batch approval of AI-assisted annotations, not independent agreement.

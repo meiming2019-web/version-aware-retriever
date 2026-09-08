@@ -1,4 +1,4 @@
-include README.md pyproject.toml
+include README.md pyproject.toml LICENSE
 recursive-include src/version_aware_retriever/runtime *.json *-LICENSE *.md
 recursive-include tests *.py
 recursive-include docs *.md *.json
